@@ -4,7 +4,11 @@
 
 ModelDock brings model installation, isolated deployment, GPU configuration and media generation into a desktop control panel. ModelDock Studio is the PC client; model inference runs on your Linux server.
 
-> **Alpha source release.** This repository is a sanitized source snapshot of MediaCenter 1.2.28. Internal Python modules, environment variables, protocol identifiers and some application labels still use `mediacenter` / `MediaCenter`. They are retained to avoid silently changing runtime and stored-data contracts. This is not a new signed desktop installer or a ready-made public model-image registry.
+> **Alpha release.** This repository is a sanitized source snapshot of MediaCenter 1.2.28. Internal Python modules, environment variables, protocol identifiers and application labels still use `mediacenter` / `MediaCenter`. They are retained to avoid silently changing runtime and stored-data contracts. Windows Studio is available as an unsigned installer; a ready-made public model-image registry is not included.
+
+## Download
+
+[Studio for Windows x64 and Server bundle](https://github.com/CrxzyChen/modeldock/releases/tag/v1.2.28-alpha.1) · [release notes](docs/RELEASE-1.2.28.md) · [Server installation guide](docs/DEPLOYMENT.md)
 
 ## What it does
 
