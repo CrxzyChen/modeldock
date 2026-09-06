@@ -31,4 +31,6 @@ Follow [the Linux installation and upgrade guide](DEPLOYMENT.md). The bundle ins
 
 Based on the sanitized 1.2.28 source. Includes model service management, residency configuration, model/LoRA/VAE import interfaces and media workspaces, subject to server-side runtime support. No private deployment history, personal addresses, API keys, model weights or user outputs are included. No existing server is modified by publishing this release.
 
-The project license has not yet been selected. Third-party components retain their own licenses; the packaged Electron license notices are included in the application distribution.
+Original ModelDock code and documentation, including the original project portions of these Alpha binaries, are now licensed under Apache-2.0. The release includes LICENSE, NOTICE and THIRD_PARTY.md as companion assets. Keep them with redistributed binaries. Third-party components retain their own licenses; the packaged Electron license notices are included in the application distribution.
+
+Licensing was added after the original Alpha build. The installer, server archive and original tag were not rebuilt or replaced; their published checksums remain unchanged. The old source/archive README may therefore still contain the superseded “license not selected” statement. This release notice supplies the updated grant for original project material; see the current repository LICENSE and companion assets.

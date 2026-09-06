@@ -3,6 +3,7 @@ name = "mediacenter"
 version = "1.2.28"
 description = "Independent server multimedia model kernel"
 requires-python = ">=3.10"
+license = {file = "LICENSE"}
 dependencies = ["redis==5.3.1", "Pillow==11.3.0"]
 
 [project.scripts]

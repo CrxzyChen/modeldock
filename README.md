@@ -65,4 +65,4 @@ Some integration tests require Linux, Redis or an isolated container engine and 
 
 No model weights, private credentials, production configurations or user outputs are distributed here. See [SECURITY.md](SECURITY.md).
 
-Public visibility is not a grant of an open-source license. A project license has not yet been selected; no additional license grant is made by this snapshot. Third-party dependencies and model weights retain their respective licenses. Review model licenses and obtain required permissions before downloading or using them.
+Original ModelDock code and documentation are licensed under [Apache-2.0](LICENSE). See [NOTICE](NOTICE) and [third-party boundaries](THIRD_PARTY.md). Third-party dependencies, upstream model configurations/tokenizers and model weights retain their respective licenses. Review model licenses and obtain required permissions before downloading or using them.

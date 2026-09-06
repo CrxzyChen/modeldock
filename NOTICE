@@ -1,0 +1,9 @@
+ModelDock
+Copyright 2026 CrxzyChen and ModelDock contributors
+
+Original ModelDock project code and documentation are licensed under the
+Apache License, Version 2.0. See LICENSE.
+
+Third-party software, model configurations, tokenizers and model weights
+remain subject to their respective licenses. This notice does not relicense
+third-party material or grant rights to model weights. See THIRD_PARTY.md.

@@ -20,7 +20,7 @@ from verify_release_bundle import (
 )
 
 
-ROOT_FILES = ("README.md", "pyproject.toml")
+ROOT_FILES = ("README.md", "pyproject.toml", "LICENSE", "NOTICE", "THIRD_PARTY.md")
 DEPLOY_FILES = (
     "deploy/container-security.json",
     "deploy/mediacenter-redis.service",

@@ -2,6 +2,7 @@
   "name": "mediacenter-desktop",
   "version": "1.2.28",
   "private": true,
+  "license": "Apache-2.0",
   "description": "MediaCenter private-network desktop client",
   "main": "electron/main.js",
   "scripts": {
@@ -34,6 +35,9 @@
     "files": [
       "electron/**/*",
       "client/dist/**/*",
+      "LICENSE",
+      "NOTICE",
+      "THIRD_PARTY.md",
       "package.json"
     ],
     "directories": {
