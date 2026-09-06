@@ -1,0 +1,94 @@
+:root {
+  color-scheme: dark;
+  --mw-canvas: #090b10;
+  --mw-surface: #0d1118;
+  --mw-surface-raised: #111721;
+  --mw-surface-overlay: #151c27;
+  --mw-line: rgba(255, 255, 255, 0.075);
+  --mw-line-strong: rgba(255, 255, 255, 0.13);
+  --mw-text: #c9d1d9;
+  --mw-text-muted: #728091;
+  --mw-text-faint: #465361;
+  --mw-accent: #49cddd;
+  --mw-accent-soft: rgba(73, 205, 221, 0.10);
+  --mw-success: #64d98b;
+  --mw-warning: #e7b85d;
+  --mw-danger: #f0737e;
+  --mw-scrollbar: #293442;
+  --mw-ui-font: Inter, "Segoe UI", "Microsoft YaHei UI", system-ui, sans-serif;
+  --mw-mono-font: "JetBrains Mono", "Cascadia Code", ui-monospace, Consolas, monospace;
+  --mw-radius-control: 5px;
+  --mw-radius-panel: 6px;
+  --mw-radius-dialog: 10px;
+  --mw-control-height: 30px;
+  --mw-transition: 100ms cubic-bezier(0.2, 0, 0, 1);
+  --mw-space-1: 4px;
+  --mw-space-2: 6px;
+  --mw-space-3: 8px;
+  --mw-space-4: 12px;
+  --mw-space-5: 16px;
+  --mw-panel-inset: 12px;
+  --mw-group-gap: 10px;
+
+  /* Compatibility aliases keep the existing layout semantic while the skin is replaced. */
+  --bg: var(--mw-canvas);
+  --surface: var(--mw-surface);
+  --surface-raised: var(--mw-surface-raised);
+  --surface-hover: var(--mw-surface-overlay);
+  --surface-active: var(--mw-accent-soft);
+  --line: var(--mw-line);
+  --line-strong: var(--mw-line-strong);
+  --text-primary: var(--mw-text);
+  --text: var(--mw-text);
+  --text-soft: var(--mw-text-muted);
+  --muted: var(--mw-text-muted);
+  --muted-dim: var(--mw-text-faint);
+  --accent: var(--mw-accent);
+  --accent-strong: var(--mw-accent);
+  --accent-muted: #398c98;
+  --accent-soft: var(--mw-accent-soft);
+  --accent-line: rgba(73, 205, 221, 0.42);
+  --success: var(--mw-success);
+  --warning: var(--mw-warning);
+  --danger: var(--mw-danger);
+  --radius-control: var(--mw-radius-control);
+  --radius-content: var(--mw-radius-panel);
+  --radius-float: var(--mw-radius-dialog);
+  --font-caption: 10px;
+  --font-chrome: 11px;
+  --font-control: 12px;
+  --font-body: 13px;
+  --font-section: 13px;
+  --font-heading: 15px;
+  --font-title: 18px;
+  --font-display: 22px;
+  --weight-normal: 400;
+  --weight-emphasis: 550;
+  --chrome-title: 38px;
+  --chrome-sidebar: 48px;
+  --chrome-status: 26px;
+  --space-panel: var(--mw-panel-inset);
+  --line-caption: 1.3;
+  --line-body: 1.45;
+  font-family: "Segoe UI Variable Text", var(--mw-ui-font);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #app { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+body { background: var(--mw-canvas); color: var(--mw-text); font-size: var(--font-body); font-weight: var(--weight-normal); line-height: var(--line-body); letter-spacing: .002em; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+button, input, select, textarea { font: inherit; line-height: inherit; }
+button { user-select: none; }
+small, time { line-height: var(--line-caption); }
+code, kbd, samp, output { font-family: var(--mw-mono-font); font-variant-numeric: tabular-nums; }
+::selection { background: rgba(73, 205, 221, 0.24); color: var(--mw-text); }
+:focus-visible { outline: 1px solid var(--mw-accent); outline-offset: 1px; }
+::placeholder { color: var(--mw-text-faint); opacity: 1; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { border: 2px solid transparent; border-radius: 8px; background: #293442; background-clip: padding-box; }
+::-webkit-scrollbar-thumb:hover { background-color: #3a4858; }
+* { scrollbar-color: #293442 transparent; scrollbar-width: thin; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

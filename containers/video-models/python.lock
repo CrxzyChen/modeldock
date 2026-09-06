@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "target": {"python":"3.11.15","os":"linux","architecture":"x86_64","glibc":"2.35"},
+  "status": "declaration_closure_complete_artifacts_unverified",
+  "base_python_lock_sha256": "b47ff9fdc3f32edb2e28f42005aff8596de7894f876263b7cfe62c0f7481a33e",
+  "replaces": ["accelerate","diffusers","hf-xet","huggingface-hub","regex","tokenizers","transformers"],
+  "required_roots": {
+    "torch":"2.7.1+cu126","torchvision":"0.22.1+cu126","torchao":"0.15.0",
+    "diffusers":"0.40.0","transformers":"5.16.1","accelerate":"1.14.0",
+    "safetensors":"0.8.0","sentencepiece":"0.2.2","protobuf":"7.36.0",
+    "av":"17.1.0","imageio":"2.37.4","imageio-ffmpeg":"0.6.0","ftfy":"6.3.1"
+  },
+  "packages": [
+    {"name":"accelerate","version":"1.14.0","filename":"accelerate-1.14.0-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/a8/db/253133d7e7cb40d3af384bb2f5c0b4a2b7fdcffbc95c688cc67a20a3c103/accelerate-1.14.0-py3-none-any.whl","size":389246,"sha256":"e94390c2863b873be18f623f9df48a0d8fe5eff13ea7f1a00092b0a7904888c6"},
+    {"name":"anyio","version":"4.10.0","filename":"anyio-4.10.0-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/6f/12/e5e0282d673bb9746bacfb6e2dba8719989d3660cdb2ea79aee9a9651afb/anyio-4.10.0-py3-none-any.whl","size":107213,"sha256":"60e474ac86736bbfd6f210f7a61218939c318f43f9972497381f1c5e930ed3d1"},
+    {"name":"av","version":"17.1.0","filename":"av-17.1.0-cp311-abi3-manylinux_2_28_x86_64.whl","url":"https://files.pythonhosted.org/packages/77/43/96b35170bf2e64e00a41748c6400ff73232dc0fc62ded283679fb07c7fe0/av-17.1.0-cp311-abi3-manylinux_2_28_x86_64.whl","size":35370183,"sha256":"f9a65d1f48b818323fb411e80358f89d77dec340b01d27c6b2dfbb9cbf4b779f"},
+    {"name":"click","version":"8.4.2","filename":"click-8.4.2-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/fb/e2/79c688af8b210d232694e31e59da9f6ec747bae31c3f5946e4e9b98860d5/click-8.4.2-py3-none-any.whl","size":119243,"sha256":"e6f9f66136c816745b9d65817da91d61d957fb16e02e4dcd0552553c5a197b76"},
+    {"name":"diffusers","version":"0.40.0","filename":"diffusers-0.40.0-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/db/df/ffb593ebed2a068d2d6be44261283f39a6b809c0fcdfdcafbd448cbeec77/diffusers-0.40.0-py3-none-any.whl","size":5911654,"sha256":"5b5da7c3ddb62152fa4afc577f02e050af688c797375c34fb2d01006da3f3541"},
+    {"name":"ftfy","version":"6.3.1","filename":"ftfy-6.3.1-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/ab/6e/81d47999aebc1b155f81eca4477a616a70f238a2549848c38983f3c22a82/ftfy-6.3.1-py3-none-any.whl","size":44821,"sha256":"7c70eb532015cd2f9adb53f101fb6c7945988d023a085d127d1573dc49dd0083"},
+    {"name":"h11","version":"0.16.0","filename":"h11-0.16.0-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/04/4b/29cac41a4d98d144bf5f6d33995617b185d14b22401f75ca86f384e87ff1/h11-0.16.0-py3-none-any.whl","size":37515,"sha256":"63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86"},
+    {"name":"hf-xet","version":"1.5.1","filename":"hf_xet-1.5.1-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl","url":"https://files.pythonhosted.org/packages/de/cc/f99f4bc7295023d7bd9ebbfd51f75cc530ca262c1227666268b8208f4b77/hf_xet-1.5.1-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl","size":4514864,"sha256":"892e3a3a3aecc12aded8b93cf4f9cd059282c7de0732f7d55026f3abdf474350"},
+    {"name":"httpcore","version":"1.0.9","filename":"httpcore-1.0.9-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/7e/f5/f66802a942d491edb555dd61e3a9961140fd64c90bce1eafd741609d334d/httpcore-1.0.9-py3-none-any.whl","size":78784,"sha256":"2d400746a40668fc9dec9810239072b40b4484b640a8c38fd654a024c7a1bf55"},
+    {"name":"httpx","version":"0.28.1","filename":"httpx-0.28.1-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/2a/39/e50c7c3a983047577ee07d2a9e53faf5a69493943ec3f6a384bdc792deb2/httpx-0.28.1-py3-none-any.whl","size":73517,"sha256":"d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad"},
+    {"name":"huggingface-hub","version":"1.23.0","filename":"huggingface_hub-1.23.0-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/f1/ce/13b2ba57838b8db1e6bd033c1b21ce0b9f6153b87d4e4939f77074e41eb0/huggingface_hub-1.23.0-py3-none-any.whl","size":770336,"sha256":"b1d604788f5adc7f0eb246e03e0ec19011ca06e38400218c347dccc3dffa64a2"},
+    {"name":"imageio","version":"2.37.4","filename":"imageio-2.37.4-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/3e/2d/ca050652104bab2cf55e569db2a178b1b61cb041fef28307f2db383f6d9f/imageio-2.37.4-py3-none-any.whl","size":318000,"sha256":"1ab2e22c8debf700f24c3ac43e8f95f3b3a8110c83b93411e97b4b0b2cd1c7e6"},
+    {"name":"imageio-ffmpeg","version":"0.6.0","filename":"imageio_ffmpeg-0.6.0-py3-none-manylinux2014_x86_64.whl","url":"https://files.pythonhosted.org/packages/a0/2d/43c8522a2038e9d0e7dbdf3a61195ecc31ca576fb1527a528c877e87d973/imageio_ffmpeg-0.6.0-py3-none-manylinux2014_x86_64.whl","size":29498237,"sha256":"c7e46fcec401dd990405049d2e2f475e2b397779df2519b544b8aab515195282"},
+    {"name":"markdown-it-py","version":"4.0.0","filename":"markdown_it_py-4.0.0-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/94/54/e7d793b573f298e1c9013b8c4dade17d481164aa517d1d7148619c2cedbf/markdown_it_py-4.0.0-py3-none-any.whl","size":87321,"sha256":"87327c59b172c5011896038353a81343b6754500a08cd7a4973bb48c6d578147"},
+    {"name":"mdurl","version":"0.1.2","filename":"mdurl-0.1.2-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl","size":9979,"sha256":"84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8"},
+    {"name":"pygments","version":"2.19.2","filename":"pygments-2.19.2-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/c7/21/705964c7812476f378728bdf590ca4b771ec72385c533964653c68e86bdc/pygments-2.19.2-py3-none-any.whl","size":1225217,"sha256":"86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b"},
+    {"name":"regex","version":"2025.10.22","filename":"regex-2025.10.22-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl","url":"https://files.pythonhosted.org/packages/0d/96/67fc321360de627c5406aed97be803240227770a29d09117157d56899c4d/regex-2025.10.22-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl","size":800313,"sha256":"4bd26a33cad0f24c045fe2d84e70a75f8bd82cb79121382c0ed6c035d247854c"},
+    {"name":"rich","version":"14.1.0","filename":"rich-14.1.0-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/e3/30/3c4d035596d3cf444529e0b2953ad0466f6049528a879d27534700580395/rich-14.1.0-py3-none-any.whl","size":243368,"sha256":"536f5f1785986d6dbdea3c75205c473f970777b4a0d6c6dd1b696aa05a3fa04f"},
+    {"name":"shellingham","version":"1.5.4","filename":"shellingham-1.5.4-py2.py3-none-any.whl","url":"https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl","size":9755,"sha256":"7ecfff8f2fd72616f7481040475a65b2bf8af90a56c89140852d1120324e8686"},
+    {"name":"sniffio","version":"1.3.1","filename":"sniffio-1.3.1-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/e9/44/75a9c9421471a6c4805dbf2356f7c181a29c1879239abab1ea2cc8f38b40/sniffio-1.3.1-py3-none-any.whl","size":10235,"sha256":"2f6da418d1f1e0fddd844478f41680e794e6051915791a034ff65e5f100525a2"},
+    {"name":"tokenizers","version":"0.23.1","filename":"tokenizers-0.23.1-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl","url":"https://files.pythonhosted.org/packages/0d/d5/1353e5f677ec27c2494fb6a6725e82d56c985f53e90ec511369e7e4f02c6/tokenizers-0.23.1-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl","size":3346235,"sha256":"5075b405006415ea148a992d093699c66eb01952bf59f4d5727089a98bda45a4"},
+    {"name":"torchao","version":"0.15.0","filename":"torchao-0.15.0-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/f6/3b/6b9d5618720f63dbc2e2509cd6b57aae9c0d61b738d1d2172f4d5d9efaab/torchao-0.15.0-py3-none-any.whl","size":1080679,"sha256":"3f3812676048ef8a2a0e9d492d12d8971ba7a7ebb16f54aa56f690414e130d2c"},
+    {"name":"transformers","version":"5.16.1","filename":"transformers-5.16.1-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/0d/4d/ee3728674c0bbc637bb4af88ccf0be697f92e4e90b55f5dc110c44d61b61/transformers-5.16.1-py3-none-any.whl","size":12080592,"sha256":"2f2d5b98a5ad3718713653734298fa620754ed683702a635ebb587df3ed29c7e"},
+    {"name":"typer","version":"0.20.0","filename":"typer-0.20.0-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/78/64/7713ffe4b5983314e9d436a90d5bd4f63b6054e2aca783a3cfc44cb95bbf/typer-0.20.0-py3-none-any.whl","size":47028,"sha256":"5b463df6793ec1dca6213a3cf4c0f03bc6e322ac5e16e13ddd622a889489784a"},
+    {"name":"wcwidth","version":"0.2.13","filename":"wcwidth-0.2.13-py2.py3-none-any.whl","url":"https://files.pythonhosted.org/packages/fd/84/fd2ba7aafacbad3c4201d395674fc6348826569da3c0937e75505ead3528/wcwidth-0.2.13-py2.py3-none-any.whl","size":34166,"sha256":"3da69048e4540d84af32131829ff948f1e022c1c6bdb8d6102117aac784f6859"}
+  ],
+  "closure": {
+    "base_reused": ["certifi","filelock","fsspec","idna","jinja2","numpy","packaging","pillow","psutil","pyyaml","requests","safetensors","sentencepiece","tqdm","torch","torchvision","typing-extensions"],
+    "declared_edges": {
+      "diffusers":["filelock","httpx","huggingface-hub","numpy","regex","requests","safetensors","pillow"],
+      "transformers":["huggingface-hub","numpy","packaging","pyyaml","regex","tokenizers","typer","safetensors","tqdm"],
+      "accelerate":["numpy","packaging","psutil","pyyaml","torch","huggingface-hub","safetensors"],
+      "huggingface-hub":["click","filelock","fsspec","hf-xet","httpx","packaging","pyyaml","tqdm","typing-extensions"],
+      "httpx":["anyio","certifi","httpcore","idna"],"httpcore":["certifi","h11"],"anyio":["idna","sniffio","typing-extensions"],
+      "typer":["click","typing-extensions","shellingham","rich"],"rich":["pygments","markdown-it-py"],"markdown-it-py":["mdurl"],
+      "tokenizers":["huggingface-hub"],"imageio":["numpy","pillow"],"ftfy":["wcwidth"]
+    }
+  }
+}

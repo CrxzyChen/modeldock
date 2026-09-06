@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "target": {"os":"linux","architecture":"x86_64","glibc":"2.35"},
+  "status": "declared_artifact_closure_unverified",
+  "base_release": "ubuntu-22.04-fixed-oci",
+  "required_runtime_libraries": ["glibc","libstdc++6","libgomp1","libssl3","libsndfile1","ffmpeg"],
+  "artifacts_verified": false
+}

@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "target": {"python":"3.11.15","os":"linux","architecture":"x86_64","glibc":"2.35"},
+  "status": "base_closure_reused_no_python_delta",
+  "base_python_lock_sha256": "b47ff9fdc3f32edb2e28f42005aff8596de7894f876263b7cfe62c0f7481a33e",
+  "required_roots": {"torch":"2.7.1+cu126","transformers":"4.51.3","accelerate":"1.6.0","numpy":"2.2.6","safetensors":"0.8.0","sentencepiece":"0.2.2","protobuf":"7.36.0"},
+  "packages": [],
+  "closure": {"base_reused":["accelerate","numpy","protobuf","safetensors","sentencepiece","torch","transformers"]}
+}

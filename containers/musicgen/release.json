@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "release": "mediacenter-musicgen-v1",
+  "platform": "linux/amd64",
+  "status": "source_locked_build_not_executed",
+  "parent": "mediacenter-runtime-v1",
+  "parent_release_sha256": "3d82fe1792cd8bb01197fe3dd1a83a1fb8e3e872322643eb5b568a24e0e7f48c",
+  "network": "none",
+  "entrypoint": [
+    "/opt/python/bin/python3.11",
+    "-B",
+    "-u",
+    "-m",
+    "mediacenter.audio_worker_cli"
+  ],
+  "target": {
+    "model": "musicgen-small",
+    "adapter": "mediacenter.adapters.musicgen:MusicGenAdapter",
+    "gpus": {
+      "min": 1,
+      "max": 1
+    },
+    "inputs": [],
+    "output": "audio/wav;codec=pcm_s16le"
+  },
+  "license": {
+    "spdx": "CC-BY-NC-4.0",
+    "commercial_use": false,
+    "notice": "MusicGen Small 仅限许可证允许的非商业用途。"
+  },
+  "inputs": {
+    "python.lock": "5dbe6cd60df7dc91295fd56b0e610e9e831e2f36e8571005634d234f26c79144",
+    "system.lock": "498400d5141e0f094272d5cb4bd5963ddac6c3f3edfce03565ab1b78ba316f52",
+    "requirements.txt": "6523ea6dbeae9100996742c489bba5e6a96dfa1436810c3f6e1ddd81d1763fdd",
+    "Dockerfile": "a6daa47aee299f822bbe30766b64e58318d5a86f230f9cecb865bcdb5d41393c"
+  },
+  "sdk": [
+    {
+      "path": "mediacenter/capabilities.py",
+      "size": 35017,
+      "sha256": "e483bf76714c6bcf80e418a988c8f2276da7bc05a69d1ed2522d83432bcef9d3"
+    },
+    {
+      "path": "mediacenter/artifacts.py",
+      "size": 40192,
+      "sha256": "cd83a292ff9c56dd3e98d942f0df59e43e37c38014ff884c58e902b73326fddb"
+    },
+    {
+      "path": "mediacenter/adapters/audio.py",
+      "size": 5535,
+      "sha256": "5423d44c003884f73cbb5a9bac18a1c377e99e0956836e78178d467b6913f6ca"
+    },
+    {
+      "path": "mediacenter/adapters/musicgen.py",
+      "size": 3638,
+      "sha256": "0af2e4601cfb4458ceb890bc8388c4d56b97195226ec3c98ee1e076322e7f54e"
+    },
+    {
+      "path": "mediacenter/audio_worker_cli.py",
+      "size": 5540,
+      "sha256": "4dffca4e4ad59b103a6d863cfa3cca4c83067b1fe1c695f35215433734c84279"
+    }
+  ],
+  "image_digest": null,
+  "evidence": {
+    "offline_build": "not_executed",
+    "gpu_load": "not_executed",
+    "cold_warm": "not_executed",
+    "real_generation": "not_executed"
+  }
+}

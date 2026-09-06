@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "model": "sdxl-base-1.0",
+  "sdk_version": "mc.sdxl-sdk/1",
+  "status": "source_locked_build_not_executed",
+  "platform": "linux/amd64",
+  "image_digest": null,
+  "parent_manifest_digest": null,
+  "base_release_sha256": "3d82fe1792cd8bb01197fe3dd1a83a1fb8e3e872322643eb5b568a24e0e7f48c",
+  "builder": {
+    "driver": "remote",
+    "endpoint_scheme": "unix",
+    "node_count": 1,
+    "buildx": {
+      "version": "0.31.1",
+      "filename": "buildx-v0.31.1.linux-amd64",
+      "size": 89751736,
+      "sha256": "dc8eaffbf29138123b4874d852522b12303c61246a5073fa0f025e4220317b1e",
+      "url": "https://github.com/docker/buildx/releases/download/v0.31.1/buildx-v0.31.1.linux-amd64",
+      "artifact_verified": false
+    },
+    "buildkit": {
+      "version": "0.27.0",
+      "filename": "buildkit-v0.27.0.linux-amd64.tar.gz",
+      "size": 91233311,
+      "sha256": "1100d32a869c85f0b206ed314ad3af35c5c1f6a64c8d99d0452724a0616285fb",
+      "url": "https://github.com/moby/buildkit/releases/download/v0.27.0/buildkit-v0.27.0.linux-amd64.tar.gz",
+      "artifact_verified": false
+    },
+    "daemon_identity_verified": false,
+    "bootstrap": "preprovisioned_only",
+    "default_load": false,
+    "automatic_prune": false,
+    "automatic_pull": false,
+    "timeout_semantics": "client exit does not prove daemon execution exit; preserve resources until independently reconciled"
+  },
+  "inputs": {
+    "Dockerfile": "5ba290e5126fafa34325f58c799939c0fcdd890c1b993c8901a498983d8ffef4",
+    "python.lock": "c8fd8e1926dc682152e12d800a047acf2694fab034e2df94c2a58a4e2f9ec2d9"
+  },
+  "sdk": [
+    {
+      "path": "mediacenter/__init__.py",
+      "size": 82,
+      "sha256": "b7f29a2674f783c8a2fa48c0d1a2c7c1ad032738bc45d6af0823961047e10975"
+    },
+    {
+      "path": "mediacenter/domain.py",
+      "size": 989,
+      "sha256": "442d135b9842f4626e1075c2ef15f807f943b5e644c9b3d97ef92d3b9c5e93c8"
+    },
+    {
+      "path": "mediacenter/capabilities.py",
+      "size": 35017,
+      "sha256": "e483bf76714c6bcf80e418a988c8f2276da7bc05a69d1ed2522d83432bcef9d3"
+    },
+    {
+      "path": "mediacenter/protocol.py",
+      "size": 18749,
+      "sha256": "0442953edcbc23ec4ca95024866d25907e2502cdf1ae93d07410d2be7900bed2"
+    },
+    {
+      "path": "mediacenter/worker_common.py",
+      "size": 860,
+      "sha256": "8511e24226b0cd6f79299034e81123bea291d9ea3ebfb54504815a5375f0ba5e"
+    },
+    {
+      "path": "mediacenter/transport.py",
+      "size": 9046,
+      "sha256": "6c3727877a24fab1edcce68887754d64b4bafa4bac36eb415d6f2db5703857f0"
+    },
+    {
+      "path": "mediacenter/redis_transport.py",
+      "size": 26573,
+      "sha256": "569d2de519e2e10aa6bbec5a8dbc5afc339b3b259ddb6f28a0c052291f69d8f6"
+    },
+    {
+      "path": "mediacenter/adapter.py",
+      "size": 1885,
+      "sha256": "7e23ee728075a22d71c9a93ccf3fe66741d1f62ca4adc5e916c6805c7e3c6675"
+    },
+    {
+      "path": "mediacenter/worker_journal.py",
+      "size": 38273,
+      "sha256": "64d65b79764484afcd2216d479ef604c0f83375bf19e7fdbbd81d7196366777b"
+    },
+    {
+      "path": "mediacenter/worker_runtime.py",
+      "size": 23173,
+      "sha256": "0e30fb5113188fb4e8720f15173b45eb4b03e6e0bddeda7d3f169804754f4b2d"
+    },
+    {
+      "path": "mediacenter/adapters/__init__.py",
+      "size": 82,
+      "sha256": "f1bf3c0ba84bd0a795a518d673c099011b5b69d5deaa30f0909d3d8d4b743a30"
+    },
+    {
+      "path": "mediacenter/adapters/sdxl.py",
+      "size": 13215,
+      "sha256": "5bc0091a6aa0eaf0145d3ee35387fc5615874e5215ebdef1ac860aa36fec784d"
+    },
+    {
+      "path": "mediacenter/worker_cli.py",
+      "size": 6470,
+      "sha256": "8508142c0c0f503bc82fca7ed332660053a2c302cf16136532bba3b8fcd4d3e1"
+    }
+  ],
+  "build_contract": {
+    "parent": "independently approved MC034 build-result SHA plus complete offline OCI layout",
+    "network": "none; fixed remote private daemon only",
+    "cold": "instruction cache disabled; content store not claimed empty",
+    "timeout": "retain persistent shared-daemon active marker; no kill or resource release",
+    "actual_model_tests": "not_run",
+    "fixed_dependency_import": "not_run"
+  }
+}

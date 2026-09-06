@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "engine_api": "1.51",
+  "engine_version": "28.3.2",
+  "qualified_engine_releases": [
+    {"engine_api": "1.51", "engine_version": "28.3.2"},
+    {"engine_api": "1.55", "engine_version": "29.7.2"}
+  ],
+  "engine_transport": "local-unix-only",
+  "cgroup_version": "2",
+  "cgroup_driver": "cgroupfs",
+  "parent_domain": "explicit-exclusive-predelegated-subtree; retained; no automatic removal",
+  "user": "explicit-positive-uid:gid",
+  "readonly_rootfs": true,
+  "network_mode": "none",
+  "pid_mode": "",
+  "cgroup_namespace": "private",
+  "cap_drop": ["ALL"],
+  "no_new_privileges": true,
+  "restart_policy": "no",
+  "auto_remove": false,
+  "gpu_policy": "explicit-UUIDs-only; empty for CPU; never all",
+  "mount_roles_readonly": ["models", "inputs", "bootstrap", "redis_credentials", "redis_socket"],
+  "mount_roles_readwrite": ["journal", "outputs"],
+  "mount_policy": "exact trusted grants; nonrecursive; rprivate; no anonymous volumes",
+  "forbidden_mounts": ["engine socket or ancestor", "Server database or ancestor", "Server API key or ancestor"],
+  "quotas": "positive memory, CPU, PID and tmpfs budgets; persistent volume quota requires host provisioning and real verification",
+  "real_engine_verification": "not-executed"
+}

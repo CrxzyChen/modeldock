@@ -1,0 +1,31 @@
+# MC-044 production adoption image for the Python 3.10 / CUDA 12.1 epoch.
+ARG BASE_IMAGE
+FROM ${BASE_IMAGE}
+
+COPY env/ /opt/python/
+COPY wheels/ /offline/control-wheels/
+COPY --chown=1000:1000 sdk/ /opt/mediacenter/
+RUN chmod -R a+rX /opt/mediacenter
+
+ENV PATH=/opt/python/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
+    LD_LIBRARY_PATH=/opt/python/lib \
+    PYTHONPATH=/opt/mediacenter \
+    PYTHONNOUSERSITE=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_NO_INDEX=1 \
+    HF_HUB_OFFLINE=1 \
+    TRANSFORMERS_OFFLINE=1 \
+    HF_DATASETS_OFFLINE=1 \
+    HOME=/tmp
+
+RUN /opt/python/bin/conda-unpack \
+    && /opt/python/bin/python -m pip install --no-index --no-deps \
+       --find-links=/offline/control-wheels \
+       redis==5.3.1 PyJWT==2.12.1 async-timeout==5.0.1 typing_extensions==4.16.0 \
+    && /opt/python/bin/python -m pip check \
+    && /opt/python/bin/python -B -c \
+       "import torch,torchaudio,diffusers,transformers,onnx,onnxruntime,numpy,redis; import mediacenter.worker_runtime"
+
+USER 1000:1000
+WORKDIR /opt/mediacenter
+CMD ["/opt/python/bin/python","-B"]

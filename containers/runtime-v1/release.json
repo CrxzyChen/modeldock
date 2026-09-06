@@ -1,0 +1,508 @@
+{
+  "schema": 1,
+  "runtime": "mediacenter-runtime-v1",
+  "platform": "linux/amd64",
+  "status": "metadata_locked_build_not_executed",
+  "execution_contract": {
+    "entrypoint": "scripts/build_runtime_image.py",
+    "approval": "independent release SHA and preparation SHA are mandatory for build",
+    "preparation": "schema=1, driver=remote, node_count=1, process(pid/start_ticks/boot_id), process_cgroup leaf, socket/storage/config/cgroup(path/identity), cgroup(membership/mount/namespace_inode), limits(memory.max/pids.max/cpu.max), binaries(bin/buildkitd/bin/buildctl/bin/buildkit-runc), argv and worker_id",
+    "config": "exact expected_buildkit_config(preparation) bytes, rootful native OCI snapshotter, GC disabled, containerd/CDI/gateway disabled",
+    "execution_cgroup": "fixed build --cgroup-parent under the verified resource parent; actual kernel containment remains untested",
+    "unknown_outcome": "active marker remains in the verified storage root; no automatic retry, stop, cleanup or unlock after unknown daemon execution",
+    "measurements": "logical storage samples are not exact physical disk peak; network and dynamic ELF measurement remain not_run",
+    "scope": "metadata/fixture validation does not authorize daemon preparation, cgroup creation or actual image build"
+  },
+  "inputs": {
+    "python.lock": "b47ff9fdc3f32edb2e28f42005aff8596de7894f876263b7cfe62c0f7481a33e",
+    "system.lock": "e835d8fad8f74ecc1ab9c54572ce4c656ee872402bf620466f4b35e1dd07aa5a",
+    "Dockerfile": "b7d1459f2b2cc5ea8da56304c58aea6b8ee5791a20494450d721dd5217c72450"
+  },
+  "sdk": [
+    {
+      "path": "mediacenter/__init__.py",
+      "size": 82,
+      "sha256": "b7f29a2674f783c8a2fa48c0d1a2c7c1ad032738bc45d6af0823961047e10975"
+    },
+    {
+      "path": "mediacenter/domain.py",
+      "size": 989,
+      "sha256": "442d135b9842f4626e1075c2ef15f807f943b5e644c9b3d97ef92d3b9c5e93c8"
+    },
+    {
+      "path": "mediacenter/capabilities.py",
+      "size": 35017,
+      "sha256": "e483bf76714c6bcf80e418a988c8f2276da7bc05a69d1ed2522d83432bcef9d3"
+    },
+    {
+      "path": "mediacenter/protocol.py",
+      "size": 18749,
+      "sha256": "0442953edcbc23ec4ca95024866d25907e2502cdf1ae93d07410d2be7900bed2"
+    },
+    {
+      "path": "mediacenter/worker_common.py",
+      "size": 860,
+      "sha256": "8511e24226b0cd6f79299034e81123bea291d9ea3ebfb54504815a5375f0ba5e"
+    },
+    {
+      "path": "mediacenter/transport.py",
+      "size": 9046,
+      "sha256": "6c3727877a24fab1edcce68887754d64b4bafa4bac36eb415d6f2db5703857f0"
+    },
+    {
+      "path": "mediacenter/redis_transport.py",
+      "size": 26573,
+      "sha256": "569d2de519e2e10aa6bbec5a8dbc5afc339b3b259ddb6f28a0c052291f69d8f6"
+    },
+    {
+      "path": "mediacenter/adapter.py",
+      "size": 1885,
+      "sha256": "7e23ee728075a22d71c9a93ccf3fe66741d1f62ca4adc5e916c6805c7e3c6675"
+    },
+    {
+      "path": "mediacenter/worker_journal.py",
+      "size": 38273,
+      "sha256": "64d65b79764484afcd2216d479ef604c0f83375bf19e7fdbbd81d7196366777b"
+    },
+    {
+      "path": "mediacenter/worker_runtime.py",
+      "size": 23173,
+      "sha256": "0e30fb5113188fb4e8720f15173b45eb4b03e6e0bddeda7d3f169804754f4b2d"
+    }
+  ],
+  "python_source": {
+    "version": "3.11.15",
+    "filename": "Python-3.11.15.tar.xz",
+    "url": "https://www.python.org/ftp/python/3.11.15/Python-3.11.15.tar.xz",
+    "size": 20332596,
+    "sha256": "272179ddd9a2e41a0fc8e42e33dfbdca0b3711aa5abf372d3f2d51543d09b625",
+    "artifact_verified": false
+  },
+  "builder": {
+    "driver": "remote",
+    "endpoint_scheme": "unix",
+    "node_count": 1,
+    "buildx": {
+      "version": "0.31.1",
+      "filename": "buildx-v0.31.1.linux-amd64",
+      "size": 89751736,
+      "sha256": "dc8eaffbf29138123b4874d852522b12303c61246a5073fa0f025e4220317b1e",
+      "url": "https://github.com/docker/buildx/releases/download/v0.31.1/buildx-v0.31.1.linux-amd64",
+      "artifact_verified": false
+    },
+    "buildkit": {
+      "version": "0.27.0",
+      "filename": "buildkit-v0.27.0.linux-amd64.tar.gz",
+      "size": 91233311,
+      "sha256": "1100d32a869c85f0b206ed314ad3af35c5c1f6a64c8d99d0452724a0616285fb",
+      "url": "https://github.com/moby/buildkit/releases/download/v0.27.0/buildkit-v0.27.0.linux-amd64.tar.gz",
+      "artifact_verified": false
+    },
+    "daemon_identity_verified": false,
+    "bootstrap": "preprovisioned_only",
+    "default_load": false,
+    "automatic_prune": false,
+    "automatic_pull": false,
+    "timeout_semantics": "client exit does not prove daemon execution exit; preserve resources until independently reconciled"
+  },
+  "metadata_ledger": {
+    "prior_unmetered_batch_charged_bytes": 5242880,
+    "current_batch_budget_bytes": 5242880,
+    "current_batch_bytes": 1829689,
+    "python_responses": "python.lock#/metadata_ledger",
+    "responses": [
+      {
+        "url": "https://raw.githubusercontent.com/moby/buildkit/v0.27.0/executor/oci/spec.go",
+        "status": 200,
+        "bytes": 9066,
+        "sha256": "19a6014c51968ddd84c583bb0ecd9967cff9e3592b879d5b6dcc2b9007d7ab9b",
+        "cumulative_bytes": 1793639,
+        "excerpts": [
+          {
+            "line": 64,
+            "text": "\n// GenerateSpec generates spec using containerd functionality.\n// opts are ignored for s.Process, s.Hostname, and s.Mounts .\nfunc GenerateSpec(ctx context.Context, meta executor.Meta, mounts []executor.Mount, id, resolvConf, hostsFile string, namespace network.Namespace, cgroupParent string, processMode ProcessMode, idmap *user.IdentityMapping, apparmorProfile string, selinuxB bool, tracingSocket string, cdiManager *cdidevices.Manager, opts ...oci.SpecOpts) (*specs.Spec, func(), error) {\n\tc := &containers.Container{\n\t\tID: id,\n\t}\n"
+          },
+          {
+            "line": 69,
+            "text": "\t\tID: id,\n\t}\n\n\tif len(meta.CgroupParent) > 0 {\n\t\tcgroupParent = meta.CgroupParent\n\t}\n\tif cgroupParent != \"\" {\n\t\tvar cgroupsPath string"
+          },
+          {
+            "line": 70,
+            "text": "\t}\n\n\tif len(meta.CgroupParent) > 0 {\n\t\tcgroupParent = meta.CgroupParent\n\t}\n\tif cgroupParent != \"\" {\n\t\tvar cgroupsPath string\n\t\tlastSeparator := cgroupParent[len(cgroupParent)-1:]"
+          },
+          {
+            "line": 72,
+            "text": "\tif len(meta.CgroupParent) > 0 {\n\t\tcgroupParent = meta.CgroupParent\n\t}\n\tif cgroupParent != \"\" {\n\t\tvar cgroupsPath string\n\t\tlastSeparator := cgroupParent[len(cgroupParent)-1:]\n\t\tif strings.Contains(cgroupParent, \".slice\") && lastSeparator == \":\" {\n\t\t\tcgroupsPath = cgroupParent + id"
+          },
+          {
+            "line": 73,
+            "text": "\t\tcgroupParent = meta.CgroupParent\n\t}\n\tif cgroupParent != \"\" {\n\t\tvar cgroupsPath string\n\t\tlastSeparator := cgroupParent[len(cgroupParent)-1:]\n\t\tif strings.Contains(cgroupParent, \".slice\") && lastSeparator == \":\" {\n\t\t\tcgroupsPath = cgroupParent + id\n\t\t} else {"
+          },
+          {
+            "line": 74,
+            "text": "\t}\n\tif cgroupParent != \"\" {\n\t\tvar cgroupsPath string\n\t\tlastSeparator := cgroupParent[len(cgroupParent)-1:]\n\t\tif strings.Contains(cgroupParent, \".slice\") && lastSeparator == \":\" {\n\t\t\tcgroupsPath = cgroupParent + id\n\t\t} else {\n\t\t\tcgroupsPath = filepath.Join(\"/\", cgroupParent, \"buildkit\", id)"
+          },
+          {
+            "line": 75,
+            "text": "\tif cgroupParent != \"\" {\n\t\tvar cgroupsPath string\n\t\tlastSeparator := cgroupParent[len(cgroupParent)-1:]\n\t\tif strings.Contains(cgroupParent, \".slice\") && lastSeparator == \":\" {\n\t\t\tcgroupsPath = cgroupParent + id\n\t\t} else {\n\t\t\tcgroupsPath = filepath.Join(\"/\", cgroupParent, \"buildkit\", id)\n\t\t}"
+          },
+          {
+            "line": 76,
+            "text": "\t\tvar cgroupsPath string\n\t\tlastSeparator := cgroupParent[len(cgroupParent)-1:]\n\t\tif strings.Contains(cgroupParent, \".slice\") && lastSeparator == \":\" {\n\t\t\tcgroupsPath = cgroupParent + id\n\t\t} else {\n\t\t\tcgroupsPath = filepath.Join(\"/\", cgroupParent, \"buildkit\", id)\n\t\t}\n\t\topts = append(opts, oci.WithCgroup(cgroupsPath))"
+          },
+          {
+            "line": 78,
+            "text": "\t\tif strings.Contains(cgroupParent, \".slice\") && lastSeparator == \":\" {\n\t\t\tcgroupsPath = cgroupParent + id\n\t\t} else {\n\t\t\tcgroupsPath = filepath.Join(\"/\", cgroupParent, \"buildkit\", id)\n\t\t}\n\t\topts = append(opts, oci.WithCgroup(cgroupsPath))\n\t}\n"
+          },
+          {
+            "line": 80,
+            "text": "\t\t} else {\n\t\t\tcgroupsPath = filepath.Join(\"/\", cgroupParent, \"buildkit\", id)\n\t\t}\n\t\topts = append(opts, oci.WithCgroup(cgroupsPath))\n\t}\n\n\t// containerd/oci.GenerateSpec requires a namespace, which\n\t// will be used to namespace specs.Linux.CgroupsPath if generated"
+          },
+          {
+            "line": 84,
+            "text": "\t}\n\n\t// containerd/oci.GenerateSpec requires a namespace, which\n\t// will be used to namespace specs.Linux.CgroupsPath if generated\n\tif _, ok := namespaces.Namespace(ctx); !ok {\n\t\tctx = namespaces.WithNamespace(ctx, \"buildkit\")\n\t}\n"
+          },
+          {
+            "line": 147,
+            "text": "\t\treturn nil, nil, errors.WithStack(err)\n\t}\n\n\tif cgroupV2NamespaceSupported() {\n\t\ts.Linux.Namespaces = append(s.Linux.Namespaces, specs.LinuxNamespace{\n\t\t\tType: specs.CgroupNamespace,\n\t\t})\n\t}"
+          },
+          {
+            "line": 149,
+            "text": "\n\tif cgroupV2NamespaceSupported() {\n\t\ts.Linux.Namespaces = append(s.Linux.Namespaces, specs.LinuxNamespace{\n\t\t\tType: specs.CgroupNamespace,\n\t\t})\n\t}\n\n\tif len(meta.Ulimit) == 0 {"
+          }
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/moby/buildkit/v0.27.0/solver/pb/caps.go",
+        "status": 200,
+        "bytes": 15849,
+        "sha256": "3637769cd2417f689c20bc059f0a0c6b5c0742d192704a6c36283a97c78bcdbf",
+        "cumulative_bytes": 1809488,
+        "excerpts": [
+          {
+            "line": 51,
+            "text": "\tCapBuildOpLLBFileName apicaps.CapID = \"source.buildop.llbfilename\"\n\n\tCapExecMetaBase                      apicaps.CapID = \"exec.meta.base\"\n\tCapExecMetaCgroupParent              apicaps.CapID = \"exec.meta.cgroup.parent\"\n\tCapExecMetaNetwork                   apicaps.CapID = \"exec.meta.network\"\n\tCapExecMetaProxy                     apicaps.CapID = \"exec.meta.proxyenv\"\n\tCapExecMetaSecurity                  apicaps.CapID = \"exec.meta.security\"\n\tCapExecMetaSecurityDeviceWhitelistV1 apicaps.CapID = \"exec.meta.security.devices.v1\""
+          },
+          {
+            "line": 70,
+            "text": "\tCapExecMountSecret                   apicaps.CapID = \"exec.mount.secret\"\n\tCapExecMountSSH                      apicaps.CapID = \"exec.mount.ssh\"\n\tCapExecMountContentCache             apicaps.CapID = \"exec.mount.cache.content\"\n\tCapExecCgroupsMounted                apicaps.CapID = \"exec.cgroup\"\n\tCapExecSecretEnv                     apicaps.CapID = \"exec.secretenv\"\n\tCapExecValidExitCode                 apicaps.CapID = \"exec.validexitcode\"\n\n\tCapFileBase                               apicaps.CapID = \"file.base\""
+          },
+          {
+            "line": 310,
+            "text": "\t})\n\n\tCaps.Init(apicaps.Cap{\n\t\tID:      CapExecMetaCgroupParent,\n\t\tEnabled: true,\n\t\tStatus:  apicaps.CapStatusExperimental,\n\t})\n"
+          },
+          {
+            "line": 418,
+            "text": "\t})\n\n\tCaps.Init(apicaps.Cap{\n\t\tID:      CapExecCgroupsMounted,\n\t\tEnabled: true,\n\t\tStatus:  apicaps.CapStatusExperimental,\n\t})\n"
+          }
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/moby/buildkit/v0.27.0/executor/runcexecutor/executor.go",
+        "status": 200,
+        "bytes": 20201,
+        "sha256": "875265ab260ddbf0cf51a026d90adc72d0d8e7947034cf1ca3bad20445998b7a",
+        "cumulative_bytes": 1829689,
+        "excerpts": [
+          {
+            "line": 48,
+            "text": "\tCommandCandidates []string\n\t// without root privileges (has nothing to do with Opt.Root directory)\n\tRootless bool\n\t// DefaultCgroupParent is the cgroup-parent name for executor\n\tDefaultCgroupParent string\n\t// ProcessMode\n\tProcessMode     oci.ProcessMode\n\tIdentityMapping *user.IdentityMapping"
+          },
+          {
+            "line": 49,
+            "text": "\t// without root privileges (has nothing to do with Opt.Root directory)\n\tRootless bool\n\t// DefaultCgroupParent is the cgroup-parent name for executor\n\tDefaultCgroupParent string\n\t// ProcessMode\n\tProcessMode     oci.ProcessMode\n\tIdentityMapping *user.IdentityMapping\n\t// runc run --no-pivot (unrecommended)"
+          },
+          {
+            "line": 69,
+            "text": "type runcExecutor struct {\n\trunc             *runc.Runc\n\troot             string\n\tcgroupParent     string\n\trootless         bool\n\tnetworkProviders map[pb.NetMode]network.Provider\n\tprocessMode      oci.ProcessMode\n\tidmap            *user.IdentityMapping"
+          },
+          {
+            "line": 137,
+            "text": "\tw := &runcExecutor{\n\t\trunc:             runtime,\n\t\troot:             root,\n\t\tcgroupParent:     opt.DefaultCgroupParent,\n\t\trootless:         opt.Rootless,\n\t\tnetworkProviders: networkProviders,\n\t\tprocessMode:      opt.ProcessMode,\n\t\tidmap:            opt.IdentityMapping,"
+          },
+          {
+            "line": 271,
+            "text": "\t\t}\n\t}\n\n\tspec, cleanup, err := oci.GenerateSpec(ctx, meta, mounts, id, resolvConf, hostsFile, namespace, w.cgroupParent, w.processMode, w.idmap, w.apparmorProfile, w.selinux, w.tracingSocket, w.cdiManager, opts...)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tdefer cleanup()"
+          },
+          {
+            "line": 306,
+            "text": "\n\tbklog.G(ctx).Debugf(\"> creating %s %v\", id, meta.Args)\n\n\tcgroupPath := spec.Linux.CgroupsPath\n\tif cgroupPath != \"\" {\n\t\trec, err = w.resmon.RecordNamespace(cgroupPath, resources.RecordOpt{\n\t\t\tNetworkSampler: namespace,\n\t\t})"
+          },
+          {
+            "line": 307,
+            "text": "\tbklog.G(ctx).Debugf(\"> creating %s %v\", id, meta.Args)\n\n\tcgroupPath := spec.Linux.CgroupsPath\n\tif cgroupPath != \"\" {\n\t\trec, err = w.resmon.RecordNamespace(cgroupPath, resources.RecordOpt{\n\t\t\tNetworkSampler: namespace,\n\t\t})\n\t\tif err != nil {"
+          },
+          {
+            "line": 308,
+            "text": "\n\tcgroupPath := spec.Linux.CgroupsPath\n\tif cgroupPath != \"\" {\n\t\trec, err = w.resmon.RecordNamespace(cgroupPath, resources.RecordOpt{\n\t\t\tNetworkSampler: namespace,\n\t\t})\n\t\tif err != nil {\n\t\t\treturn nil, err"
+          },
+          {
+            "line": 339,
+            "text": "\t}\n\tdoReleaseNetwork = false\n\n\terr = exitError(ctx, cgroupPath, err, process.Meta.ValidExitCodes)\n\tif err != nil {\n\t\tif rec != nil {\n\t\t\trec.Close()\n\t\t}"
+          },
+          {
+            "line": 355,
+            "text": "\treturn rec, rec.CloseAsync(releaseContainer)\n}\n\nfunc exitError(ctx context.Context, cgroupPath string, err error, validExitCodes []int) error {\n\texitErr := &gatewayapi.ExitError{ExitCode: uint32(gatewayapi.UnknownExitStatus), Err: err}\n\n\tif err == nil {\n\t\texitErr.ExitCode = 0"
+          },
+          {
+            "line": 366,
+            "text": "\t\t\texitErr = &gatewayapi.ExitError{ExitCode: uint32(runcExitError.Status)}\n\t\t}\n\n\t\tdetectOOM(ctx, cgroupPath, exitErr)\n\t}\n\n\ttrace.SpanFromContext(ctx).AddEvent(\n\t\t\"Container exited\","
+          }
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/docker/buildx/v0.31.1/build/opt.go",
+        "status": 200,
+        "bytes": 36675,
+        "sha256": "e94f8a8a7b3f703c2ffdb034601246c77ee8c4c93c83748ff551b234d481304c",
+        "cumulative_bytes": 1690772,
+        "excerpts": [
+          {
+            "line": 284,
+            "text": "\t\tSourcePolicy:        opt.SourcePolicy,\n\t}\n\n\tif opt.CgroupParent != \"\" {\n\t\tso.FrontendAttrs[\"cgroup-parent\"] = opt.CgroupParent\n\t}\n\n\tif v, ok := opt.BuildArgs[\"BUILDKIT_SYNTAX\"]; ok {"
+          },
+          {
+            "line": 285,
+            "text": "\t}\n\n\tif opt.CgroupParent != \"\" {\n\t\tso.FrontendAttrs[\"cgroup-parent\"] = opt.CgroupParent\n\t}\n\n\tif v, ok := opt.BuildArgs[\"BUILDKIT_SYNTAX\"]; ok {\n\t\tp := strings.SplitN(strings.TrimSpace(v), \" \", 2)"
+          }
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/moby/buildkit/v0.27.0/frontend/dockerui/config.go",
+        "status": 200,
+        "bytes": 14964,
+        "sha256": "192db362f98a53f74564d335c9468eee7b93b998315879859e1491ca46681405",
+        "cumulative_bytes": 1705736,
+        "excerpts": [
+          {
+            "line": 34,
+            "text": "\tlocalSessionIDPrefix = \"local-sessionid:\"\n\n\tkeyTarget           = \"target\"\n\tkeyCgroupParent     = \"cgroup-parent\"\n\tkeyForceNetwork     = \"force-network-mode\"\n\tkeyGlobalAddHosts   = \"add-hosts\"\n\tkeyHostname         = \"hostname\"\n\tkeyImageResolveMode = \"image-resolve-mode\""
+          },
+          {
+            "line": 60,
+            "text": "type Config struct {\n\tBuildArgs        map[string]string\n\tCacheIDNamespace string\n\tCgroupParent     string\n\tEpoch            *time.Time\n\tExtraHosts       []llb.HostIP\n\tHostname         string\n\tImageResolveMode llb.ResolveMode"
+          },
+          {
+            "line": 291,
+            "text": "\tbc.BuildArgs = filter(opts, buildArgPrefix)\n\tbc.Labels = filter(opts, labelPrefix)\n\tbc.CacheIDNamespace = opts[keyCacheNSArg]\n\tbc.CgroupParent = opts[keyCgroupParent]\n\tbc.Target = opts[keyTarget]\n\n\tif v, ok := opts[keyHostnameArg]; ok && len(v) > 0 {\n\t\topts[keyHostname] = v"
+          }
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/moby/buildkit/v0.27.0/frontend/dockerfile/dockerfile2llb/convert.go",
+        "status": 200,
+        "bytes": 78837,
+        "sha256": "907110516fd2d305e82c6830429463ade3f46e4810220ff92ef0cb262665b481",
+        "cumulative_bytes": 1784573,
+        "excerpts": [
+          {
+            "line": 734,
+            "text": "\t\t\tshmSize:             opt.ShmSize,\n\t\t\tulimit:              opt.Ulimits,\n\t\t\tdevices:             opt.Devices,\n\t\t\tcgroupParent:        opt.CgroupParent,\n\t\t\tllbCaps:             opt.LLBCaps,\n\t\t\tsourceMap:           opt.SourceMap,\n\t\t\tlint:                lint,\n\t\t\tdockerIgnoreMatcher: dockerIgnoreMatcher,"
+          },
+          {
+            "line": 883,
+            "text": "\tshmSize             int64\n\tulimit              []*pb.Ulimit\n\tdevices             []*pb.CDIDevice\n\tcgroupParent        string\n\tllbCaps             *apicaps.CapSet\n\tsourceMap           *llb.SourceMap\n\tlint                *linter.Linter\n\tdockerIgnoreMatcher *patternmatcher.PatternMatcher"
+          },
+          {
+            "line": 1371,
+            "text": "\t\t}\n\t}\n\n\tif dopt.llbCaps != nil && dopt.llbCaps.Supports(pb.CapExecMetaCgroupParent) == nil {\n\t\tif len(dopt.cgroupParent) > 0 {\n\t\t\topt = append(opt, llb.WithCgroupParent(dopt.cgroupParent))\n\t\t}\n\t}"
+          },
+          {
+            "line": 1372,
+            "text": "\t}\n\n\tif dopt.llbCaps != nil && dopt.llbCaps.Supports(pb.CapExecMetaCgroupParent) == nil {\n\t\tif len(dopt.cgroupParent) > 0 {\n\t\t\topt = append(opt, llb.WithCgroupParent(dopt.cgroupParent))\n\t\t}\n\t}\n"
+          },
+          {
+            "line": 1373,
+            "text": "\n\tif dopt.llbCaps != nil && dopt.llbCaps.Supports(pb.CapExecMetaCgroupParent) == nil {\n\t\tif len(dopt.cgroupParent) > 0 {\n\t\t\topt = append(opt, llb.WithCgroupParent(dopt.cgroupParent))\n\t\t}\n\t}\n\n\td.state = d.state.Run(opt...).Root()"
+          }
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/moby/buildkit/v0.27.0/docs/buildkitd.toml.md",
+        "status": 200,
+        "bytes": 9002,
+        "sha256": "7c9dc6125682d2fe394b0648618ff817bddf8b39a8caec0f7de136873eaf4a23",
+        "cumulative_bytes": 1636146,
+        "body": "---\ntitle: buildkitd.toml\n---\n\nThe TOML file used to configure the buildkitd daemon settings has a short\nlist of global settings followed by a series of sections for specific areas\nof daemon configuration.\n\nThe file path is `/etc/buildkit/buildkitd.toml` for rootful mode,\n`~/.config/buildkit/buildkitd.toml` for rootless mode.\n\nThe following is a complete `buildkitd.toml` configuration example.\nNote that some configuration options are only useful in edge cases.\n\n```toml\n# debug enables additional debug logging\ndebug = true\n# trace enables additional trace logging (very verbose, with potential performance impacts)\ntrace = true\n# root is where all buildkit state is stored.\nroot = \"/var/lib/buildkit\"\n# insecure-entitlements allows insecure entitlements, disabled by default.\ninsecure-entitlements = [ \"network.host\", \"security.insecure\", \"device\" ]\n# provenanceEnvDir is the directory where extra config is loaded that is added\n# to the provenance of builds:\n# slsa v0.2: invocation.environment.*\n# slsa v1: buildDefinition.internalParameters.*\nprovenanceEnvDir = \"/etc/buildkit/provenance.d\"\n\n[log]\n  # log formatter: json or text\n  format = \"text\"\n\n[dns]\n  nameservers=[\"1.1.1.1\",\"8.8.8.8\"]\n  options=[\"edns0\"]\n  searchDomains=[\"example.com\"]\n\n[grpc]\n  address = [ \"tcp://0.0.0.0:1234\" ]\n  # debugAddress is address for attaching go profiles and debuggers.\n  debugAddress = \"0.0.0.0:6060\"\n  uid = 0\n  gid = 0\n  [grpc.tls]\n    cert = \"/etc/buildkit/tls.crt\"\n    key = \"/etc/buildkit/tls.key\"\n    ca = \"/etc/buildkit/tlsca.crt\"\n\n[otel]\n  # OTEL collector trace socket path\n  socketPath = \"/run/buildkit/otel-grpc.sock\"\n\n[cdi]\n  # Disables support of the Container Device Interface (CDI).\n  disabled = true\n  # List of directories to scan for CDI spec files. For more details about CDI\n  # specification, please refer to https://github.com/cncf-tags/container-device-interface/blob/main/SPEC.md#cdi-json-specification\n  specDirs = [\"/etc/cdi\", \"/var/run/cdi\", \"/etc/buildkit/cdi\"]\n\n# config for build history API that stores information about completed build commands\n[history]\n  # maxAge is the maximum age of history entries to keep, in seconds.\n  maxAge = 172800\n  # maxEntries is the maximum number of history entries to keep.\n  maxEntries = 50\n\n[worker.oci]\n  enabled = true\n  # platforms is manually configure platforms, detected automatically if unset.\n  platforms = [ \"linux/amd64\", \"linux/arm64\" ]\n  snapshotter = \"auto\" # overlayfs or native, default value is \"auto\".\n  rootless = false # see docs/rootless.md for the details on rootless mode.\n  # Whether run subprocesses in main pid namespace or not, this is useful for\n  # running rootless buildkit inside a container.\n  noProcessSandbox = false\n  # gc enables/disables garbage collection\n  gc = true\n  # reservedSpace is the minimum amount of disk space guaranteed to be\n  # retained by this buildkit worker - any usage below this threshold will not\n  # be reclaimed during garbage collection.\n  # all disk space parameters can be an integer number of bytes (e.g.\n  # 512000000), a string with a unit (e.g. \"512MB\"), or a string percentage\n  # of the total disk space (e.g. \"10%\")\n  reservedSpace = \"30%\"\n  # maxUsedSpace is the maximum amount of disk space that may be used by\n  # this buildkit worker - any usage above this threshold will be reclaimed\n  # during garbage collection.\n  maxUsedSpace = \"60%\"\n  # minFreeSpace is the target amount of free disk space that the garbage\n  # collector will attempt to leave - however, it will never be bought below\n  # reservedSpace.\n  minFreeSpace = \"20GB\"\n  # alternate OCI worker binary name(example 'crun'), by default either \n  # buildkit-runc or runc binary is used\n  binary = \"\"\n  # name of the apparmor profile that should be used to constrain build containers.\n  # the profile should already be loaded (by a higher level system) before creating a worker.\n  apparmor-profile = \"\"\n  # limit the number of parallel build steps that can run at the same time\n  max-parallelism = 4\n  # maintain a pool of reusable CNI network namespaces to amortize the overhead\n  # of allocating and releasing the namespaces\n  cniPoolSize = 16\n\n  [worker.oci.labels]\n    \"foo\" = \"bar\"\n\n  [[worker.oci.gcpolicy]]\n    # reservedSpace is the minimum amount of disk space guaranteed to be\n    # retained by this policy - any usage below this threshold will not be\n    # reclaimed during # garbage collection.\n    reservedSpace = \"512MB\"\n    # maxUsedSpace is the maximum amount of disk space that may be used by this\n    # policy - any usage above this threshold will be reclaimed during garbage\n    # collection.\n    maxUsedSpace = \"1GB\"\n    # minFreeSpace is the target amount of free disk space that the garbage\n    # collector will attempt to leave - however, it will never be bought below\n    # reservedSpace.\n    minFreeSpace = \"10GB\"\n    # keepDuration can be an integer number of seconds (e.g. 172800), or a\n    # string duration (e.g. \"48h\")\n    keepDuration = \"48h\"\n    filters = [ \"type==source.local\", \"type==exec.cachemount\", \"type==source.git.checkout\"]\n  [[worker.oci.gcpolicy]]\n    all = true\n    reservedSpace = 1024000000\n\n[worker.containerd]\n  address = \"/run/containerd/containerd.sock\"\n  enabled = true\n  platforms = [ \"linux/amd64\", \"linux/arm64\" ]\n  namespace = \"buildkit\"\n\n  # gc enables/disables garbage collection\n  gc = true\n  # reservedSpace is the minimum amount of disk space guaranteed to be\n  # retained by this buildkit worker - any usage below this threshold will not\n  # be reclaimed during garbage collection.\n  # all disk space parameters can be an integer number of bytes (e.g.\n  # 512000000), a string with a unit (e.g. \"512MB\"), or a string percentage\n  # of the total disk space (e.g. \"10%\")\n  reservedSpace = \"30%\"\n  # maxUsedSpace is the maximum amount of disk space that may be used by\n  # this buildkit worker - any usage above this threshold will be reclaimed\n  # during garbage collection.\n  maxUsedSpace = \"60%\"\n  # minFreeSpace is the target amount of free disk space that the garbage\n  # collector will attempt to leave - however, it will never be bought below\n  # reservedSpace.\n  minFreeSpace = \"20GB\"\n  # limit the number of parallel build steps that can run at the same time\n  max-parallelism = 4\n  # maintain a pool of reusable CNI network namespaces to amortize the overhead\n  # of allocating and releasing the namespaces\n  cniPoolSize = 16\n  # defaultCgroupParent sets the parent cgroup of all containers.\n  defaultCgroupParent = \"buildkit\"\n\n  [worker.containerd.labels]\n    \"foo\" = \"bar\"\n\n  # configure the containerd runtime\n  [worker.containerd.runtime]\n    name = \"io.containerd.runc.v2\"\n    path = \"/path/to/containerd/runc/shim\"\n    options = { BinaryName = \"runc\" }\n\n  [[worker.containerd.gcpolicy]]\n    reservedSpace = 512000000\n    keepDuration = 172800\n    filters = [ \"type==source.local\", \"type==exec.cachemount\", \"type==source.git.checkout\"]\n  [[worker.containerd.gcpolicy]]\n    all = true\n    reservedSpace = 1024000000\n\n# registry configures a new Docker register used for cache import or output.\n[registry.\"docker.io\"]\n  # mirror configuration to handle path in case a mirror registry requires a /project path rather than just a host:port\n  mirrors = [\"yourmirror.local:5000\", \"core.harbor.domain/proxy.docker.io\"]\n  # Use plain HTTP to connect to the mirrors.\n  http = true\n  # Use HTTPS with self-signed certificates. Do not enable this together with `http`.\n  insecure = true\n  # If you use token auth with self-signed certificates,\n  # then buildctl also needs to trust the token provider CA (for example, certificates that are configured for registry)\n  # because buildctl pulls tokens directly without daemon process\n  ca=[\"/etc/config/myca.pem\"]\n  [[registry.\"docker.io\".keypair]]\n    key=\"/etc/config/key.pem\"\n    cert=\"/etc/config/cert.pem\"\n\n# optionally mirror configuration can be done by defining it as a registry.\n[registry.\"yourmirror.local:5000\"]\n  http = true\n\n# Frontend control\n[frontend.\"dockerfile.v0\"]\n  enabled = true\n\n[frontend.\"gateway.v0\"]\n  enabled = true\n  # If allowedRepositories is empty, all gateway sources are allowed.\n  # Otherwise, only the listed repositories are allowed as a gateway source.\n  # \n  # NOTE: Only the repository name (without tag) is compared.\n  #\n  # Example:\n  # allowedRepositories = [ \"docker-registry.wikimedia.org/repos/releng/blubber/buildkit\" ]\n  allowedRepositories = []\n\n[system]\n  # how often buildkit scans for changes in the supported emulated platforms\n  platformsCacheMaxAge = \"1h\"\n\n\n# optional signed cache configuration for GitHub Actions backend\n[ghacache.sign]\n# command that signs the payload in stdin and outputs the signature to stdout. Normally you want cosign to produce the signature bytes.\ncmd = \"\"\n[ghacache.verify]\nrequired = false\n[ghacache.verify.policy]\ntimestampThreshold = 1\ntlogThreshold = 1\n# cetificate properties that need to match. Simple wildcards (*) are supported.\ncertificateIssuer = \"\"\nsubjectAlternativeName = \"\"\nbuildSignerURI = \"\"\n```\n"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/moby/buildkit/v0.27.0/cmd/buildkitd/main_oci_worker.go",
+        "status": 200,
+        "bytes": 17951,
+        "sha256": "03e2696ef06eb64c448b9b806d024d1915448ed764cd9f04769a1d9fda2c92b0",
+        "cumulative_bytes": 1654097,
+        "body": "//go:build linux\n\npackage main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\t\"maps\"\n\t\"os\"\n\t\"os/exec\"\n\t\"path/filepath\"\n\t\"strconv\"\n\t\"strings\"\n\t\"time\"\n\n\tsnapshotsapi \"github.com/containerd/containerd/api/services/snapshots/v1\"\n\t\"github.com/containerd/containerd/v2/core/remotes/docker\"\n\tctdsnapshot \"github.com/containerd/containerd/v2/core/snapshots\"\n\tsnproxy \"github.com/containerd/containerd/v2/core/snapshots/proxy\"\n\t\"github.com/containerd/containerd/v2/defaults\"\n\t\"github.com/containerd/containerd/v2/pkg/dialer\"\n\t\"github.com/containerd/containerd/v2/pkg/reference\"\n\t\"github.com/containerd/containerd/v2/plugins/snapshots/native\"\n\t\"github.com/containerd/containerd/v2/plugins/snapshots/overlay\"\n\t\"github.com/containerd/containerd/v2/plugins/snapshots/overlay/overlayutils\"\n\tfuseoverlayfs \"github.com/containerd/fuse-overlayfs-snapshotter/v2\"\n\tsgzfs \"github.com/containerd/stargz-snapshotter/fs\"\n\tsgzconf \"github.com/containerd/stargz-snapshotter/fs/config\"\n\tsgzlayer \"github.com/containerd/stargz-snapshotter/fs/layer\"\n\tsgzsource \"github.com/containerd/stargz-snapshotter/fs/source\"\n\tremotesn \"github.com/containerd/stargz-snapshotter/snapshot\"\n\t\"github.com/moby/buildkit/cmd/buildkitd/config\"\n\t\"github.com/moby/buildkit/executor/oci\"\n\t\"github.com/moby/buildkit/session\"\n\t\"github.com/moby/buildkit/util/bklog\"\n\t\"github.com/moby/buildkit/util/disk\"\n\t\"github.com/moby/buildkit/util/network/cniprovider\"\n\t\"github.com/moby/buildkit/util/network/netproviders\"\n\t\"github.com/moby/buildkit/util/resolver\"\n\t\"github.com/moby/buildkit/worker\"\n\t\"github.com/moby/buildkit/worker/base\"\n\t\"github.com/moby/buildkit/worker/runc\"\n\t\"github.com/moby/sys/userns\"\n\t\"github.com/pelletier/go-toml\"\n\t\"github.com/pkg/errors\"\n\t\"github.com/sirupsen/logrus\"\n\t\"github.com/urfave/cli\"\n\t\"golang.org/x/sync/semaphore\"\n\t\"google.golang.org/grpc\"\n\t\"google.golang.org/grpc/backoff\"\n\t\"google.golang.org/grpc/credentials/insecure\"\n)\n\nfunc init() {\n\tdefaultConf, _ := defaultConf()\n\n\tenabledValue := func(b *bool) string {\n\t\tif b == nil {\n\t\t\treturn \"auto\"\n\t\t}\n\t\treturn strconv.FormatBool(*b)\n\t}\n\n\tif defaultConf.Workers.OCI.Snapshotter == \"\" {\n\t\tdefaultConf.Workers.OCI.Snapshotter = \"auto\"\n\t}\n\n\tflags := []cli.Flag{\n\t\tcli.StringFlag{\n\t\t\tName:  \"oci-worker\",\n\t\t\tUsage: \"enable oci workers (true/false/auto)\",\n\t\t\tValue: enabledValue(defaultConf.Workers.OCI.Enabled),\n\t\t},\n\t\tcli.StringSliceFlag{\n\t\t\tName:  \"oci-worker-labels\",\n\t\t\tUsage: \"user-specific annotation labels (com.example.foo=bar)\",\n\t\t},\n\t\tcli.StringFlag{\n\t\t\tName:  \"oci-worker-snapshotter\",\n\t\t\tUsage: \"name of snapshotter (overlayfs, native, etc.)\",\n\t\t\tValue: defaultConf.Workers.OCI.Snapshotter,\n\t\t},\n\t\tcli.StringFlag{\n\t\t\tName:  \"oci-worker-proxy-snapshotter-path\",\n\t\t\tUsage: \"address of proxy snapshotter socket (do not include 'unix://' prefix)\",\n\t\t},\n\t\tcli.StringSliceFlag{\n\t\t\tName:  \"oci-worker-platform\",\n\t\t\tUsage: \"override supported platforms for worker\",\n\t\t},\n\t\tcli.StringFlag{\n\t\t\tName:  \"oci-worker-net\",\n\t\t\tUsage: \"worker network type (auto, bridge, cni or host)\",\n\t\t\tValue: defaultConf.Workers.OCI.Mode,\n\t\t},\n\t\tcli.StringFlag{\n\t\t\tName:  \"oci-cni-config-path\",\n\t\t\tUsage: \"path of cni config file\",\n\t\t\tValue: defaultConf.Workers.OCI.CNIConfigPath,\n\t\t},\n\t\tcli.StringFlag{\n\t\t\tName:  \"oci-cni-binary-dir\",\n\t\t\tUsage: \"path of cni binary files\",\n\t\t\tValue: defaultConf.Workers.OCI.CNIBinaryPath,\n\t\t},\n\t\tcli.IntFlag{\n\t\t\tName:  \"oci-cni-pool-size\",\n\t\t\tUsage: \"size of cni network namespace pool\",\n\t\t\tValue: defaultConf.Workers.OCI.CNIPoolSize,\n\t\t},\n\t\tcli.StringFlag{\n\t\t\tName:  \"oci-worker-binary\",\n\t\t\tUsage: \"name of specified oci worker binary\",\n\t\t\tValue: defaultConf.Workers.OCI.Binary,\n\t\t},\n\t\tcli.StringFlag{\n\t\t\tName:  \"oci-worker-apparmor-profile\",\n\t\t\tUsage: \"set the name of the apparmor profile applied to containers\",\n\t\t},\n\t\tcli.BoolFlag{\n\t\t\tName:  \"oci-worker-selinux\",\n\t\t\tUsage: \"apply SELinux labels\",\n\t\t},\n\t\tcli.IntFlag{\n\t\t\tName:  \"oci-max-parallelism\",\n\t\t\tUsage: \"limit the number of parallel build steps that can run at the same time\",\n\t\t\tValue: defaultConf.Workers.OCI.MaxParallelism,\n\t\t},\n\t}\n\tn := \"oci-worker-rootless\"\n\tu := \"enable rootless mode\"\n\tif userns.RunningInUserNS() {\n\t\tflags = append(flags, cli.BoolTFlag{\n\t\t\tName:  n,\n\t\t\tUsage: u,\n\t\t})\n\t} else {\n\t\tflags = append(flags, cli.BoolFlag{\n\t\t\tName:  n,\n\t\t\tUsage: u,\n\t\t})\n\t}\n\tflags = append(flags, cli.BoolFlag{\n\t\tName:  \"oci-worker-no-process-sandbox\",\n\t\tUsage: \"use the host PID namespace and procfs (WARNING: allows build containers to kill (and potentially ptrace) an arbitrary process in the host namespace)\",\n\t})\n\tif defaultConf.Workers.OCI.GC == nil || *defaultConf.Workers.OCI.GC {\n\t\tflags = append(flags, cli.BoolTFlag{\n\t\t\tName:  \"oci-worker-gc\",\n\t\t\tUsage: \"Enable automatic garbage collection on worker\",\n\t\t})\n\t} else {\n\t\tflags = append(flags, cli.BoolFlag{\n\t\t\tName:  \"oci-worker-gc\",\n\t\t\tUsage: \"Enable automatic garbage collection on worker\",\n\t\t})\n\t}\n\tflags = append(flags, cli.StringFlag{\n\t\tName:  \"oci-worker-gc-keepstorage\",\n\t\tUsage: \"Amount of storage GC keep locally, format \\\"Reserved[,Free[,Maximum]]\\\" (MB)\",\n\t\tValue: func() string {\n\t\t\tcfg := defaultConf.Workers.OCI.GCConfig\n\t\t\tdstat, _ := disk.GetDiskStat(defaultConf.Root)\n\t\t\treturn gcConfigToString(cfg, dstat)\n\t\t}(),\n\t\tHidden: len(defaultConf.Workers.OCI.GCPolicy) != 0,\n\t})\n\n\tregisterWorkerInitializer(\n\t\tworkerInitializer{\n\t\t\tfn:       ociWorkerInitializer,\n\t\t\tpriority: 0,\n\t\t},\n\t\tflags...,\n\t)\n\t// TODO: allow multiple oci runtimes\n}\n\nfunc applyOCIFlags(c *cli.Context, cfg *config.Config) error {\n\tif cfg.Workers.OCI.Snapshotter == \"\" {\n\t\tcfg.Workers.OCI.Snapshotter = \"auto\"\n\t}\n\n\tif c.GlobalIsSet(\"oci-worker\") {\n\t\tboolOrAuto, err := parseBoolOrAuto(c.GlobalString(\"oci-worker\"))\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tcfg.Workers.OCI.Enabled = boolOrAuto\n\t}\n\n\tlabels, err := attrMap(c.GlobalStringSlice(\"oci-worker-labels\"))\n\tif err != nil {\n\t\treturn err\n\t}\n\tif cfg.Workers.OCI.Labels == nil {\n\t\tcfg.Workers.OCI.Labels = make(map[string]string)\n\t}\n\tmaps.Copy(cfg.Workers.OCI.Labels, labels)\n\tif c.GlobalIsSet(\"oci-worker-snapshotter\") {\n\t\tcfg.Workers.OCI.Snapshotter = c.GlobalString(\"oci-worker-snapshotter\")\n\t}\n\n\tif c.GlobalIsSet(\"rootless\") || c.GlobalBool(\"rootless\") {\n\t\tcfg.Workers.OCI.Rootless = c.GlobalBool(\"rootless\")\n\t}\n\tif c.GlobalIsSet(\"oci-worker-rootless\") {\n\t\tif !userns.RunningInUserNS() || os.Geteuid() > 0 {\n\t\t\treturn errors.New(\"rootless mode requires to be executed as the mapped root in a user namespace; you may use RootlessKit for setting up the namespace\")\n\t\t}\n\t\tcfg.Workers.OCI.Rootless = c.GlobalBool(\"oci-worker-rootless\")\n\t}\n\tif c.GlobalIsSet(\"oci-worker-no-process-sandbox\") {\n\t\tcfg.Workers.OCI.NoProcessSandbox = c.GlobalBool(\"oci-worker-no-process-sandbox\")\n\t}\n\n\tif platforms := c.GlobalStringSlice(\"oci-worker-platform\"); len(platforms) != 0 {\n\t\tcfg.Workers.OCI.Platforms = platforms\n\t}\n\n\tif c.GlobalIsSet(\"oci-worker-gc\") {\n\t\tv := c.GlobalBool(\"oci-worker-gc\")\n\t\tcfg.Workers.OCI.GC = &v\n\t}\n\n\tif c.GlobalIsSet(\"oci-worker-gc-keepstorage\") {\n\t\tgc, err := stringToGCConfig(c.GlobalString(\"oci-worker-gc-keepstorage\"))\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tcfg.Workers.OCI.GCReservedSpace = gc.GCReservedSpace\n\t\tcfg.Workers.OCI.GCMaxUsedSpace = gc.GCMaxUsedSpace\n\t\tcfg.Workers.OCI.GCMinFreeSpace = gc.GCMinFreeSpace\n\t}\n\n\tif c.GlobalIsSet(\"oci-worker-net\") {\n\t\tcfg.Workers.OCI.Mode = c.GlobalString(\"oci-worker-net\")\n\t}\n\tif c.GlobalIsSet(\"oci-cni-config-path\") {\n\t\tcfg.Workers.OCI.CNIConfigPath = c.GlobalString(\"oci-cni-worker-path\")\n\t}\n\tif c.GlobalIsSet(\"oci-cni-binary-dir\") {\n\t\tcfg.Workers.OCI.CNIBinaryPath = c.GlobalString(\"oci-cni-binary-dir\")\n\t}\n\tif c.GlobalIsSet(\"oci-cni-pool-size\") {\n\t\tcfg.Workers.OCI.CNIPoolSize = c.GlobalInt(\"oci-cni-pool-size\")\n\t}\n\tif c.GlobalIsSet(\"oci-worker-binary\") {\n\t\tcfg.Workers.OCI.Binary = c.GlobalString(\"oci-worker-binary\")\n\t}\n\tif c.GlobalIsSet(\"oci-worker-proxy-snapshotter-path\") {\n\t\tcfg.Workers.OCI.ProxySnapshotterPath = c.GlobalString(\"oci-worker-proxy-snapshotter-path\")\n\t}\n\tif c.GlobalIsSet(\"oci-worker-apparmor-profile\") {\n\t\tcfg.Workers.OCI.ApparmorProfile = c.GlobalString(\"oci-worker-apparmor-profile\")\n\t}\n\tif c.GlobalIsSet(\"oci-worker-selinux\") {\n\t\tcfg.Workers.OCI.SELinux = c.GlobalBool(\"oci-worker-selinux\")\n\t}\n\tif c.GlobalIsSet(\"oci-max-parallelism\") {\n\t\tcfg.Workers.OCI.MaxParallelism = c.GlobalInt(\"oci-max-parallelism\")\n\t}\n\n\treturn nil\n}\n\nfunc ociWorkerInitializer(c *cli.Context, common workerInitializerOpt) ([]worker.Worker, error) {\n\tif err := applyOCIFlags(c, common.config); err != nil {\n\t\treturn nil, err\n\t}\n\n\tcfg := common.config.Workers.OCI\n\n\tif (cfg.Enabled == nil && !validOCIBinary()) || (cfg.Enabled != nil && !*cfg.Enabled) {\n\t\treturn nil, nil\n\t}\n\n\t// TODO: this should never change the existing state dir\n\tidmapping, err := parseIdentityMapping(cfg.UserRemapUnsupported)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\thosts := resolverFunc(common.config)\n\tsnFactory, err := snapshotterFactory(common.config.Root, cfg, common.sessionManager, hosts)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif cfg.Rootless {\n\t\tbklog.L.Debugf(\"running in rootless mode\")\n\t\tif common.config.Workers.OCI.Mode == \"auto\" {\n\t\t\tcommon.config.Workers.OCI.Mode = \"host\"\n\t\t}\n\t}\n\n\tprocessMode := oci.ProcessSandbox\n\tif cfg.NoProcessSandbox {\n\t\tbklog.L.Warn(\"NoProcessSandbox is enabled. Note that NoProcessSandbox allows build containers to kill (and potentially ptrace) an arbitrary process in the BuildKit host namespace. NoProcessSandbox should be enabled only when the BuildKit is running in a container as an unprivileged user.\")\n\t\tif !cfg.Rootless {\n\t\t\treturn nil, errors.New(\"can't enable NoProcessSandbox without Rootless\")\n\t\t}\n\t\tprocessMode = oci.NoProcessSandbox\n\t}\n\n\tdns := getDNSConfig(common.config.DNS)\n\n\tcdiManager, err := getCDIManager(common.config.CDI)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tnc := netproviders.Opt{\n\t\tMode: common.config.Workers.OCI.Mode,\n\t\tCNI: cniprovider.Opt{\n\t\t\tRoot:         common.config.Root,\n\t\t\tConfigPath:   common.config.Workers.OCI.CNIConfigPath,\n\t\t\tBinaryDir:    common.config.Workers.OCI.CNIBinaryPath,\n\t\t\tPoolSize:     common.config.Workers.OCI.CNIPoolSize,\n\t\t\tBridgeName:   common.config.Workers.OCI.BridgeName,\n\t\t\tBridgeSubnet: common.config.Workers.OCI.BridgeSubnet,\n\t\t},\n\t}\n\n\tvar parallelismSem *semaphore.Weighted\n\tif cfg.MaxParallelism > 0 {\n\t\tparallelismSem = semaphore.NewWeighted(int64(cfg.MaxParallelism))\n\t}\n\n\topt, err := runc.NewWorkerOpt(common.config.Root, snFactory, cfg.Rootless, processMode, cfg.Labels, idmapping, nc, dns, cfg.Binary, cfg.ApparmorProfile, cfg.SELinux, parallelismSem, common.traceSocket, cfg.DefaultCgroupParent, cdiManager)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\topt.GCPolicy = getGCPolicy(cfg.GCConfig, common.config.Root)\n\topt.BuildkitVersion = getBuildkitVersion()\n\topt.RegistryHosts = hosts\n\n\tif platformsStr := cfg.Platforms; len(platformsStr) != 0 {\n\t\tplatforms, err := parsePlatforms(platformsStr)\n\t\tif err != nil {\n\t\t\treturn nil, errors.Wrap(err, \"invalid platforms\")\n\t\t}\n\t\topt.Platforms = platforms\n\t}\n\tw, err := base.NewWorker(context.TODO(), opt)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn []worker.Worker{w}, nil\n}\n\nfunc snapshotterFactory(commonRoot string, cfg config.OCIConfig, sm *session.Manager, hosts docker.RegistryHosts) (runc.SnapshotterFactory, error) {\n\tvar (\n\t\tname    = cfg.Snapshotter\n\t\taddress = cfg.ProxySnapshotterPath\n\t)\n\tif address != \"\" {\n\t\tsnFactory := runc.SnapshotterFactory{\n\t\t\tName: name,\n\t\t}\n\t\tif _, err := os.Stat(address); os.IsNotExist(err) {\n\t\t\treturn snFactory, errors.Wrapf(err, \"snapshotter doesn't exist on %q (Do not include 'unix://' prefix)\", address)\n\t\t}\n\t\tsnFactory.New = func(root string) (ctdsnapshot.Snapshotter, error) {\n\t\t\tbackoffConfig := backoff.DefaultConfig\n\t\t\tbackoffConfig.MaxDelay = 3 * time.Second\n\t\t\tconnParams := grpc.ConnectParams{\n\t\t\t\tBackoff: backoffConfig,\n\t\t\t}\n\t\t\tgopts := []grpc.DialOption{\n\t\t\t\tgrpc.WithTransportCredentials(insecure.NewCredentials()),\n\t\t\t\tgrpc.WithConnectParams(connParams),\n\t\t\t\tgrpc.WithContextDialer(dialer.ContextDialer),\n\t\t\t\tgrpc.WithDefaultCallOptions(grpc.MaxCallRecvMsgSize(defaults.DefaultMaxRecvMsgSize)),\n\t\t\t\tgrpc.WithDefaultCallOptions(grpc.MaxCallSendMsgSize(defaults.DefaultMaxSendMsgSize)),\n\t\t\t}\n\t\t\t// ignore SA1019 NewClient has different behavior and needs to be tested\n\t\t\t//nolint:staticcheck\n\t\t\tconn, err := grpc.Dial(dialer.DialAddress(address), gopts...)\n\t\t\tif err != nil {\n\t\t\t\treturn nil, errors.Wrapf(err, \"failed to dial %q\", address)\n\t\t\t}\n\t\t\treturn snproxy.NewSnapshotter(snapshotsapi.NewSnapshotsClient(conn), name), nil\n\t\t}\n\t\treturn snFactory, nil\n\t}\n\n\tif name == \"auto\" {\n\t\tif err := overlayutils.Supported(commonRoot); err == nil {\n\t\t\tname = \"overlayfs\"\n\t\t} else {\n\t\t\tbklog.L.Debugf(\"auto snapshotter: overlayfs is not available for %s, trying fuse-overlayfs: %v\", commonRoot, err)\n\t\t\tif err2 := fuseoverlayfs.Supported(commonRoot); err2 == nil {\n\t\t\t\tname = \"fuse-overlayfs\"\n\t\t\t} else {\n\t\t\t\tbklog.L.Debugf(\"auto snapshotter: fuse-overlayfs is not available for %s, falling back to native: %v\", commonRoot, err2)\n\t\t\t\tname = \"native\"\n\t\t\t}\n\t\t}\n\t\tbklog.L.Infof(\"auto snapshotter: using %s\", name)\n\t}\n\n\tsnFactory := runc.SnapshotterFactory{\n\t\tName: name,\n\t}\n\tswitch name {\n\tcase \"native\":\n\t\tsnFactory.New = native.NewSnapshotter\n\tcase \"overlayfs\": // not \"overlay\", for consistency with containerd snapshotter plugin ID.\n\t\tsnFactory.New = func(root string) (ctdsnapshot.Snapshotter, error) {\n\t\t\treturn overlay.NewSnapshotter(root, overlay.AsynchronousRemove)\n\t\t}\n\tcase \"fuse-overlayfs\":\n\t\tsnFactory.New = func(root string) (ctdsnapshot.Snapshotter, error) {\n\t\t\t// no Opt (AsynchronousRemove is untested for fuse-overlayfs)\n\t\t\treturn fuseoverlayfs.NewSnapshotter(root)\n\t\t}\n\tcase \"stargz\":\n\t\tsgzCfg := sgzconf.Config{}\n\t\tif cfg.StargzSnapshotterConfig != nil {\n\t\t\t// In order to keep the stargz Config type (and dependency) out of\n\t\t\t// the main BuildKit config, the main config Unmarshalls it into a\n\t\t\t// generic map[string]interface{}. Here we convert it back into TOML\n\t\t\t// tree, and unmarshal it to the actual type.\n\t\t\tt, err := toml.TreeFromMap(cfg.StargzSnapshotterConfig)\n\t\t\tif err != nil {\n\t\t\t\treturn snFactory, errors.Wrapf(err, \"failed to parse stargz config\")\n\t\t\t}\n\t\t\terr = t.Unmarshal(&sgzCfg)\n\t\t\tif err != nil {\n\t\t\t\treturn snFactory, errors.Wrapf(err, \"failed to parse stargz config\")\n\t\t\t}\n\t\t}\n\t\tsnFactory.New = func(root string) (ctdsnapshot.Snapshotter, error) {\n\t\t\tuserxattr, err := overlayutils.NeedsUserXAttr(root)\n\t\t\tif err != nil {\n\t\t\t\tbklog.L.WithError(err).Warnf(\"cannot detect whether \\\"userxattr\\\" option needs to be used, assuming to be %v\", userxattr)\n\t\t\t}\n\t\t\topq := sgzlayer.OverlayOpaqueTrusted\n\t\t\tif userxattr {\n\t\t\t\topq = sgzlayer.OverlayOpaqueUser\n\t\t\t}\n\t\t\tfs, err := sgzfs.NewFilesystem(filepath.Join(root, \"stargz\"),\n\t\t\t\tsgzCfg,\n\t\t\t\t// Source info based on the buildkit's registry config and session\n\t\t\t\tsgzfs.WithGetSources(sourceWithSession(hosts, sm)),\n\t\t\t\tsgzfs.WithMetricsLogLevel(logrus.DebugLevel),\n\t\t\t\tsgzfs.WithOverlayOpaqueType(opq),\n\t\t\t)\n\t\t\tif err != nil {\n\t\t\t\treturn nil, err\n\t\t\t}\n\t\t\treturn remotesn.NewSnapshotter(context.Background(),\n\t\t\t\tfilepath.Join(root, \"snapshotter\"),\n\t\t\t\tfs, remotesn.AsynchronousRemove, remotesn.NoRestore)\n\t\t}\n\tdefault:\n\t\treturn snFactory, errors.Errorf(\"unknown snapshotter name: %q\", name)\n\t}\n\treturn snFactory, nil\n}\n\nfunc validOCIBinary() bool {\n\t_, err := exec.LookPath(\"runc\")\n\t_, err1 := exec.LookPath(\"buildkit-runc\")\n\tif err != nil && err1 != nil {\n\t\tbklog.L.Warnf(\"skipping oci worker, as runc does not exist\")\n\t\treturn false\n\t}\n\treturn true\n}\n\nconst (\n\t// targetRefLabel is a label which contains image reference.\n\ttargetRefLabel = \"containerd.io/snapshot/remote/stargz.reference\"\n\n\t// targetDigestLabel is a label which contains layer digest.\n\ttargetDigestLabel = \"containerd.io/snapshot/remote/stargz.digest\"\n\n\t// targetImageLayersLabel is a label which contains layer digests contained in\n\t// the target image.\n\ttargetImageLayersLabel = \"containerd.io/snapshot/remote/stargz.layers\"\n\n\t// targetSessionLabel is a labeld which contains session IDs usable for\n\t// authenticating the target snapshot.\n\ttargetSessionLabel = \"containerd.io/snapshot/remote/stargz.session\"\n)\n\n// sourceWithSession returns a callback which implements a converter from labels to the\n// typed snapshot source info. This callback is called everytime the snapshotter resolves a\n// snapshot. This callback returns configuration that is based on buildkitd's registry config\n// and utilizes the session-based authorizer.\nfunc sourceWithSession(hosts docker.RegistryHosts, sm *session.Manager) sgzsource.GetSources {\n\treturn func(labels map[string]string) (src []sgzsource.Source, err error) {\n\t\t// labels contains multiple source candidates with unique IDs appended on each call\n\t\t// to the snapshotter API. So, first, get all these IDs\n\t\tvar ids []string\n\t\tfor k := range labels {\n\t\t\tif after, ok := strings.CutPrefix(k, targetRefLabel+\".\"); ok {\n\t\t\t\tids = append(ids, after)\n\t\t\t}\n\t\t}\n\n\t\t// Parse all labels\n\t\tfor _, id := range ids {\n\t\t\t// Parse session labels\n\t\t\tref, ok := labels[targetRefLabel+\".\"+id]\n\t\t\tif !ok {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tnamed, err := reference.Parse(ref)\n\t\t\tif err != nil {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tvar sids []string\n\t\t\tfor i := 0; ; i++ {\n\t\t\t\tsidKey := targetSessionLabel + \".\" + fmt.Sprintf(\"%d\", i) + \".\" + id\n\t\t\t\tsid, ok := labels[sidKey]\n\t\t\t\tif !ok {\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t\tsids = append(sids, sid)\n\t\t\t}\n\n\t\t\t// Get source information based on labels and RegistryHosts containing\n\t\t\t// session-based authorizer.\n\t\t\tparse := sgzsource.FromDefaultLabels(func(ref reference.Spec) ([]docker.RegistryHost, error) {\n\t\t\t\treturn resolver.DefaultPool.GetResolver(hosts, named.String(), resolver.ScopeType{}, sm, session.NewGroup(sids...)).\n\t\t\t\t\tHostsFunc(ref.Hostname())\n\t\t\t})\n\t\t\tif s, err := parse(map[string]string{\n\t\t\t\ttargetRefLabel:         ref,\n\t\t\t\ttargetDigestLabel:      labels[targetDigestLabel+\".\"+id],\n\t\t\t\ttargetImageLayersLabel: labels[targetImageLayersLabel+\".\"+id],\n\t\t\t}); err == nil {\n\t\t\t\tsrc = append(src, s...)\n\t\t\t}\n\t\t}\n\n\t\treturn src, nil\n\t}\n}\n"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/moby/buildkit/v0.27.0/client/info.go",
+        "status": 200,
+        "bytes": 1402,
+        "sha256": "ada0763715336db39141fdf64d33b3bd083dee4ba57b3727888de2757247f30c",
+        "cumulative_bytes": 1610734,
+        "body": "package client\n\nimport (\n\t\"context\"\n\n\tcontrolapi \"github.com/moby/buildkit/api/services/control\"\n\tapitypes \"github.com/moby/buildkit/api/types\"\n\t\"github.com/pkg/errors\"\n)\n\ntype Info struct {\n\tBuildkitVersion BuildkitVersion `json:\"buildkitVersion\"`\n}\n\ntype BuildkitVersion struct {\n\tPackage  string `json:\"package\"`\n\tVersion  string `json:\"version\"`\n\tRevision string `json:\"revision\"`\n}\n\ntype CDIDevice struct {\n\tName        string            `json:\"name\"`\n\tAutoAllow   bool              `json:\"autoAllow\"`\n\tAnnotations map[string]string `json:\"annotations\"`\n\tOnDemand    bool              `json:\"onDemand\"`\n}\n\nfunc (c *Client) Info(ctx context.Context) (*Info, error) {\n\tres, err := c.ControlClient().Info(ctx, &controlapi.InfoRequest{})\n\tif err != nil {\n\t\treturn nil, errors.Wrap(err, \"failed to call info\")\n\t}\n\treturn &Info{\n\t\tBuildkitVersion: fromAPIBuildkitVersion(res.BuildkitVersion),\n\t}, nil\n}\n\nfunc fromAPIBuildkitVersion(in *apitypes.BuildkitVersion) BuildkitVersion {\n\tif in == nil {\n\t\treturn BuildkitVersion{}\n\t}\n\treturn BuildkitVersion{\n\t\tPackage:  in.Package,\n\t\tVersion:  in.Version,\n\t\tRevision: in.Revision,\n\t}\n}\n\nfunc fromAPICDIDevices(in []*apitypes.CDIDevice) []CDIDevice {\n\tvar out []CDIDevice\n\tfor _, d := range in {\n\t\tout = append(out, CDIDevice{\n\t\t\tName:        d.Name,\n\t\t\tAutoAllow:   d.AutoAllow,\n\t\t\tAnnotations: d.Annotations,\n\t\t\tOnDemand:    d.OnDemand,\n\t\t})\n\t}\n\treturn out\n}\n"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/moby/buildkit/v0.27.0/client/workers.go",
+        "status": 200,
+        "bytes": 2122,
+        "sha256": "b539270425a6fefa16182b358cccbcc37bed148e30f714159c212cfb6614e480",
+        "cumulative_bytes": 1612856,
+        "body": "package client\n\nimport (\n\t\"context\"\n\t\"time\"\n\n\tcontrolapi \"github.com/moby/buildkit/api/services/control\"\n\tapitypes \"github.com/moby/buildkit/api/types\"\n\t\"github.com/moby/buildkit/solver/pb\"\n\tocispecs \"github.com/opencontainers/image-spec/specs-go/v1\"\n\t\"github.com/pkg/errors\"\n)\n\n// WorkerInfo contains information about a worker\ntype WorkerInfo struct {\n\tID              string              `json:\"id\"`\n\tLabels          map[string]string   `json:\"labels\"`\n\tPlatforms       []ocispecs.Platform `json:\"platforms\"`\n\tGCPolicy        []PruneInfo         `json:\"gcPolicy\"`\n\tBuildkitVersion BuildkitVersion     `json:\"buildkitVersion\"`\n\tCDIDevices      []CDIDevice         `json:\"cdiDevices\"`\n}\n\n// ListWorkers lists all active workers\nfunc (c *Client) ListWorkers(ctx context.Context, opts ...ListWorkersOption) ([]*WorkerInfo, error) {\n\tinfo := &ListWorkersInfo{}\n\tfor _, o := range opts {\n\t\to.SetListWorkersOption(info)\n\t}\n\n\treq := &controlapi.ListWorkersRequest{Filter: info.Filter}\n\tresp, err := c.ControlClient().ListWorkers(ctx, req)\n\tif err != nil {\n\t\treturn nil, errors.Wrap(err, \"failed to list workers\")\n\t}\n\n\tvar wi []*WorkerInfo\n\n\tfor _, w := range resp.Record {\n\t\twi = append(wi, &WorkerInfo{\n\t\t\tID:              w.ID,\n\t\t\tLabels:          w.Labels,\n\t\t\tPlatforms:       pb.ToSpecPlatforms(w.Platforms),\n\t\t\tGCPolicy:        fromAPIGCPolicy(w.GCPolicy),\n\t\t\tBuildkitVersion: fromAPIBuildkitVersion(w.BuildkitVersion),\n\t\t\tCDIDevices:      fromAPICDIDevices(w.CDIDevices),\n\t\t})\n\t}\n\n\treturn wi, nil\n}\n\n// ListWorkersOption is an option for a worker list query\ntype ListWorkersOption interface {\n\tSetListWorkersOption(*ListWorkersInfo)\n}\n\n// ListWorkersInfo is a payload for worker list query\ntype ListWorkersInfo struct {\n\tFilter []string\n}\n\nfunc fromAPIGCPolicy(in []*apitypes.GCPolicy) []PruneInfo {\n\tout := make([]PruneInfo, 0, len(in))\n\tfor _, p := range in {\n\t\tout = append(out, PruneInfo{\n\t\t\tAll:           p.All,\n\t\t\tFilter:        p.Filters,\n\t\t\tKeepDuration:  time.Duration(p.KeepDuration),\n\t\t\tReservedSpace: p.ReservedSpace,\n\t\t\tMaxUsedSpace:  p.MaxUsedSpace,\n\t\t\tMinFreeSpace:  p.MinFreeSpace,\n\t\t})\n\t}\n\treturn out\n}\n"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/moby/buildkit/v0.27.0/api/types/worker.pb.go",
+        "status": 200,
+        "bytes": 14288,
+        "sha256": "e3f2365997edea6838e67c41501f4bc620cb6f206663bf16518c9eb065ce4a75",
+        "cumulative_bytes": 1627144,
+        "body": "// Code generated by protoc-gen-go. DO NOT EDIT.\n// versions:\n// \tprotoc-gen-go v1.36.11\n// \tprotoc        v3.11.4\n// source: github.com/moby/buildkit/api/types/worker.proto\n\npackage moby_buildkit_v1_types\n\nimport (\n\tpb \"github.com/moby/buildkit/solver/pb\"\n\tprotoreflect \"google.golang.org/protobuf/reflect/protoreflect\"\n\tprotoimpl \"google.golang.org/protobuf/runtime/protoimpl\"\n\treflect \"reflect\"\n\tsync \"sync\"\n\tunsafe \"unsafe\"\n)\n\nconst (\n\t// Verify that this generated code is sufficiently up-to-date.\n\t_ = protoimpl.EnforceVersion(20 - protoimpl.MinVersion)\n\t// Verify that runtime/protoimpl is sufficiently up-to-date.\n\t_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)\n)\n\ntype WorkerRecord struct {\n\tstate           protoimpl.MessageState `protogen:\"open.v1\"`\n\tID              string                 `protobuf:\"bytes,1,opt,name=ID,proto3\" json:\"ID,omitempty\"`\n\tLabels          map[string]string      `protobuf:\"bytes,2,rep,name=Labels,proto3\" json:\"Labels,omitempty\" protobuf_key:\"bytes,1,opt,name=key\" protobuf_val:\"bytes,2,opt,name=value\"`\n\tPlatforms       []*pb.Platform         `protobuf:\"bytes,3,rep,name=platforms,proto3\" json:\"platforms,omitempty\"`\n\tGCPolicy        []*GCPolicy            `protobuf:\"bytes,4,rep,name=GCPolicy,proto3\" json:\"GCPolicy,omitempty\"`\n\tBuildkitVersion *BuildkitVersion       `protobuf:\"bytes,5,opt,name=BuildkitVersion,proto3\" json:\"BuildkitVersion,omitempty\"`\n\tCDIDevices      []*CDIDevice           `protobuf:\"bytes,6,rep,name=CDIDevices,proto3\" json:\"CDIDevices,omitempty\"`\n\tunknownFields   protoimpl.UnknownFields\n\tsizeCache       protoimpl.SizeCache\n}\n\nfunc (x *WorkerRecord) Reset() {\n\t*x = WorkerRecord{}\n\tmi := &file_github_com_moby_buildkit_api_types_worker_proto_msgTypes[0]\n\tms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))\n\tms.StoreMessageInfo(mi)\n}\n\nfunc (x *WorkerRecord) String() string {\n\treturn protoimpl.X.MessageStringOf(x)\n}\n\nfunc (*WorkerRecord) ProtoMessage() {}\n\nfunc (x *WorkerRecord) ProtoReflect() protoreflect.Message {\n\tmi := &file_github_com_moby_buildkit_api_types_worker_proto_msgTypes[0]\n\tif x != nil {\n\t\tms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))\n\t\tif ms.LoadMessageInfo() == nil {\n\t\t\tms.StoreMessageInfo(mi)\n\t\t}\n\t\treturn ms\n\t}\n\treturn mi.MessageOf(x)\n}\n\n// Deprecated: Use WorkerRecord.ProtoReflect.Descriptor instead.\nfunc (*WorkerRecord) Descriptor() ([]byte, []int) {\n\treturn file_github_com_moby_buildkit_api_types_worker_proto_rawDescGZIP(), []int{0}\n}\n\nfunc (x *WorkerRecord) GetID() string {\n\tif x != nil {\n\t\treturn x.ID\n\t}\n\treturn \"\"\n}\n\nfunc (x *WorkerRecord) GetLabels() map[string]string {\n\tif x != nil {\n\t\treturn x.Labels\n\t}\n\treturn nil\n}\n\nfunc (x *WorkerRecord) GetPlatforms() []*pb.Platform {\n\tif x != nil {\n\t\treturn x.Platforms\n\t}\n\treturn nil\n}\n\nfunc (x *WorkerRecord) GetGCPolicy() []*GCPolicy {\n\tif x != nil {\n\t\treturn x.GCPolicy\n\t}\n\treturn nil\n}\n\nfunc (x *WorkerRecord) GetBuildkitVersion() *BuildkitVersion {\n\tif x != nil {\n\t\treturn x.BuildkitVersion\n\t}\n\treturn nil\n}\n\nfunc (x *WorkerRecord) GetCDIDevices() []*CDIDevice {\n\tif x != nil {\n\t\treturn x.CDIDevices\n\t}\n\treturn nil\n}\n\ntype GCPolicy struct {\n\tstate        protoimpl.MessageState `protogen:\"open.v1\"`\n\tAll          bool                   `protobuf:\"varint,1,opt,name=all,proto3\" json:\"all,omitempty\"`\n\tKeepDuration int64                  `protobuf:\"varint,2,opt,name=keepDuration,proto3\" json:\"keepDuration,omitempty\"`\n\tFilters      []string               `protobuf:\"bytes,4,rep,name=filters,proto3\" json:\"filters,omitempty\"`\n\t// reservedSpace was renamed from freeBytes\n\tReservedSpace int64 `protobuf:\"varint,3,opt,name=reservedSpace,proto3\" json:\"reservedSpace,omitempty\"`\n\tMaxUsedSpace  int64 `protobuf:\"varint,5,opt,name=maxUsedSpace,proto3\" json:\"maxUsedSpace,omitempty\"`\n\tMinFreeSpace  int64 `protobuf:\"varint,6,opt,name=minFreeSpace,proto3\" json:\"minFreeSpace,omitempty\"`\n\tunknownFields protoimpl.UnknownFields\n\tsizeCache     protoimpl.SizeCache\n}\n\nfunc (x *GCPolicy) Reset() {\n\t*x = GCPolicy{}\n\tmi := &file_github_com_moby_buildkit_api_types_worker_proto_msgTypes[1]\n\tms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))\n\tms.StoreMessageInfo(mi)\n}\n\nfunc (x *GCPolicy) String() string {\n\treturn protoimpl.X.MessageStringOf(x)\n}\n\nfunc (*GCPolicy) ProtoMessage() {}\n\nfunc (x *GCPolicy) ProtoReflect() protoreflect.Message {\n\tmi := &file_github_com_moby_buildkit_api_types_worker_proto_msgTypes[1]\n\tif x != nil {\n\t\tms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))\n\t\tif ms.LoadMessageInfo() == nil {\n\t\t\tms.StoreMessageInfo(mi)\n\t\t}\n\t\treturn ms\n\t}\n\treturn mi.MessageOf(x)\n}\n\n// Deprecated: Use GCPolicy.ProtoReflect.Descriptor instead.\nfunc (*GCPolicy) Descriptor() ([]byte, []int) {\n\treturn file_github_com_moby_buildkit_api_types_worker_proto_rawDescGZIP(), []int{1}\n}\n\nfunc (x *GCPolicy) GetAll() bool {\n\tif x != nil {\n\t\treturn x.All\n\t}\n\treturn false\n}\n\nfunc (x *GCPolicy) GetKeepDuration() int64 {\n\tif x != nil {\n\t\treturn x.KeepDuration\n\t}\n\treturn 0\n}\n\nfunc (x *GCPolicy) GetFilters() []string {\n\tif x != nil {\n\t\treturn x.Filters\n\t}\n\treturn nil\n}\n\nfunc (x *GCPolicy) GetReservedSpace() int64 {\n\tif x != nil {\n\t\treturn x.ReservedSpace\n\t}\n\treturn 0\n}\n\nfunc (x *GCPolicy) GetMaxUsedSpace() int64 {\n\tif x != nil {\n\t\treturn x.MaxUsedSpace\n\t}\n\treturn 0\n}\n\nfunc (x *GCPolicy) GetMinFreeSpace() int64 {\n\tif x != nil {\n\t\treturn x.MinFreeSpace\n\t}\n\treturn 0\n}\n\ntype BuildkitVersion struct {\n\tstate         protoimpl.MessageState `protogen:\"open.v1\"`\n\tPackage       string                 `protobuf:\"bytes,1,opt,name=package,proto3\" json:\"package,omitempty\"`\n\tVersion       string                 `protobuf:\"bytes,2,opt,name=version,proto3\" json:\"version,omitempty\"`\n\tRevision      string                 `protobuf:\"bytes,3,opt,name=revision,proto3\" json:\"revision,omitempty\"`\n\tunknownFields protoimpl.UnknownFields\n\tsizeCache     protoimpl.SizeCache\n}\n\nfunc (x *BuildkitVersion) Reset() {\n\t*x = BuildkitVersion{}\n\tmi := &file_github_com_moby_buildkit_api_types_worker_proto_msgTypes[2]\n\tms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))\n\tms.StoreMessageInfo(mi)\n}\n\nfunc (x *BuildkitVersion) String() string {\n\treturn protoimpl.X.MessageStringOf(x)\n}\n\nfunc (*BuildkitVersion) ProtoMessage() {}\n\nfunc (x *BuildkitVersion) ProtoReflect() protoreflect.Message {\n\tmi := &file_github_com_moby_buildkit_api_types_worker_proto_msgTypes[2]\n\tif x != nil {\n\t\tms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))\n\t\tif ms.LoadMessageInfo() == nil {\n\t\t\tms.StoreMessageInfo(mi)\n\t\t}\n\t\treturn ms\n\t}\n\treturn mi.MessageOf(x)\n}\n\n// Deprecated: Use BuildkitVersion.ProtoReflect.Descriptor instead.\nfunc (*BuildkitVersion) Descriptor() ([]byte, []int) {\n\treturn file_github_com_moby_buildkit_api_types_worker_proto_rawDescGZIP(), []int{2}\n}\n\nfunc (x *BuildkitVersion) GetPackage() string {\n\tif x != nil {\n\t\treturn x.Package\n\t}\n\treturn \"\"\n}\n\nfunc (x *BuildkitVersion) GetVersion() string {\n\tif x != nil {\n\t\treturn x.Version\n\t}\n\treturn \"\"\n}\n\nfunc (x *BuildkitVersion) GetRevision() string {\n\tif x != nil {\n\t\treturn x.Revision\n\t}\n\treturn \"\"\n}\n\ntype CDIDevice struct {\n\tstate         protoimpl.MessageState `protogen:\"open.v1\"`\n\tName          string                 `protobuf:\"bytes,1,opt,name=Name,proto3\" json:\"Name,omitempty\"`\n\tAutoAllow     bool                   `protobuf:\"varint,2,opt,name=AutoAllow,proto3\" json:\"AutoAllow,omitempty\"`\n\tAnnotations   map[string]string      `protobuf:\"bytes,3,rep,name=Annotations,proto3\" json:\"Annotations,omitempty\" protobuf_key:\"bytes,1,opt,name=key\" protobuf_val:\"bytes,2,opt,name=value\"`\n\tOnDemand      bool                   `protobuf:\"varint,4,opt,name=OnDemand,proto3\" json:\"OnDemand,omitempty\"`\n\tunknownFields protoimpl.UnknownFields\n\tsizeCache     protoimpl.SizeCache\n}\n\nfunc (x *CDIDevice) Reset() {\n\t*x = CDIDevice{}\n\tmi := &file_github_com_moby_buildkit_api_types_worker_proto_msgTypes[3]\n\tms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))\n\tms.StoreMessageInfo(mi)\n}\n\nfunc (x *CDIDevice) String() string {\n\treturn protoimpl.X.MessageStringOf(x)\n}\n\nfunc (*CDIDevice) ProtoMessage() {}\n\nfunc (x *CDIDevice) ProtoReflect() protoreflect.Message {\n\tmi := &file_github_com_moby_buildkit_api_types_worker_proto_msgTypes[3]\n\tif x != nil {\n\t\tms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))\n\t\tif ms.LoadMessageInfo() == nil {\n\t\t\tms.StoreMessageInfo(mi)\n\t\t}\n\t\treturn ms\n\t}\n\treturn mi.MessageOf(x)\n}\n\n// Deprecated: Use CDIDevice.ProtoReflect.Descriptor instead.\nfunc (*CDIDevice) Descriptor() ([]byte, []int) {\n\treturn file_github_com_moby_buildkit_api_types_worker_proto_rawDescGZIP(), []int{3}\n}\n\nfunc (x *CDIDevice) GetName() string {\n\tif x != nil {\n\t\treturn x.Name\n\t}\n\treturn \"\"\n}\n\nfunc (x *CDIDevice) GetAutoAllow() bool {\n\tif x != nil {\n\t\treturn x.AutoAllow\n\t}\n\treturn false\n}\n\nfunc (x *CDIDevice) GetAnnotations() map[string]string {\n\tif x != nil {\n\t\treturn x.Annotations\n\t}\n\treturn nil\n}\n\nfunc (x *CDIDevice) GetOnDemand() bool {\n\tif x != nil {\n\t\treturn x.OnDemand\n\t}\n\treturn false\n}\n\nvar File_github_com_moby_buildkit_api_types_worker_proto protoreflect.FileDescriptor\n\nconst file_github_com_moby_buildkit_api_types_worker_proto_rawDesc = \"\" +\n\t\"\\n\" +\n\t\"/github.com/moby/buildkit/api/types/worker.proto\\x12\\x16moby.buildkit.v1.types\\x1a,github.com/moby/buildkit/solver/pb/ops.proto\\\"\\xa3\\x03\\n\" +\n\t\"\\fWorkerRecord\\x12\\x0e\\n\" +\n\t\"\\x02ID\\x18\\x01 \\x01(\\tR\\x02ID\\x12H\\n\" +\n\t\"\\x06Labels\\x18\\x02 \\x03(\\v20.moby.buildkit.v1.types.WorkerRecord.LabelsEntryR\\x06Labels\\x12*\\n\" +\n\t\"\\tplatforms\\x18\\x03 \\x03(\\v2\\f.pb.PlatformR\\tplatforms\\x12<\\n\" +\n\t\"\\bGCPolicy\\x18\\x04 \\x03(\\v2 .moby.buildkit.v1.types.GCPolicyR\\bGCPolicy\\x12Q\\n\" +\n\t\"\\x0fBuildkitVersion\\x18\\x05 \\x01(\\v2'.moby.buildkit.v1.types.BuildkitVersionR\\x0fBuildkitVersion\\x12A\\n\" +\n\t\"\\n\" +\n\t\"CDIDevices\\x18\\x06 \\x03(\\v2!.moby.buildkit.v1.types.CDIDeviceR\\n\" +\n\t\"CDIDevices\\x1a9\\n\" +\n\t\"\\vLabelsEntry\\x12\\x10\\n\" +\n\t\"\\x03key\\x18\\x01 \\x01(\\tR\\x03key\\x12\\x14\\n\" +\n\t\"\\x05value\\x18\\x02 \\x01(\\tR\\x05value:\\x028\\x01\\\"\\xc8\\x01\\n\" +\n\t\"\\bGCPolicy\\x12\\x10\\n\" +\n\t\"\\x03all\\x18\\x01 \\x01(\\bR\\x03all\\x12\\\"\\n\" +\n\t\"\\fkeepDuration\\x18\\x02 \\x01(\\x03R\\fkeepDuration\\x12\\x18\\n\" +\n\t\"\\afilters\\x18\\x04 \\x03(\\tR\\afilters\\x12$\\n\" +\n\t\"\\rreservedSpace\\x18\\x03 \\x01(\\x03R\\rreservedSpace\\x12\\\"\\n\" +\n\t\"\\fmaxUsedSpace\\x18\\x05 \\x01(\\x03R\\fmaxUsedSpace\\x12\\\"\\n\" +\n\t\"\\fminFreeSpace\\x18\\x06 \\x01(\\x03R\\fminFreeSpace\\\"a\\n\" +\n\t\"\\x0fBuildkitVersion\\x12\\x18\\n\" +\n\t\"\\apackage\\x18\\x01 \\x01(\\tR\\apackage\\x12\\x18\\n\" +\n\t\"\\aversion\\x18\\x02 \\x01(\\tR\\aversion\\x12\\x1a\\n\" +\n\t\"\\brevision\\x18\\x03 \\x01(\\tR\\brevision\\\"\\xef\\x01\\n\" +\n\t\"\\tCDIDevice\\x12\\x12\\n\" +\n\t\"\\x04Name\\x18\\x01 \\x01(\\tR\\x04Name\\x12\\x1c\\n\" +\n\t\"\\tAutoAllow\\x18\\x02 \\x01(\\bR\\tAutoAllow\\x12T\\n\" +\n\t\"\\vAnnotations\\x18\\x03 \\x03(\\v22.moby.buildkit.v1.types.CDIDevice.AnnotationsEntryR\\vAnnotations\\x12\\x1a\\n\" +\n\t\"\\bOnDemand\\x18\\x04 \\x01(\\bR\\bOnDemand\\x1a>\\n\" +\n\t\"\\x10AnnotationsEntry\\x12\\x10\\n\" +\n\t\"\\x03key\\x18\\x01 \\x01(\\tR\\x03key\\x12\\x14\\n\" +\n\t\"\\x05value\\x18\\x02 \\x01(\\tR\\x05value:\\x028\\x01B;Z9github.com/moby/buildkit/api/types;moby_buildkit_v1_typesb\\x06proto3\"\n\nvar (\n\tfile_github_com_moby_buildkit_api_types_worker_proto_rawDescOnce sync.Once\n\tfile_github_com_moby_buildkit_api_types_worker_proto_rawDescData []byte\n)\n\nfunc file_github_com_moby_buildkit_api_types_worker_proto_rawDescGZIP() []byte {\n\tfile_github_com_moby_buildkit_api_types_worker_proto_rawDescOnce.Do(func() {\n\t\tfile_github_com_moby_buildkit_api_types_worker_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_github_com_moby_buildkit_api_types_worker_proto_rawDesc), len(file_github_com_moby_buildkit_api_types_worker_proto_rawDesc)))\n\t})\n\treturn file_github_com_moby_buildkit_api_types_worker_proto_rawDescData\n}\n\nvar file_github_com_moby_buildkit_api_types_worker_proto_msgTypes = make([]protoimpl.MessageInfo, 6)\nvar file_github_com_moby_buildkit_api_types_worker_proto_goTypes = []any{\n\t(*WorkerRecord)(nil),    // 0: moby.buildkit.v1.types.WorkerRecord\n\t(*GCPolicy)(nil),        // 1: moby.buildkit.v1.types.GCPolicy\n\t(*BuildkitVersion)(nil), // 2: moby.buildkit.v1.types.BuildkitVersion\n\t(*CDIDevice)(nil),       // 3: moby.buildkit.v1.types.CDIDevice\n\tnil,                     // 4: moby.buildkit.v1.types.WorkerRecord.LabelsEntry\n\tnil,                     // 5: moby.buildkit.v1.types.CDIDevice.AnnotationsEntry\n\t(*pb.Platform)(nil),     // 6: pb.Platform\n}\nvar file_github_com_moby_buildkit_api_types_worker_proto_depIdxs = []int32{\n\t4, // 0: moby.buildkit.v1.types.WorkerRecord.Labels:type_name -> moby.buildkit.v1.types.WorkerRecord.LabelsEntry\n\t6, // 1: moby.buildkit.v1.types.WorkerRecord.platforms:type_name -> pb.Platform\n\t1, // 2: moby.buildkit.v1.types.WorkerRecord.GCPolicy:type_name -> moby.buildkit.v1.types.GCPolicy\n\t2, // 3: moby.buildkit.v1.types.WorkerRecord.BuildkitVersion:type_name -> moby.buildkit.v1.types.BuildkitVersion\n\t3, // 4: moby.buildkit.v1.types.WorkerRecord.CDIDevices:type_name -> moby.buildkit.v1.types.CDIDevice\n\t5, // 5: moby.buildkit.v1.types.CDIDevice.Annotations:type_name -> moby.buildkit.v1.types.CDIDevice.AnnotationsEntry\n\t6, // [6:6] is the sub-list for method output_type\n\t6, // [6:6] is the sub-list for method input_type\n\t6, // [6:6] is the sub-list for extension type_name\n\t6, // [6:6] is the sub-list for extension extendee\n\t0, // [0:6] is the sub-list for field type_name\n}\n\nfunc init() { file_github_com_moby_buildkit_api_types_worker_proto_init() }\nfunc file_github_com_moby_buildkit_api_types_worker_proto_init() {\n\tif File_github_com_moby_buildkit_api_types_worker_proto != nil {\n\t\treturn\n\t}\n\ttype x struct{}\n\tout := protoimpl.TypeBuilder{\n\t\tFile: protoimpl.DescBuilder{\n\t\t\tGoPackagePath: reflect.TypeOf(x{}).PkgPath(),\n\t\t\tRawDescriptor: unsafe.Slice(unsafe.StringData(file_github_com_moby_buildkit_api_types_worker_proto_rawDesc), len(file_github_com_moby_buildkit_api_types_worker_proto_rawDesc)),\n\t\t\tNumEnums:      0,\n\t\t\tNumMessages:   6,\n\t\t\tNumExtensions: 0,\n\t\t\tNumServices:   0,\n\t\t},\n\t\tGoTypes:           file_github_com_moby_buildkit_api_types_worker_proto_goTypes,\n\t\tDependencyIndexes: file_github_com_moby_buildkit_api_types_worker_proto_depIdxs,\n\t\tMessageInfos:      file_github_com_moby_buildkit_api_types_worker_proto_msgTypes,\n\t}.Build()\n\tFile_github_com_moby_buildkit_api_types_worker_proto = out.File\n\tfile_github_com_moby_buildkit_api_types_worker_proto_goTypes = nil\n\tfile_github_com_moby_buildkit_api_types_worker_proto_depIdxs = nil\n}\n"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/docker/buildx/v0.31.1/cmd/buildx/main.go",
+        "status": 200,
+        "bytes": 3961,
+        "sha256": "6b79842300aa318204b67fff527fa538f57623aad296e5c683ebc61aafd79e11",
+        "cumulative_bytes": 1604255,
+        "body": "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\t\"os\"\n\t\"path/filepath\"\n\n\t\"github.com/docker/buildx/commands\"\n\t\"github.com/docker/buildx/util/cobrautil\"\n\t\"github.com/docker/buildx/util/desktop\"\n\t\"github.com/docker/buildx/version\"\n\t\"github.com/docker/cli/cli\"\n\t\"github.com/docker/cli/cli-plugins/metadata\"\n\t\"github.com/docker/cli/cli-plugins/plugin\"\n\t\"github.com/docker/cli/cli/command\"\n\t\"github.com/docker/cli/cli/debug\"\n\tsolvererrdefs \"github.com/moby/buildkit/solver/errdefs\"\n\t\"github.com/moby/buildkit/sourcepolicy/policysession\"\n\t\"github.com/moby/buildkit/util/grpcerrors\"\n\t\"github.com/moby/buildkit/util/stack\"\n\t\"github.com/pkg/errors\"\n\t\"go.opentelemetry.io/otel\"\n\t\"google.golang.org/grpc/codes\"\n\n\t_ \"k8s.io/client-go/plugin/pkg/client/auth/oidc\"\n\n\t_ \"github.com/docker/buildx/driver/docker\"\n\t_ \"github.com/docker/buildx/driver/docker-container\"\n\t_ \"github.com/docker/buildx/driver/kubernetes\"\n\t_ \"github.com/docker/buildx/driver/remote\"\n\n\t// Use custom grpc codec to utilize vtprotobuf\n\t_ \"github.com/moby/buildkit/util/grpcutil/encoding/proto\"\n)\n\nfunc init() {\n\tstack.SetVersionInfo(version.Version, version.Revision)\n}\n\nfunc runStandalone(cmd *command.DockerCli) error {\n\tdefer flushMetrics(cmd)\n\texecutable := os.Args[0]\n\trootCmd := commands.NewRootCmd(filepath.Base(executable), false, cmd)\n\treturn rootCmd.Execute()\n}\n\n// flushMetrics will manually flush metrics from the configured\n// meter provider. This is needed when running in standalone mode\n// because the meter provider is initialized by the cli library,\n// but the mechanism for forcing it to report is not presently\n// exposed and not invoked when run in standalone mode.\n// There are plans to fix that in the next release, but this is\n// needed temporarily until the API for this is more thorough.\nfunc flushMetrics(cmd *command.DockerCli) {\n\tif mp, ok := cmd.MeterProvider().(command.MeterProvider); ok {\n\t\tif err := mp.ForceFlush(context.Background()); err != nil {\n\t\t\totel.Handle(err)\n\t\t}\n\t}\n}\n\nfunc runPlugin(cmd *command.DockerCli) error {\n\trootCmd := commands.NewRootCmd(\"buildx\", true, cmd)\n\treturn plugin.RunPlugin(cmd, rootCmd, metadata.Metadata{\n\t\tSchemaVersion: \"0.1.0\",\n\t\tVendor:        \"Docker Inc.\",\n\t\tVersion:       version.Version,\n\t})\n}\n\nfunc run(cmd *command.DockerCli) error {\n\tstopProfiles := setupDebugProfiles(context.TODO())\n\tdefer stopProfiles()\n\n\tif plugin.RunningStandalone() {\n\t\treturn runStandalone(cmd)\n\t}\n\treturn runPlugin(cmd)\n}\n\nfunc main() {\n\tcmd, err := command.NewDockerCli()\n\tif err != nil {\n\t\tfmt.Fprintln(os.Stderr, err)\n\t\tos.Exit(1)\n\t}\n\n\tif err = run(cmd); err == nil {\n\t\treturn\n\t}\n\n\t// Check the error from the run function above.\n\tif sterr, ok := err.(cli.StatusError); ok {\n\t\tif sterr.Status != \"\" {\n\t\t\tfmt.Fprintln(cmd.Err(), sterr.Status)\n\t\t}\n\t\t// StatusError should only be used for errors, and all errors should\n\t\t// have a non-zero exit status, so never exit with 0\n\t\tif sterr.StatusCode == 0 {\n\t\t\tos.Exit(1)\n\t\t}\n\t\tos.Exit(sterr.StatusCode)\n\t}\n\n\t// Check for ExitCodeError, which is used to exit with a specific code\n\t// without printing an error message.\n\tvar exitCodeErr cobrautil.ExitCodeError\n\tif errors.As(err, &exitCodeErr) {\n\t\tos.Exit(int(exitCodeErr))\n\t}\n\tfor _, msg := range policysession.DenyMessages(err) {\n\t\tif msg.GetMessage() != \"\" {\n\t\t\tfmt.Fprintf(os.Stderr, \"Policy: %s\\n\", msg.GetMessage())\n\t\t}\n\t}\n\n\tfor _, s := range solvererrdefs.Sources(err) {\n\t\ts.Print(cmd.Err())\n\t}\n\tif debug.IsEnabled() {\n\t\tfmt.Fprintf(cmd.Err(), \"ERROR: %+v\", stack.Formatter(err))\n\t} else {\n\t\tfmt.Fprintf(cmd.Err(), \"ERROR: %v\\n\", err)\n\t}\n\n\tvar ebr *desktop.ErrorWithBuildRef\n\tif errors.As(err, &ebr) {\n\t\tebr.Print(cmd.Err())\n\t}\n\n\texitCode := 1\n\tswitch grpcerrors.Code(err) {\n\tcase codes.Internal:\n\t\texitCode = 100 // https://github.com/square/exit/blob/v1.3.0/exit.go#L70\n\tcase codes.ResourceExhausted:\n\t\texitCode = 102\n\tcase codes.Canceled:\n\t\texitCode = 130\n\tdefault:\n\t\tif errors.Is(err, context.Canceled) {\n\t\t\texitCode = 130\n\t\t}\n\t}\n\n\tos.Exit(exitCode)\n}\n"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/moby/buildkit/v0.27.0/cmd/buildctl/debug/info.go",
+        "status": 200,
+        "bytes": 1109,
+        "sha256": "3093f63977f1f69b0e363f21f0bae2816152814229dad2ba230bcb0373f80088",
+        "cumulative_bytes": 1605364,
+        "body": "package debug\n\nimport (\n\t\"fmt\"\n\t\"os\"\n\t\"text/tabwriter\"\n\n\tbccommon \"github.com/moby/buildkit/cmd/buildctl/common\"\n\t\"github.com/urfave/cli\"\n)\n\nvar InfoCommand = cli.Command{\n\tName:   \"info\",\n\tUsage:  \"display internal information\",\n\tAction: info,\n\tFlags: []cli.Flag{\n\t\tcli.StringFlag{\n\t\t\tName:  \"format\",\n\t\t\tUsage: \"Format the output using the given Go template, e.g, '{{json .}}'\",\n\t\t},\n\t},\n}\n\nfunc info(clicontext *cli.Context) error {\n\tc, err := bccommon.ResolveClient(clicontext)\n\tif err != nil {\n\t\treturn err\n\t}\n\tres, err := c.Info(bccommon.CommandContext(clicontext))\n\tif err != nil {\n\t\treturn err\n\t}\n\tif format := clicontext.String(\"format\"); format != \"\" {\n\t\ttmpl, err := bccommon.ParseTemplate(format)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tif err := tmpl.Execute(clicontext.App.Writer, res); err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = fmt.Fprintf(clicontext.App.Writer, \"\\n\")\n\t\treturn err\n\t}\n\n\tw := tabwriter.NewWriter(os.Stdout, 0, 0, 1, ' ', 0)\n\t_, _ = fmt.Fprintf(w, \"BuildKit:\\t%s %s %s\\n\", res.BuildkitVersion.Package, res.BuildkitVersion.Version, res.BuildkitVersion.Revision)\n\treturn w.Flush()\n}\n"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/moby/buildkit/v0.27.0/cmd/buildctl/debug/workers.go",
+        "status": 200,
+        "bytes": 3968,
+        "sha256": "8e77fa7f33388f26bd43d4cf8f136bdf388810f94265cabe6a926d041101f0c4",
+        "cumulative_bytes": 1609332,
+        "body": "package debug\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\t\"maps\"\n\t\"os\"\n\t\"slices\"\n\t\"strings\"\n\t\"text/tabwriter\"\n\n\t\"github.com/containerd/platforms\"\n\t\"github.com/moby/buildkit/client\"\n\tbccommon \"github.com/moby/buildkit/cmd/buildctl/common\"\n\t\"github.com/moby/buildkit/util/bklog\"\n\tocispecs \"github.com/opencontainers/image-spec/specs-go/v1\"\n\t\"github.com/tonistiigi/units\"\n\t\"github.com/urfave/cli\"\n)\n\nvar WorkersCommand = cli.Command{\n\tName:   \"workers\",\n\tUsage:  \"list workers\",\n\tAction: listWorkers,\n\tFlags: []cli.Flag{\n\t\tcli.StringSliceFlag{\n\t\t\tName:  \"filter, f\",\n\t\t\tUsage: \"containerd-style filter string slice\",\n\t\t},\n\t\tcli.BoolFlag{\n\t\t\tName:  \"verbose, v\",\n\t\t\tUsage: \"Verbose output\",\n\t\t},\n\t\tcli.StringFlag{\n\t\t\tName:  \"format\",\n\t\t\tUsage: \"Format the output using the given Go template, e.g, '{{json .}}'\",\n\t\t},\n\t},\n}\n\nfunc listWorkers(clicontext *cli.Context) error {\n\tc, err := bccommon.ResolveClient(clicontext)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tworkers, err := c.ListWorkers(commandContext(clicontext), client.WithFilter(clicontext.StringSlice(\"filter\")))\n\tif err != nil {\n\t\treturn err\n\t}\n\tif format := clicontext.String(\"format\"); format != \"\" {\n\t\tif clicontext.Bool(\"verbose\") {\n\t\t\tbklog.L.Debug(\"Ignoring --verbose\")\n\t\t}\n\t\ttmpl, err := bccommon.ParseTemplate(format)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tif err := tmpl.Execute(clicontext.App.Writer, workers); err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = fmt.Fprintf(clicontext.App.Writer, \"\\n\")\n\t\treturn err\n\t}\n\n\ttw := tabwriter.NewWriter(os.Stdout, 1, 8, 1, '\\t', 0)\n\n\tif clicontext.Bool(\"verbose\") {\n\t\tprintWorkersVerbose(tw, workers)\n\t} else {\n\t\tprintWorkersTable(tw, workers)\n\t}\n\treturn nil\n}\n\nfunc printWorkersVerbose(tw *tabwriter.Writer, winfo []*client.WorkerInfo) {\n\tfor _, wi := range winfo {\n\t\tfmt.Fprintf(tw, \"ID:\\t%s\\n\", wi.ID)\n\t\tfmt.Fprintf(tw, \"Platforms:\\t%s\\n\", joinPlatforms(wi.Platforms))\n\t\tfmt.Fprintf(tw, \"BuildKit:\\t%s %s %s\\n\", wi.BuildkitVersion.Package, wi.BuildkitVersion.Version, wi.BuildkitVersion.Revision)\n\t\tfmt.Fprintf(tw, \"Labels:\\n\")\n\t\tfor _, k := range sortedKeys(wi.Labels) {\n\t\t\tv := wi.Labels[k]\n\t\t\tfmt.Fprintf(tw, \"\\t%s:\\t%s\\n\", k, v)\n\t\t}\n\t\tif len(wi.CDIDevices) > 0 {\n\t\t\tfmt.Fprint(tw, \"Devices:\\n\")\n\t\t\tfor _, d := range wi.CDIDevices {\n\t\t\t\tfmt.Fprintf(tw, \"\\tName:\\t%s\\n\", d.Name)\n\t\t\t\tif d.OnDemand {\n\t\t\t\t\tfmt.Fprintf(tw, \"\\tOnDemand:\\t%v\\n\", d.OnDemand)\n\t\t\t\t} else {\n\t\t\t\t\tfmt.Fprintf(tw, \"\\tAutoAllow:\\t%v\\n\", d.AutoAllow)\n\t\t\t\t}\n\n\t\t\t\tfor _, k := range sortedKeys(d.Annotations) {\n\t\t\t\t\tv := d.Annotations[k]\n\t\t\t\t\tfmt.Fprintf(tw, \"\\tAnnotations:\\t%s:\\t%s\\n\", k, v)\n\t\t\t\t}\n\t\t\t}\n\t\t\tfmt.Fprint(tw, \"\\n\")\n\t\t}\n\t\tfor i, rule := range wi.GCPolicy {\n\t\t\tfmt.Fprintf(tw, \"GC Policy rule#%d:\\n\", i)\n\t\t\tfmt.Fprintf(tw, \"\\tAll:\\t%v\\n\", rule.All)\n\t\t\tif len(rule.Filter) > 0 {\n\t\t\t\tfmt.Fprintf(tw, \"\\tFilters:\\t%s\\n\", strings.Join(rule.Filter, \" \"))\n\t\t\t}\n\t\t\tif rule.KeepDuration > 0 {\n\t\t\t\tfmt.Fprintf(tw, \"\\tKeep duration:\\t%v\\n\", rule.KeepDuration.String())\n\t\t\t}\n\t\t\tif rule.ReservedSpace > 0 {\n\t\t\t\tfmt.Fprintf(tw, \"\\tReserved space:\\t%g\\n\", units.Bytes(rule.ReservedSpace))\n\t\t\t}\n\t\t\tif rule.MinFreeSpace > 0 {\n\t\t\t\tfmt.Fprintf(tw, \"\\tMinimum free space:\\t%g\\n\", units.Bytes(rule.MinFreeSpace))\n\t\t\t}\n\t\t\tif rule.MaxUsedSpace > 0 {\n\t\t\t\tfmt.Fprintf(tw, \"\\tMaximum used space:\\t%g\\n\", units.Bytes(rule.MaxUsedSpace))\n\t\t\t}\n\t\t}\n\t\tfmt.Fprintf(tw, \"\\n\")\n\t}\n\n\ttw.Flush()\n}\n\nfunc printWorkersTable(tw *tabwriter.Writer, winfo []*client.WorkerInfo) {\n\tfmt.Fprintln(tw, \"ID\\tPLATFORMS\")\n\n\tfor _, wi := range winfo {\n\t\tid := wi.ID\n\t\tfmt.Fprintf(tw, \"%s\\t%s\\n\", id, joinPlatforms(wi.Platforms))\n\t}\n\n\ttw.Flush()\n}\n\nfunc sortedKeys[T any](m map[string]T) []string {\n\treturn slices.Sorted(maps.Keys(m))\n}\n\nfunc commandContext(c *cli.Context) context.Context {\n\treturn c.App.Metadata[\"context\"].(context.Context)\n}\n\nfunc joinPlatforms(p []ocispecs.Platform) string {\n\tstr := make([]string, 0, len(p))\n\tfor _, pp := range p {\n\t\tstr = append(str, platforms.Format(platforms.Normalize(pp)))\n\t}\n\treturn strings.Join(str, \",\")\n}\n"
+      },
+      {
+        "url": "https://github.com/docker/buildx/releases/download/v0.31.1/checksums.txt",
+        "status": 200,
+        "bytes": 6268,
+        "sha256": "5bccbf0bb5099538387af7d809ee06dca6ff280f2238008ce4ab1689c74d0abe",
+        "cumulative_bytes": 1404860,
+        "body": "14879cb0b2aee144156119260bc6649822ef1b648aea1ef0ee5381daa6bbaca0 *buildx-v0.31.1.freebsd-amd64\n1955ce40842a64928b65d79e7a65f29bde9c1009c7f139dd8091a5380d02bbf6 *buildx-v0.31.1.freebsd-amd64.provenance.json\nca986664083d936a6e7b0b924decb1ebab714f0be51cabfebf1100a1184d5f0a *buildx-v0.31.1.freebsd-amd64.sbom.json\n1ed67d3d50ea0d2faa142636ade776c26386ef29dc108883971d51c98ba63032 *buildx-v0.31.1.freebsd-amd64.sigstore.json\na327ed5ae8d21aad20f0087be5775634a893f85740120edce92b40cc9712cbe2 *buildx-v0.31.1.freebsd-arm64\n062a1ef843ceddc2eddcdd6a169f8898df0bd13846e59488f6cb1777d7adceb0 *buildx-v0.31.1.freebsd-arm64.provenance.json\n7c10b1657c35e378da7f2770d8909c8ea186e043c027b7307240fffda468777a *buildx-v0.31.1.freebsd-arm64.sbom.json\n414dd0ce488913a1d9a6aa9d2df5f71a32a305af760d214948bc8c39149b05f3 *buildx-v0.31.1.freebsd-arm64.sigstore.json\ndc8eaffbf29138123b4874d852522b12303c61246a5073fa0f025e4220317b1e *buildx-v0.31.1.linux-amd64\nb325c073f89fc49b5f6d8235fdafa2406d01a70299a020d568002ce6c943e4fe *buildx-v0.31.1.linux-amd64.provenance.json\n681a843b611364b38ef01267aaf6f1a66714b6fa04605d98189d8843755b7884 *buildx-v0.31.1.linux-amd64.sbom.json\n194ec9ff3e78e897d043237e0c96cd689179b236b7fc52098b300fe8d31f3b13 *buildx-v0.31.1.linux-amd64.sigstore.json\n0b661aa682eb421fb497e080b02f58357bc1f1e83744ffc6fb8de2671f330e93 *buildx-v0.31.1.linux-arm-v6\nb171ec4d82b21fdb4dfd676fd7b5d42ac4d62e52d7ae0611af3a1ebe52f85956 *buildx-v0.31.1.linux-arm-v6.provenance.json\ne11958c0ae2eab6cdac4d1f7fb8ffa85a26e4536b167c7b338dfa6a77d4c5a82 *buildx-v0.31.1.linux-arm-v6.sbom.json\ned823cde0035309f490c72bbd1af77468982911b6bb4a107cca9f7f220991a87 *buildx-v0.31.1.linux-arm-v6.sigstore.json\n9a3cd7007611be95608a623b01ce9749b667450bf57f756e112770eeaa3cde8b *buildx-v0.31.1.linux-arm-v7\n964d0e372242040c5b0b164ce75e23e44679a5ee467cab47513a5ec66c9bd971 *buildx-v0.31.1.linux-arm-v7.provenance.json\n623db0e361eb21410207ee1c4ed3d3be6456871ef0a8a2f385138cb259308743 *buildx-v0.31.1.linux-arm-v7.sbom.json\n4f4dd477ee55224e9d9590007a3647f83bf27b29925cdf5f64b8adb23dd85a78 *buildx-v0.31.1.linux-arm-v7.sigstore.json\n963c674c558dad2eefd42304a09020329a196ed16819b72396e7657eb69f031b *buildx-v0.31.1.linux-arm64\na0d8c9c18492c3960e31d20bba83d69ae70ccdbe1b176cbcb4ec4b26ba0683d9 *buildx-v0.31.1.linux-arm64.provenance.json\necd3ab10f4e4243d0ef1ed799275aad9f1c490b57556ff8317925c4fc4529360 *buildx-v0.31.1.linux-arm64.sbom.json\ndd4a88890469146e4463892f6ab915a8889d02da5a5f155ca5e49a8cd8110933 *buildx-v0.31.1.linux-arm64.sigstore.json\n67016c06ceaaf076f852f07f6172f0edc6d71fb6f1436664f9877db68e2ffcfe *buildx-v0.31.1.linux-ppc64le\n4ea4753ef28327c202dd5fb3fdf0052bf38cfd6c825084e9d80a6e05c1d15aee *buildx-v0.31.1.linux-ppc64le.provenance.json\n5aba5a4d8c7b0989e16db06c38fbd2ec4429b4762989eb3ba64a1a06083022a7 *buildx-v0.31.1.linux-ppc64le.sbom.json\n63b9da1824b4e01cd166b089b3b03be5293c8e94d005d8ce34a3bc3f35471716 *buildx-v0.31.1.linux-ppc64le.sigstore.json\n20ad44615fa09af8eccad4014040c0b59d5c83192337be0bd293b2cf732f606f *buildx-v0.31.1.linux-riscv64\nf51dbb2936091e3dbb270f7a2051615e7fc8e674dd1c23c1f37f54564bfc6cb2 *buildx-v0.31.1.linux-riscv64.provenance.json\ndb8425eb37088e3fc9ba0f95cb0f349658034e4334000271636617f9cb9d5f47 *buildx-v0.31.1.linux-riscv64.sbom.json\n9d1ce5cd03042a4d2ed77c58345213087d903620c76dac756d491cca24b90056 *buildx-v0.31.1.linux-riscv64.sigstore.json\n759b12386f3ec701b4255986193d339fad3093033d4786caab04bbdb9cc0d10a *buildx-v0.31.1.linux-s390x\n03f3ebf05bd44867c9c42e106cc17d1556e60b786ce5b8731fbc0c3ab27973f7 *buildx-v0.31.1.linux-s390x.provenance.json\n82a95e745bc26f6eaaebf801883413fa0f011e44b0dd28d55de29e6734a5a0c9 *buildx-v0.31.1.linux-s390x.sbom.json\n5a215d589819364862839ba5549f10a99304cc97e0514ad4ff751af5eee296a5 *buildx-v0.31.1.linux-s390x.sigstore.json\nd07ff05ec8b5281fcf282a854247ce07c81794da15198b3731676b184f2c472d *buildx-v0.31.1.netbsd-amd64\n2c38f654dd25dd8daaaaf705e4bb75c4a7a645c4f8f2a8762b9a31be745e80f1 *buildx-v0.31.1.netbsd-amd64.provenance.json\ned2cf37cd8c87ff0c6100ee484d1faf28c782b60c918e317ee0ca4575c16eb64 *buildx-v0.31.1.netbsd-amd64.sbom.json\n6938b2be354cca4e4eb822dfb910cd5d71d144c25bd6cf80954f38a06f943051 *buildx-v0.31.1.netbsd-amd64.sigstore.json\n2d1171b1c907a10dfc2b971256f2a948c249df16d5714c7e646326b9a5ec7604 *buildx-v0.31.1.netbsd-arm64\nd9532549e038407ab5112d3239085361e7bfe7ba0ea851d03f26e9e8d9f37e6e *buildx-v0.31.1.netbsd-arm64.provenance.json\n1a8b4ed6a8ba6b98ab7712ec49ef7fa1dc16dab8d8b6c7bc7dca062c734771ee *buildx-v0.31.1.netbsd-arm64.sbom.json\n849d45b34d35c7321d1079898a084de69ba4cd0541ee93870142a4ee1d8dc941 *buildx-v0.31.1.netbsd-arm64.sigstore.json\n144a1661f9ad5b710e381100dfe30e44747adfd27f217c3bee38c19e2582bfd7 *buildx-v0.31.1.openbsd-amd64\n1faaa2c988d3c07edcc9c9e6581516f36997da3db2cc6e83df233f8f6260a197 *buildx-v0.31.1.openbsd-amd64.provenance.json\n94ecc433aa1a2f49f908260001863d5ca511ce56c8320bda401d05a4b1f6af64 *buildx-v0.31.1.openbsd-amd64.sbom.json\n6a8ba6bb1e85bc56a60994fdb5f866015263b25a3d868d43a60554c06a7f070a *buildx-v0.31.1.openbsd-amd64.sigstore.json\nafbb1619679a7bfd5d427bb851cd4c0361da07f21aaf73d4724a72c0d62833f7 *buildx-v0.31.1.openbsd-arm64\n2570b23043766f1e530edac8f15d389130e714c5097586c29a32da1a913a6cf5 *buildx-v0.31.1.openbsd-arm64.provenance.json\ne5d067ef1ffe5b82c61830f3fd33d6f5fa6429bd2e3002a04e6745cb5361de09 *buildx-v0.31.1.openbsd-arm64.sbom.json\nf61a76262994c5ad8c7382b4e0a066f186ab430840e578ee4c61ae058b8d02d3 *buildx-v0.31.1.openbsd-arm64.sigstore.json\nb49832d4ac46bde05006f7ad3506b9d5060b60e5c566545d8e10c1a80df08a4a *buildx-v0.31.1.windows-amd64.exe\n2891b649016b21d1b45b62f794224979176cb7269b179c315c5ac87e84dbca1f *buildx-v0.31.1.windows-amd64.provenance.json\n9576b08c446dfd269dba6c4613a78a0c9ac4df19b27291efd3dbbceb3cbd1958 *buildx-v0.31.1.windows-amd64.sbom.json\n302d74d980d0ba7c05f0a90148c19563859fd3e35d4e4a2a7cff4d124b969220 *buildx-v0.31.1.windows-amd64.sigstore.json\n531578169b3bc7fade2305afbbe0f6baf22bbed14cea2cf7f21f3db9dfcd4d15 *buildx-v0.31.1.windows-arm64.exe\n3df7c89c7ff64df6dab96266ec114f1963b7930b61b413946c323e1a9b11b2fc *buildx-v0.31.1.windows-arm64.provenance.json\ne4e16590ca230eb936975174c65c40ebe7d08b694cb86720de1c9e9389d02e4b *buildx-v0.31.1.windows-arm64.sbom.json\n66187fe5ec5885c6fdbed9441148262f3a429ff9c59644c29b34606c07891b96 *buildx-v0.31.1.windows-arm64.sigstore.json\n"
+      },
+      {
+        "url": "https://github.com/moby/buildkit/releases/download/v0.27.0/SHA256SUMS",
+        "status": 404,
+        "bytes": 0,
+        "cumulative_bytes": 1404860
+      },
+      {
+        "url": "https://api.github.com/repos/moby/buildkit/releases/tags/v0.27.0",
+        "status": 200,
+        "bytes": 81609,
+        "sha256": "2fe0f3a1970dd4b78cfe2b489bfff2cecaeb03d1c0f4e5257dcc414f7614acdb",
+        "cumulative_bytes": 1486469,
+        "assets": [
+          {
+            "name": "buildkit-v0.27.0.linux-amd64.provenance.json",
+            "size": 145875,
+            "digest": "sha256:ffe4491cb7d2a19507041cf8ed82538c060aa89390fd7829ce678d8c5d2c80d4",
+            "browser_download_url": "https://github.com/moby/buildkit/releases/download/v0.27.0/buildkit-v0.27.0.linux-amd64.provenance.json"
+          },
+          {
+            "name": "buildkit-v0.27.0.linux-amd64.sbom.json",
+            "size": 685990,
+            "digest": "sha256:65df907889a4b52f963dfb0a8ae63a8f2814f016aaf03de80e84dde02e590a6e",
+            "browser_download_url": "https://github.com/moby/buildkit/releases/download/v0.27.0/buildkit-v0.27.0.linux-amd64.sbom.json"
+          },
+          {
+            "name": "buildkit-v0.27.0.linux-amd64.sigstore.json",
+            "size": 205287,
+            "digest": "sha256:089aa32c409d80b0bb2a6ace03aff192d4c32e9fbb8a9fb0603fffb05da27260",
+            "browser_download_url": "https://github.com/moby/buildkit/releases/download/v0.27.0/buildkit-v0.27.0.linux-amd64.sigstore.json"
+          },
+          {
+            "name": "buildkit-v0.27.0.linux-amd64.tar.gz",
+            "size": 91233311,
+            "digest": "sha256:1100d32a869c85f0b206ed314ad3af35c5c1f6a64c8d99d0452724a0616285fb",
+            "browser_download_url": "https://github.com/moby/buildkit/releases/download/v0.27.0/buildkit-v0.27.0.linux-amd64.tar.gz"
+          }
+        ]
+      },
+      {
+        "url": "https://api.github.com/repos/docker/buildx/releases/tags/v0.31.1",
+        "status": 200,
+        "bytes": 113825,
+        "sha256": "ee3a73e5fa20d278e73e14224564ad22e20b5e9ea7d4e63bc2c46f89e619d9dc",
+        "cumulative_bytes": 1600294,
+        "assets": [
+          {
+            "name": "buildx-v0.31.1.linux-amd64",
+            "size": 89751736,
+            "digest": "sha256:dc8eaffbf29138123b4874d852522b12303c61246a5073fa0f025e4220317b1e",
+            "browser_download_url": "https://github.com/docker/buildx/releases/download/v0.31.1/buildx-v0.31.1.linux-amd64"
+          },
+          {
+            "name": "buildx-v0.31.1.linux-amd64.provenance.json",
+            "size": 54562,
+            "digest": "sha256:b325c073f89fc49b5f6d8235fdafa2406d01a70299a020d568002ce6c943e4fe",
+            "browser_download_url": "https://github.com/docker/buildx/releases/download/v0.31.1/buildx-v0.31.1.linux-amd64.provenance.json"
+          },
+          {
+            "name": "buildx-v0.31.1.linux-amd64.sbom.json",
+            "size": 429193,
+            "digest": "sha256:681a843b611364b38ef01267aaf6f1a66714b6fa04605d98189d8843755b7884",
+            "browser_download_url": "https://github.com/docker/buildx/releases/download/v0.31.1/buildx-v0.31.1.linux-amd64.sbom.json"
+          },
+          {
+            "name": "buildx-v0.31.1.linux-amd64.sigstore.json",
+            "size": 83415,
+            "digest": "sha256:194ec9ff3e78e897d043237e0c96cd689179b236b7fc52098b300fe8d31f3b13",
+            "browser_download_url": "https://github.com/docker/buildx/releases/download/v0.31.1/buildx-v0.31.1.linux-amd64.sigstore.json"
+          },
+          {
+            "name": "checksums.txt",
+            "size": 6268,
+            "digest": "sha256:5bccbf0bb5099538387af7d809ee06dca6ff280f2238008ce4ab1689c74d0abe",
+            "browser_download_url": "https://github.com/docker/buildx/releases/download/v0.31.1/checksums.txt"
+          }
+        ]
+      }
+    ]
+  },
+  "expected_imports": [
+    "ssl",
+    "hashlib",
+    "zlib",
+    "bz2",
+    "lzma",
+    "ctypes",
+    "sqlite3",
+    "readline",
+    "uuid",
+    "torch",
+    "torchvision",
+    "diffusers",
+    "transformers",
+    "accelerate",
+    "safetensors",
+    "sentencepiece",
+    "numpy",
+    "PIL",
+    "google.protobuf",
+    "redis",
+    "mediacenter.worker_runtime"
+  ],
+  "final_image": null,
+  "evidence": {
+    "build": "not_executed",
+    "offline_import": "not_executed",
+    "dynamic_libraries": "not_executed",
+    "cold_warm": "not_executed",
+    "network": "not_measured",
+    "disk_peak": "not_measured"
+  },
+  "unresolved": [
+    "prepared_remote_daemon_identity_and_resources",
+    "real_cold_warm_build_import_and_measurements"
+  ]
+}

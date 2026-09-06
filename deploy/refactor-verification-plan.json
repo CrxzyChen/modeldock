@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "release_scope": "MC-026..MC-044",
+  "candidate_manifest": "docs/project-control/evidence/refactor/mc043-final-candidate-sha256.json",
+  "offline_suites": [
+    {"id":"faults","modules":["tests.test_platform_faults","tests.test_task_state","tests.test_task_outbox","tests.test_worker_journal","tests.test_worker_runtime","tests.test_runtime_controller","tests.test_artifact_commit","tests.test_transport_recovery","tests.test_reconciliation"],"timeout_seconds":900},
+    {"id":"security","modules":["tests.test_container_security","tests.test_redis_acl","tests.test_container_runtime","tests.test_runtime_artifacts","tests.test_runtime_provisioning","tests.test_redis_transport","tests.test_asset_mounts"],"timeout_seconds":900},
+    {"id":"multiserver","modules":["tests.test_multiserver_recovery_ui","tests.test_electron_client","tests.test_generation_ui"],"timeout_seconds":300}
+  ],
+  "model_reports": ["sdxl-base-1.0","illustrious-xl-v2.0","z-image-turbo","qwen-image-2512","realesrgan-x2plus","realesrgan-x4plus","realesrgan-x4plus-anime-6b","wan2.1-t2v-1.3b","minimax-h3-ref2va","ltx-2.3-distilled","wan2.2-i2v-a14b","hunyuanvideo-1.5-720p-t2v","musicgen-small","cosyvoice2-0.5b"],
+  "real_resource_gate": {"status":"unprepared","requires":["server_identity","maintenance_window","gpu_uuids","instance_ids","release_digests","asset_revisions","legal_input_fixtures","task_count","phase_timeouts","total_timeout","disk_limit","ram_limit","vram_limit","download_budget","rollback_actions"],"forbids":["stop_external_process","disconnect_shared_redis","infer_gpu_ownership"]}
+}

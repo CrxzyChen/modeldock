@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "release": "mediacenter-krea2-v1",
+  "cases": [
+    {
+      "model": "krea-2-turbo",
+      "target": "krea2",
+      "operation": "image.generate",
+      "width": 1024,
+      "height": 1024,
+      "steps": 8,
+      "guidance_scale": 0.0,
+      "lora": false
+    }
+  ],
+  "limits": {
+    "timeout_seconds": 900,
+    "max_output_bytes": 134217728,
+    "network": "none"
+  },
+  "resource_gate": "requires an immutable image digest, exact Krea asset identity, one GPU UUID and bounded execution authorization"
+}

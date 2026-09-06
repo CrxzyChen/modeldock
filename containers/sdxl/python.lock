@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "target": {
+    "python": "3.11.15",
+    "os": "linux",
+    "architecture": "x86_64"
+  },
+  "status": "metadata_locked_artifact_unverified",
+  "base_python_lock_sha256": "b47ff9fdc3f32edb2e28f42005aff8596de7894f876263b7cfe62c0f7481a33e",
+  "packages": [
+    {
+      "name": "peft",
+      "version": "0.17.1",
+      "filename": "peft-0.17.1-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/49/fe/a2da1627aa9cb6310b6034598363bd26ac301c4a99d21f415b1b2855891e/peft-0.17.1-py3-none-any.whl",
+      "size": 504896,
+      "sha256": "3d129d64def3d74779c32a080d2567e5f7b674e77d546e3585138216d903f99e",
+      "requires_python": ">=3.9.0",
+      "requires_dist": [
+        "numpy>=1.17",
+        "packaging>=20.0",
+        "psutil",
+        "pyyaml",
+        "torch>=1.13.0",
+        "transformers",
+        "tqdm",
+        "accelerate>=0.21.0",
+        "safetensors",
+        "huggingface_hub>=0.25.0",
+        "black; extra == \"quality\"",
+        "hf-doc-builder; extra == \"quality\"",
+        "ruff~=0.9.2; extra == \"quality\"",
+        "black; extra == \"docs-specific\"",
+        "hf-doc-builder; extra == \"docs-specific\"",
+        "black; extra == \"dev\"",
+        "hf-doc-builder; extra == \"dev\"",
+        "ruff~=0.9.2; extra == \"dev\"",
+        "black; extra == \"dev\"",
+        "hf-doc-builder; extra == \"dev\"",
+        "black; extra == \"test\"",
+        "hf-doc-builder; extra == \"test\"",
+        "ruff~=0.9.2; extra == \"test\"",
+        "black; extra == \"test\"",
+        "hf-doc-builder; extra == \"test\"",
+        "pytest; extra == \"test\"",
+        "pytest-cov; extra == \"test\"",
+        "pytest-xdist; extra == \"test\"",
+        "parameterized; extra == \"test\"",
+        "datasets; extra == \"test\"",
+        "diffusers; extra == \"test\"",
+        "scipy; extra == \"test\"",
+        "protobuf; extra == \"test\"",
+        "sentencepiece; extra == \"test\""
+      ],
+      "metadata_sha256": "4481a2b864803aca67d1af15a42a575b4b61f06488f007add0add4f93ae1d629",
+      "metadata_scope": "official-exact-wheel-metadata"
+    }
+  ]
+}

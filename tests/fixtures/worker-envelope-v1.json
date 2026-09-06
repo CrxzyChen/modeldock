@@ -1,0 +1,546 @@
+{
+  "protocol": "mc.worker/1",
+  "messages": [
+    {
+      "name": "receipt.worker",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-registered-receipt",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:01Z",
+        "type": "event.receipt",
+        "expires_at": "2026-08-31T12:02:00Z",
+        "payload": {
+          "subject": "worker",
+          "event_message_id": "msg-9",
+          "event_seq": 1
+        }
+      }
+    },
+    {
+      "name": "execute.image",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-1",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "task.execute",
+        "task_id": "task-1",
+        "attempt_id": "attempt-1",
+        "expires_at": "2026-08-31T12:02:00Z",
+        "payload": {
+          "model_key": "sdxl-base-1.0",
+          "recipe_revision": "recipe-r1",
+          "model_asset_id": "asset-sdxl",
+          "model_asset_revision": "weights-r1",
+          "reservation_id": "reservation-1",
+          "reservation_generation": 1,
+          "operation": "image.generate",
+          "parameters": {
+            "prompt": "A mountain lake; a sign says API Key, https://example.com and /tmp are text.",
+            "width": 1024,
+            "height": 1024,
+            "seed": 42,
+            "steps": 25
+          },
+          "inputs": [],
+          "loras": []
+        }
+      }
+    },
+    {
+      "name": "execute.reference",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-2",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "task.execute",
+        "task_id": "task-1",
+        "attempt_id": "attempt-1",
+        "expires_at": "2026-08-31T12:02:00Z",
+        "payload": {
+          "model_key": "wan2.2-i2v-a14b",
+          "recipe_revision": "recipe-r1",
+          "model_asset_id": "asset-sdxl",
+          "model_asset_revision": "weights-r1",
+          "reservation_id": "reservation-1",
+          "reservation_generation": 1,
+          "operation": "video.generate",
+          "parameters": {
+            "prompt": "The subject gently turns towards the camera."
+          },
+          "inputs": [
+            {
+              "asset_id": "asset-frame",
+              "revision": "r1",
+              "media_type": "image/png"
+            }
+          ],
+          "loras": []
+        }
+      }
+    },
+    {
+      "name": "load",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-3",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "model.load",
+        "expires_at": "2026-08-31T12:02:00Z",
+        "payload": {
+          "model_key": "sdxl-base-1.0",
+          "recipe_revision": "recipe-r1",
+          "model_asset_id": "asset-sdxl",
+          "model_asset_revision": "weights-r1",
+          "reservation_id": "reservation-1",
+          "reservation_generation": 1,
+          "operation_id": "operation-1",
+          "desired_revision": 1,
+          "residency": "resident"
+        }
+      }
+    },
+    {
+      "name": "unload",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-4",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "model.unload",
+        "expires_at": "2026-08-31T12:02:00Z",
+        "payload": {
+          "operation_id": "operation-1",
+          "desired_revision": 1
+        }
+      }
+    },
+    {
+      "name": "cancel",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-5",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "task.cancel",
+        "task_id": "task-1",
+        "attempt_id": "attempt-1",
+        "expires_at": "2026-08-31T12:02:00Z",
+        "payload": {
+          "cancel_revision": 1
+        }
+      }
+    },
+    {
+      "name": "snapshot.request",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-6",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "worker.snapshot.request",
+        "expires_at": "2026-08-31T12:02:00Z",
+        "payload": {
+          "operation_id": "operation-1",
+          "desired_revision": 1
+        }
+      }
+    },
+    {
+      "name": "receipt.task",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-7",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "event.receipt",
+        "expires_at": "2026-08-31T12:02:00Z",
+        "payload": {
+          "subject": "task",
+          "task_id": "task-1",
+          "attempt_id": "attempt-1",
+          "event_message_id": "msg-terminal",
+          "event_seq": 3
+        }
+      }
+    },
+    {
+      "name": "receipt.operation",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-8",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "event.receipt",
+        "expires_at": "2026-08-31T12:02:00Z",
+        "payload": {
+          "subject": "operation",
+          "operation_id": "operation-1",
+          "desired_revision": 1,
+          "event_message_id": "msg-model-terminal",
+          "event_seq": 3
+        }
+      }
+    },
+    {
+      "name": "registered",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-9",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "worker.registered",
+        "event_seq": 1,
+        "payload": {
+          "model_key": "sdxl-base-1.0",
+          "recipe_revision": "recipe-r1",
+          "image_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "capability_digest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "gpu_uuids": [
+            "GPU-abc-123"
+          ]
+        }
+      }
+    },
+    {
+      "name": "accepted.task",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-10",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "task.accepted",
+        "task_id": "task-1",
+        "attempt_id": "attempt-1",
+        "event_seq": 1,
+        "payload": {
+          "reservation_id": "reservation-1",
+          "reservation_generation": 1
+        }
+      }
+    },
+    {
+      "name": "phase.task",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-11",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "phase.changed",
+        "task_id": "task-1",
+        "attempt_id": "attempt-1",
+        "event_seq": 1,
+        "payload": {
+          "phase": "generating"
+        }
+      }
+    },
+    {
+      "name": "phase.operation",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-12",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "phase.changed",
+        "event_seq": 1,
+        "payload": {
+          "operation_id": "operation-1",
+          "desired_revision": 1,
+          "phase": "loading"
+        }
+      }
+    },
+    {
+      "name": "terminal.succeeded",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-13",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "task.terminal",
+        "task_id": "task-1",
+        "attempt_id": "attempt-1",
+        "event_seq": 1,
+        "payload": {
+          "status": "succeeded",
+          "error_code": null,
+          "manifest": {
+            "asset_id": "artifact-1",
+            "revision": "r1",
+            "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        }
+      }
+    },
+    {
+      "name": "terminal.failed",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-14",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "task.terminal",
+        "task_id": "task-1",
+        "attempt_id": "attempt-1",
+        "event_seq": 1,
+        "payload": {
+          "status": "failed",
+          "error_code": "worker_failed",
+          "manifest": null
+        }
+      }
+    },
+    {
+      "name": "terminal.canceled",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-15",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "task.terminal",
+        "task_id": "task-1",
+        "attempt_id": "attempt-1",
+        "event_seq": 1,
+        "payload": {
+          "status": "canceled",
+          "error_code": "worker_canceled",
+          "manifest": null
+        }
+      }
+    },
+    {
+      "name": "terminal.interrupted",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-16",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "task.terminal",
+        "task_id": "task-1",
+        "attempt_id": "attempt-1",
+        "event_seq": 1,
+        "payload": {
+          "status": "interrupted",
+          "error_code": "worker_interrupted",
+          "manifest": null
+        }
+      }
+    },
+    {
+      "name": "accepted.load",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-17",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "model.accepted",
+        "event_seq": 1,
+        "payload": {
+          "operation_id": "operation-1",
+          "desired_revision": 1,
+          "action": "load",
+          "reservation_id": "reservation-1",
+          "reservation_generation": 1
+        }
+      }
+    },
+    {
+      "name": "terminal.load",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-18",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "model.terminal",
+        "event_seq": 1,
+        "payload": {
+          "operation_id": "operation-1",
+          "desired_revision": 1,
+          "action": "load",
+          "reservation_id": "reservation-1",
+          "reservation_generation": 1,
+          "status": "succeeded",
+          "error_code": null
+        }
+      }
+    },
+    {
+      "name": "accepted.unload",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-19",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "model.accepted",
+        "event_seq": 1,
+        "payload": {
+          "operation_id": "operation-1",
+          "desired_revision": 1,
+          "action": "unload"
+        }
+      }
+    },
+    {
+      "name": "terminal.unload",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-20",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "model.terminal",
+        "event_seq": 1,
+        "payload": {
+          "operation_id": "operation-1",
+          "desired_revision": 1,
+          "action": "unload",
+          "status": "succeeded",
+          "error_code": null
+        }
+      }
+    },
+    {
+      "name": "snapshot",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-21",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "worker.snapshot",
+        "event_seq": 1,
+        "payload": {
+          "operation_id": "operation-1",
+          "desired_revision": 1,
+          "state": "ready",
+          "tasks": [
+            {
+              "task_id": "task-1",
+              "attempt_id": "attempt-1",
+              "worker_epoch": "epoch-old",
+              "state": "succeeded",
+              "event_seq": 3
+            }
+          ],
+          "operations": [
+            {
+              "operation_id": "operation-1",
+              "desired_revision": 1,
+              "worker_epoch": "epoch-1",
+              "state": "succeeded",
+              "event_seq": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "heartbeat",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-22",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "telemetry.heartbeat",
+        "telemetry_seq": 1,
+        "payload": {
+          "state": "busy",
+          "uptime_seconds": 120
+        }
+      }
+    },
+    {
+      "name": "progress",
+      "envelope": {
+        "protocol": "mc.worker/1",
+        "message_id": "msg-23",
+        "server_id": "server-1",
+        "instance_id": "instance-1",
+        "worker_epoch": "epoch-1",
+        "correlation_id": "request-1",
+        "created_at": "2026-08-31T12:00:00Z",
+        "type": "telemetry.progress",
+        "task_id": "task-1",
+        "attempt_id": "attempt-1",
+        "progress_seq": 1,
+        "payload": {
+          "phase": "generating",
+          "completed": 10,
+          "total": 25,
+          "unit": "steps"
+        }
+      }
+    }
+  ]
+}

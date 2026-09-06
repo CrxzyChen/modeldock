@@ -1,0 +1,19 @@
+[Unit]
+Description=MediaCenter independent model kernel
+Requires=mediacenter-redis.service
+After=network-online.target mediacenter-redis.service
+
+[Service]
+Type=simple
+WorkingDirectory=@MEDIACENTER_DATA_ROOT@/current
+EnvironmentFile=@MEDIACENTER_DATA_ROOT@/config/mediacenter.env
+ExecStart=@MEDIACENTER_CONTROL_PYTHON@ -B -m mediacenter.server
+Restart=on-failure
+RestartSec=5
+Delegate=yes
+NoNewPrivileges=true
+ProtectControlGroups=false
+UMask=0077
+
+[Install]
+WantedBy=default.target

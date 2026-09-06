@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "target": {"python":"3.11.15","os":"linux","architecture":"x86_64"},
+  "status": "metadata_locked_artifacts_unverified",
+  "base_python_lock_sha256": "b47ff9fdc3f32edb2e28f42005aff8596de7894f876263b7cfe62c0f7481a33e",
+  "packages": [
+    {"name":"ftfy","version":"6.3.1","filename":"ftfy-6.3.1-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/ab/6e/81d47999aebc1b155f81eca4477a616a70f238a2549848c38983f3c22a82/ftfy-6.3.1-py3-none-any.whl","size":44821,"sha256":"7c70eb532015cd2f9adb53f101fb6c7945988d023a085d127d1573dc49dd0083"},
+    {"name":"imageio","version":"2.37.4","filename":"imageio-2.37.4-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/3e/2d/ca050652104bab2cf55e569db2a178b1b61cb041fef28307f2db383f6d9f/imageio-2.37.4-py3-none-any.whl","size":318000,"sha256":"1ab2e22c8debf700f24c3ac43e8f95f3b3a8110c83b93411e97b4b0b2cd1c7e6"},
+    {"name":"imageio-ffmpeg","version":"0.6.0","filename":"imageio_ffmpeg-0.6.0-py3-none-manylinux2014_x86_64.whl","url":"https://files.pythonhosted.org/packages/a0/2d/43c8522a2038e9d0e7dbdf3a61195ecc31ca576fb1527a528c877e87d973/imageio_ffmpeg-0.6.0-py3-none-manylinux2014_x86_64.whl","size":29498237,"sha256":"c7e46fcec401dd990405049d2e2f475e2b397779df2519b544b8aab515195282"},
+    {"name":"wcwidth","version":"0.2.13","filename":"wcwidth-0.2.13-py2.py3-none-any.whl","url":"https://files.pythonhosted.org/packages/fd/84/fd2ba7aafacbad3c4201d395674fc6348826569da3c0937e75505ead3528/wcwidth-0.2.13-py2.py3-none-any.whl","size":34166,"sha256":"3da69048e4540d84af32131829ff948f1e022c1c6bdb8d6102117aac784f6859"}
+  ]
+}

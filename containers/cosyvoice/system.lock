@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "target": {"os":"linux","architecture":"x86_64","glibc":"2.35"},
+  "status": "base_closure_reused_no_system_delta",
+  "parent": "mediacenter-runtime-v0",
+  "packages": []
+}

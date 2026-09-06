@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mediacenter.local/schema/release-1.json",
+  "title": "MediaCenter cross-platform release manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "product", "version", "release_id", "created_at",
+    "source_snapshot", "toolchain", "artifacts", "security", "verification"
+  ],
+  "properties": {
+    "schema": {"const": "mc.release/1"},
+    "product": {"const": "MediaCenter"},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "release_id": {"type": "string", "pattern": "^mediacenter-[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "source_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "git_repository", "digest", "files"],
+      "properties": {
+        "kind": {"const": "filesystem_sha256"},
+        "git_repository": {"type": "boolean"},
+        "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "files": {"type": "array", "minItems": 1}
+      }
+    },
+    "toolchain": {"type": "object"},
+    "artifacts": {"type": "array", "minItems": 2, "maxItems": 2},
+    "security": {"type": "object"},
+    "verification": {"type": "object"}
+  }
+}

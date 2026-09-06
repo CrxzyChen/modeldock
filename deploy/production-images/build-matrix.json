@@ -1,0 +1,35 @@
+{
+  "schema": "mc.production-image-build-matrix/1",
+  "platform": "linux/amd64",
+  "base_repository": "ubuntu",
+  "base_tag": "24.04",
+  "images": [
+    {"id":"runtime-v1","group":"foundation","context":"runtime-v1","dockerfile":"Dockerfile","archive":"runtime-v1.oci.tar","build_args":{}},
+    {"id":"runtime-v0","group":"foundation","context":"runtime-v0","dockerfile":"Dockerfile","archive":"runtime-v0.oci.tar","build_args":{}},
+    {"id":"sdxl-base-1.0","group":"sdxl","context":"image","dockerfile":"Dockerfile.sdxl","archive":"sdxl-base-1.0.oci.tar","build_args":{}},
+    {"id":"illustrious-xl-v2.0","group":"image-models","context":"image","dockerfile":"Dockerfile.image-worker","archive":"illustrious-xl-v2.0.oci.tar","build_args":{"VALIDATE_MODULE":"mediacenter.adapters.illustrious"}},
+    {"id":"z-image-turbo","group":"image-models","context":"zimage","dockerfile":"Dockerfile","archive":"z-image-turbo.oci.tar","build_args":{"VALIDATE_MODULE":"mediacenter.adapters.zimage"}},
+    {"id":"qwen-image-2512","group":"image-models","context":"qwen-image","dockerfile":"Dockerfile","archive":"qwen-image-2512.oci.tar","build_args":{"VALIDATE_MODULE":"mediacenter.adapters.qwen_image"}},
+    {"id":"realesrgan","group":"image-models","context":"realesrgan","dockerfile":"Dockerfile","archive":"realesrgan.oci.tar","build_args":{"VALIDATE_MODULE":"mediacenter.adapters.realesrgan"}},
+    {"id":"wan2.1-t2v-1.3b","group":"wan21","context":"runtime-v1","dockerfile":"Dockerfile.video-worker","archive":"wan2.1-t2v-1.3b.oci.tar","build_args":{"VALIDATE_MODULES":"mediacenter.adapters.wan21"}},
+    {"id":"video-models","group":"video-models","context":"h3","dockerfile":"Dockerfile","archive":"video-models.oci.tar","build_args":{"VALIDATE_MODULES":"mediacenter.adapters.h3,mediacenter.adapters.ltx,mediacenter.adapters.wan22,mediacenter.adapters.hunyuan15"}},
+    {"id":"musicgen-small","group":"musicgen","context":"music","dockerfile":"Dockerfile","archive":"musicgen-small.oci.tar","build_args":{"VALIDATE_MODULE":"mediacenter.adapters.musicgen"}},
+    {"id":"cosyvoice2-0.5b","group":"cosyvoice","context":"runtime-v0","dockerfile":"Dockerfile.cosyvoice","archive":"cosyvoice2-0.5b.oci.tar","build_args":{}}
+  ],
+  "model_bindings": {
+    "sdxl-base-1.0":"sdxl-base-1.0",
+    "illustrious-xl-v2.0":"illustrious-xl-v2.0",
+    "z-image-turbo":"z-image-turbo",
+    "qwen-image-2512":"qwen-image-2512",
+    "realesrgan-x2plus":"realesrgan",
+    "realesrgan-x4plus":"realesrgan",
+    "realesrgan-x4plus-anime-6b":"realesrgan",
+    "wan2.1-t2v-1.3b":"wan2.1-t2v-1.3b",
+    "minimax-h3-ref2va":"video-models",
+    "ltx-2.3-distilled":"video-models",
+    "wan2.2-i2v-a14b":"video-models",
+    "hunyuanvideo-1.5-720p-t2v":"video-models",
+    "musicgen-small":"musicgen-small",
+    "cosyvoice2-0.5b":"cosyvoice2-0.5b"
+  }
+}

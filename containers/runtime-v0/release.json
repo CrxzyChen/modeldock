@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "runtime": "mediacenter-runtime-v0",
+  "platform": "linux/amd64",
+  "status": "inventory_locked_build_not_ready_artifacts_unverified",
+  "compatibility_epoch": "python3.10-cuda12.1",
+  "network": "none",
+  "inputs": {
+    "python.lock": "4480ba6182fc4e901821cfc5d5fda89d1c0f9b5a5dad335f0bb23e6238b454e1",
+    "system.lock": "6f567f51e63d31503ff62f0e14b37bdee9fda7542021dc96d53c1c6f68be04cc",
+    "requirements.txt": "38738df5b8365e0c8cce6493832fdf6d8af533dbb774ca6070a8afbc17856fe6",
+    "Dockerfile": "d75a2d1fb821f3c72024d4167d08f8b95c1fb9671b3d58c1ab92cf51a735d1b5"
+  },
+  "sdk": [
+    {
+      "path": "mediacenter/__init__.py",
+      "size": 82,
+      "sha256": "b7f29a2674f783c8a2fa48c0d1a2c7c1ad032738bc45d6af0823961047e10975"
+    },
+    {
+      "path": "mediacenter/domain.py",
+      "size": 989,
+      "sha256": "442d135b9842f4626e1075c2ef15f807f943b5e644c9b3d97ef92d3b9c5e93c8"
+    },
+    {
+      "path": "mediacenter/capabilities.py",
+      "size": 35017,
+      "sha256": "e483bf76714c6bcf80e418a988c8f2276da7bc05a69d1ed2522d83432bcef9d3"
+    },
+    {
+      "path": "mediacenter/protocol.py",
+      "size": 18749,
+      "sha256": "0442953edcbc23ec4ca95024866d25907e2502cdf1ae93d07410d2be7900bed2"
+    },
+    {
+      "path": "mediacenter/worker_common.py",
+      "size": 860,
+      "sha256": "8511e24226b0cd6f79299034e81123bea291d9ea3ebfb54504815a5375f0ba5e"
+    },
+    {
+      "path": "mediacenter/transport.py",
+      "size": 9046,
+      "sha256": "6c3727877a24fab1edcce68887754d64b4bafa4bac36eb415d6f2db5703857f0"
+    },
+    {
+      "path": "mediacenter/redis_transport.py",
+      "size": 26573,
+      "sha256": "569d2de519e2e10aa6bbec5a8dbc5afc339b3b259ddb6f28a0c052291f69d8f6"
+    },
+    {
+      "path": "mediacenter/adapter.py",
+      "size": 1885,
+      "sha256": "7e23ee728075a22d71c9a93ccf3fe66741d1f62ca4adc5e916c6805c7e3c6675"
+    },
+    {
+      "path": "mediacenter/worker_journal.py",
+      "size": 38273,
+      "sha256": "64d65b79764484afcd2216d479ef604c0f83375bf19e7fdbbd81d7196366777b"
+    },
+    {
+      "path": "mediacenter/worker_runtime.py",
+      "size": 23173,
+      "sha256": "0e30fb5113188fb4e8720f15173b45eb4b03e6e0bddeda7d3f169804754f4b2d"
+    }
+  ],
+  "expected_imports": [
+    "torch",
+    "torchaudio",
+    "diffusers",
+    "transformers",
+    "onnx",
+    "onnxruntime",
+    "numpy",
+    "soundfile",
+    "redis",
+    "mediacenter.worker_runtime"
+  ],
+  "final_image": null,
+  "evidence": {
+    "build": "not_executed",
+    "offline_import": "not_executed",
+    "dynamic_libraries": "not_executed",
+    "cold_warm": "not_executed"
+  },
+  "unresolved": [
+    "exact_linux_wheel_url_size_sha256_and_elf_closure",
+    "prepared_build_daemon_and_resources",
+    "real_build_import_and_measurements"
+  ]
+}

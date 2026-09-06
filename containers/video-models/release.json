@@ -1,0 +1,122 @@
+{
+  "schema": 1,
+  "release": "mediacenter-video-models-v1",
+  "platform": "linux/amd64",
+  "status": "source_locked_build_not_executed",
+  "parent": "mediacenter-runtime-v1",
+  "parent_release_sha256": "3d82fe1792cd8bb01197fe3dd1a83a1fb8e3e872322643eb5b568a24e0e7f48c",
+  "network": "none",
+  "entrypoint": [
+    "/opt/python/bin/python3.11",
+    "-B",
+    "-u",
+    "-m",
+    "mediacenter.video_worker_cli"
+  ],
+  "targets": {
+    "h3": {
+      "model": "minimax-h3-ref2va",
+      "adapter": "mediacenter.adapters.h3:H3Adapter",
+      "gpus": {
+        "min": 2,
+        "max": 2
+      },
+      "inputs": [
+        "image/*",
+        "video/*",
+        "audio/*"
+      ],
+      "output": "video/mp4+audio"
+    },
+    "ltx": {
+      "model": "ltx-2.3-distilled",
+      "adapter": "mediacenter.adapters.ltx:LTXAdapter",
+      "gpus": {
+        "min": 1,
+        "max": 2
+      },
+      "inputs": [],
+      "output": "video/mp4+audio"
+    },
+    "wan22": {
+      "model": "wan2.2-i2v-a14b",
+      "adapter": "mediacenter.adapters.wan22:Wan22Adapter",
+      "gpus": {
+        "min": 1,
+        "max": 2
+      },
+      "inputs": [
+        "image/*"
+      ],
+      "output": "video/mp4"
+    },
+    "hunyuan15": {
+      "model": "hunyuanvideo-1.5-720p-t2v",
+      "adapter": "mediacenter.adapters.hunyuan15:Hunyuan15Adapter",
+      "gpus": {
+        "min": 1,
+        "max": 2
+      },
+      "inputs": [],
+      "output": "video/mp4"
+    }
+  },
+  "inputs": {
+    "python.lock": "e6e3f808eaeb54c1903649144a683c698cab8a8c4128924437b270d432605872",
+    "system.lock": "498400d5141e0f094272d5cb4bd5963ddac6c3f3edfce03565ab1b78ba316f52",
+    "requirements.txt": "f16d2b9131baaa53d688c7427019c8dc1d84b996c4651b8cdbfcc17c128f9b6b",
+    "Dockerfile": "137075539c2c2ab5dac0715fa33006d5c2054b6b590a254cb5ce466d13804bca"
+  },
+  "sdk": [
+    {
+      "path": "mediacenter/capabilities.py",
+      "size": 35017,
+      "sha256": "e483bf76714c6bcf80e418a988c8f2276da7bc05a69d1ed2522d83432bcef9d3"
+    },
+    {
+      "path": "mediacenter/artifacts.py",
+      "size": 40192,
+      "sha256": "cd83a292ff9c56dd3e98d942f0df59e43e37c38014ff884c58e902b73326fddb"
+    },
+    {
+      "path": "mediacenter/adapters/video.py",
+      "size": 10977,
+      "sha256": "cadb0258556c908778a8b6a59f2ed03919d6493264b16dece8ceefbbe031e2e3"
+    },
+    {
+      "path": "mediacenter/adapters/h3.py",
+      "size": 3727,
+      "sha256": "5124c6dbd51acd4801bbeb37c9cf94865def087e9ffea691df75efefae4a24fb"
+    },
+    {
+      "path": "mediacenter/adapters/ltx.py",
+      "size": 1818,
+      "sha256": "071863cd91e61221faa874fb0717a269e71bffde7ea6c6289380954fc8de5e13"
+    },
+    {
+      "path": "mediacenter/adapters/wan22.py",
+      "size": 1694,
+      "sha256": "01a7c84b1ca49a86cb1fa08060fb9f779caf51b9a620b7fa788410009c392b09"
+    },
+    {
+      "path": "mediacenter/adapters/hunyuan15.py",
+      "size": 1357,
+      "sha256": "09438407d806652b0b8c8f2731ddc5f06c0063265c855d62abf9a81b6eedf4f9"
+    },
+    {
+      "path": "mediacenter/video_worker_cli.py",
+      "size": 6279,
+      "sha256": "66d40ca56bc1d4d65cd30d2816f544d13b91c517b32210a71b2097b1ac8673d0"
+    }
+  ],
+  "image_digest": null,
+  "evidence": {
+    "offline_build": "not_executed",
+    "gpu_load": "not_executed",
+    "cold_warm": "not_executed",
+    "h3_real_generation": "not_executed",
+    "ltx_real_generation": "not_executed",
+    "wan22_real_generation": "not_executed",
+    "hunyuan15_real_generation": "not_executed"
+  }
+}

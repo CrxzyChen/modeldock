@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "target": {"os":"linux","architecture":"x86_64","glibc":"2.35"},
+  "status": "base_closure_reused_no_system_delta",
+  "base_system_lock_sha256": "b41d6aa6a5f620a52efe06aea1caff5544757b8ad4b4b01927d46d854a13ff02",
+  "packages": []
+}

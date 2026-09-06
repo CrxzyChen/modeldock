@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "release": "mediacenter-image-models-v1",
+  "platform": "linux/amd64",
+  "status": "source_locked_build_not_executed",
+  "parent": "mediacenter-runtime-v1 verified OCI manifest",
+  "network": "none",
+  "entrypoint": ["/opt/python/bin/python3.11", "-B", "-u", "-m", "mediacenter.image_worker_cli"],
+  "targets": {
+    "sdxl": {
+      "models": ["illustrious-xl-v2.0"],
+      "adapter": "mediacenter.adapters.illustrious:IllustriousAdapter",
+      "dependency_profile": "torch2.7.1-diffusers0.35.1-transformers4.51.3-peft0.17.1"
+    },
+    "zimage": {
+      "models": ["z-image-turbo"],
+      "adapter": "mediacenter.adapters.zimage:ZImageAdapter",
+      "dependency_profile": "torch2.7.1-diffusers0.39.0-transformers4.51.3"
+    },
+    "qwen": {
+      "models": ["qwen-image-2512"],
+      "adapter": "mediacenter.adapters.qwen_image:QwenImageAdapter",
+      "dependency_profile": "torch2.7.1-diffusers0.39.0-transformers4.57.1"
+    },
+    "upscale": {
+      "models": ["realesrgan-x2plus", "realesrgan-x4plus", "realesrgan-x4plus-anime-6b"],
+      "adapter": "mediacenter.adapters.realesrgan:RealESRGANAdapter",
+      "dependency_profile": "runtime-v1-torch2.7.1-numpy2.2.6-pillow11.3.0"
+    }
+  },
+  "image_digests": {"sdxl": null, "zimage": null, "qwen": null, "upscale": null},
+  "evidence": {
+    "offline_build": "not_executed",
+    "gpu_load": "not_executed",
+    "cold_warm": "not_executed",
+    "real_generation": "not_executed"
+  }
+}

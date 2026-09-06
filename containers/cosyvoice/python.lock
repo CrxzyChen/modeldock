@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "target": {"python":"3.10.20","os":"linux","architecture":"x86_64","glibc":"2.35"},
+  "status": "base_closure_reused_no_python_delta",
+  "parent": "mediacenter-runtime-v0",
+  "packages": [],
+  "closure": {"base_reused":["torch","torchaudio","onnx","onnxruntime-gpu","numpy","soundfile","redis"]}
+}

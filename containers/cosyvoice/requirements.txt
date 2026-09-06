@@ -1,0 +1,1 @@
+# No derivative Python delta. CosyVoice uses the immutable Runtime-v0 closure.

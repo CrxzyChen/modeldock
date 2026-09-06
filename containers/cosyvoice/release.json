@@ -1,0 +1,88 @@
+{
+  "schema": 1,
+  "release": "mediacenter-cosyvoice-v1",
+  "platform": "linux/amd64",
+  "status": "source_locked_build_not_executed",
+  "parent": "mediacenter-runtime-v0",
+  "parent_release_sha256": "f32f519258be40f4f4e24e249300d828d128c86574b22642644d20cf4ca64532",
+  "network": "none",
+  "entrypoint": [
+    "/opt/python/bin/python3.10",
+    "-B",
+    "-u",
+    "-m",
+    "mediacenter.audio_worker_cli"
+  ],
+  "target": {
+    "model": "cosyvoice2-0.5b",
+    "adapter": "mediacenter.adapters.cosyvoice:CosyVoiceAdapter",
+    "gpus": {
+      "min": 1,
+      "max": 1
+    },
+    "inputs": [],
+    "output": "audio/wav;codec=pcm_s16le"
+  },
+  "sources": [
+    {
+      "repository": "FunAudioLLM/CosyVoice",
+      "revision": "074ca6dc9e80a2f424f1f74b48bdd7d3fea531cc",
+      "mount": "/opt/cosyvoice"
+    },
+    {
+      "repository": "shivammehta25/Matcha-TTS",
+      "revision": "dd9105b34bf2be2230f4aa1e4769fb586a3c824e",
+      "mount": "/opt/cosyvoice/third_party/Matcha-TTS"
+    }
+  ],
+  "reference": {
+    "path": "/opt/cosyvoice/asset/zero_shot_prompt.wav",
+    "size": 334138,
+    "sha256": "c7b31d6dbe7cc6a716dded00550db5b50940bf209e424e4ad207b12e657c8ff6"
+  },
+  "license": {
+    "spdx": "Apache-2.0",
+    "commercial_use": true
+  },
+  "inputs": {
+    "python.lock": "8525a872b7298f3ae80008a4cd5a9168ff5648851dd2e9ed246fa2f81284b547",
+    "system.lock": "16c246e90540e1afc00c5f4dd3186fb8660ffd9ceada0a5be57091b5ef4ec3cd",
+    "requirements.txt": "2988f80ce0cb0ecb0472bc9936fc2357be5f7c3dd72c3528e7fa2828f2c1674f",
+    "Dockerfile": "1d817a29800145046b49c5e00cae62fcbf28651372e8ce8bbea0cf63ae546cf2"
+  },
+  "sdk": [
+    {
+      "path": "mediacenter/capabilities.py",
+      "size": 35017,
+      "sha256": "e483bf76714c6bcf80e418a988c8f2276da7bc05a69d1ed2522d83432bcef9d3"
+    },
+    {
+      "path": "mediacenter/artifacts.py",
+      "size": 40192,
+      "sha256": "cd83a292ff9c56dd3e98d942f0df59e43e37c38014ff884c58e902b73326fddb"
+    },
+    {
+      "path": "mediacenter/adapters/audio.py",
+      "size": 5535,
+      "sha256": "5423d44c003884f73cbb5a9bac18a1c377e99e0956836e78178d467b6913f6ca"
+    },
+    {
+      "path": "mediacenter/adapters/cosyvoice.py",
+      "size": 7384,
+      "sha256": "ef62a9b6713afdb506e426c4e2d46b2214185851e8a13172dbb404ef113f2597"
+    },
+    {
+      "path": "mediacenter/audio_worker_cli.py",
+      "size": 5540,
+      "sha256": "4dffca4e4ad59b103a6d863cfa3cca4c83067b1fe1c695f35215433734c84279"
+    }
+  ],
+  "image_digest": null,
+  "evidence": {
+    "offline_build": "not_executed",
+    "gpu_load": "not_executed",
+    "cold_warm": "not_executed",
+    "real_generation": "not_executed",
+    "audio_quality": "not_executed"
+  }
+}

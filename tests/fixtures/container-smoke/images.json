@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "release": "mediacenter-image-models-v1",
+  "cases": [
+    {"model":"illustrious-xl-v2.0","target":"sdxl","operation":"image.generate","width":1024,"height":1024,"lora":true},
+    {"model":"z-image-turbo","target":"zimage","operation":"image.generate","width":1024,"height":1024,"lora":false},
+    {"model":"qwen-image-2512","target":"qwen","operation":"image.generate","width":1328,"height":1328,"lora":false},
+    {"model":"realesrgan-x2plus","target":"upscale","operation":"image.upscale","input":[64,48],"output":[128,96],"lora":false},
+    {"model":"realesrgan-x4plus","target":"upscale","operation":"image.upscale","input":[64,48],"output":[256,192],"lora":false},
+    {"model":"realesrgan-x4plus-anime-6b","target":"upscale","operation":"image.upscale","input":[64,48],"output":[256,192],"lora":false}
+  ],
+  "limits": {"timeout_seconds":900,"max_output_bytes":134217728,"network":"none"},
+  "resource_gate": "requires explicit immutable image digests, model asset identities, GPU UUIDs and bounded execution authorization"
+}

@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "run_id": null,
+  "server_url": null,
+  "instance_id": "cosyvoice2-0.5b",
+  "binding_digest": null,
+  "image_digest": null,
+  "release_digest": null,
+  "gpu_uuids": [],
+  "installation_id": null,
+  "installation_mode": "existing_asset_acceptance",
+  "task": {"service":"speech","model":"cosyvoice2-0.5b","prompt":"你好，欢迎使用 MediaCenter。","options":{"speed":1.0},"inputs":[]},
+  "lora_a": null,
+  "lora_b": null,
+  "timeout_seconds": 900,
+  "max_response_bytes": 268435456,
+  "max_total_bytes": 536870912
+}

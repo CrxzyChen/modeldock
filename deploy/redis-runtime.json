@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "redis_version": "7.2.16",
+  "resources": {
+    "maxmemory_bytes": 2147483648,
+    "container_memory_bytes": 4294967296,
+    "container_memory_swap_bytes": 4294967296,
+    "pids_limit": 128
+  },
+  "image": {
+    "repository": "docker.io/library/redis",
+    "tag": "7.2.16",
+    "index_digest": "sha256:74566c6910d13ae61e7ce73ebd3127438a1fe805b309b097c323142719ec8a5b",
+    "platform": "linux/amd64",
+    "manifest_digest": "sha256:e17e3a1993da428251cbd88dbdb3de8c8d4007f840d7350eb17a2d8695fa705f",
+    "config_digest": "sha256:82d6cb5ce52178d45aaa066f657b784548355c5a1377445221d451a763956490",
+    "verification": "manifest metadata only; image blobs not downloaded or executed"
+  },
+  "redis_source_license": {
+    "spdx": "BSD-3-Clause",
+    "url": "https://raw.githubusercontent.com/redis/redis/7.2.16/COPYING",
+    "sha256": "97f0a15b7bbae580d2609dad2e11f1956ae167be296ab60f4691ab9c30ee9828",
+    "scope": "Redis source only, not all Debian image components"
+  },
+  "python": {
+    "lock": "requirements/control-runtime.lock",
+    "versions": {"redis": "5.3.1", "PyJWT": "2.12.1", "async-timeout": "5.0.1", "typing_extensions": "4.16.0"},
+    "licenses": {"redis": "MIT", "PyJWT": "MIT", "async-timeout": "Apache-2.0", "typing_extensions": "PSF-2.0"}
+  },
+  "isolated_test_tool": {
+    "package": "6:7.2.16-1rl1~jammy1",
+    "server_sha256": "f47f4177c0c47d1d58d24a63b89a023d5ac8605178eefd147f333d9dd29db9ad",
+    "tools_sha256": "9c99482f8b29431fbf9b43f0fea89ab6270d8408cefef798389d8c3b850f7d1f",
+    "scope": "Separate extracted Jammy test binary, not the production image"
+  }
+}

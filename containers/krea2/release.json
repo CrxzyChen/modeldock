@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "release": "mediacenter-krea2-v1",
+  "model": "krea-2-turbo",
+  "adapter_id": "krea2",
+  "target": "krea2",
+  "platform": "linux/amd64",
+  "status": "immutable_oci_built_imported",
+  "parent": {
+    "release": "mediacenter-runtime-v1",
+    "manifest_digest": "sha256:25d8e3f28e0ce059c02338dd0fba4850eb378107c5620c60ad7e8276581c96c1",
+    "image_id": "sha256:5960e66a6804f244d3c52c49f856ceb6fd4080a8dc3432d82e90be7e6844808e"
+  },
+  "network": "none",
+  "entrypoint": ["/opt/krea-runtime/bin/python", "-B", "-u", "-m", "mediacenter.image_worker_cli"],
+  "dependency_profile": {
+    "python": "3.11.15",
+    "torch": "2.7.1+cu126",
+    "diffusers": "0.40.0",
+    "transformers": "5.16.1",
+    "lock": "containers/krea2/krea2.requirements.txt",
+    "lock_sha256": "107b6fdd9b243ec8f23fee49309343e37afe307e4da0b62ac937e979b05f2c8a",
+    "wheel_count": 16,
+    "strategy": "retain the shared torch/CUDA parent and replace only the fully locked Krea-compatible Python closure"
+  },
+  "image_digest": "sha256:77be376a6f6d303271431829936b73c31a50f34f9f143c1d29b537e91ba62e08",
+  "image_id": "sha256:42bc57d1ae9018d4a6e5c8aaf654a4e11eb6d1e420657f9d4c18f73bf53641f7",
+  "artifact": {
+    "format": "oci-layout-tar",
+    "sha256": "6556092390ae003c517f2bcb8a8d29a6e62f4c27f63166be0c4c4ad918bd5c53",
+    "byte_size": 2366279680
+  },
+  "evidence": {
+    "offline_dependency_lock": "verified",
+    "offline_build": "passed",
+    "oci_contract": "verified",
+    "docker_import": "verified_readback",
+    "runtime_imports": "passed_without_network_or_gpu",
+    "gpu_load": "not_executed",
+    "cold_warm": "not_executed",
+    "real_generation": "not_executed"
+  }
+}

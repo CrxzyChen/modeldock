@@ -1,0 +1,24 @@
+ARG BASE_IMAGE
+FROM ${BASE_IMAGE}
+
+COPY env/ /opt/python/
+COPY wheels/ /offline/wheels/
+COPY sources/CosyVoice/ /opt/cosyvoice/
+COPY sources/Matcha-TTS/ /opt/cosyvoice/third_party/Matcha-TTS/
+COPY --chown=1000:1000 sdk/ /opt/mediacenter/
+RUN chmod -R a+rX /opt/mediacenter
+
+ENV PATH=/opt/python/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
+    LD_LIBRARY_PATH=/opt/python/lib PYTHONPATH=/opt/mediacenter:/opt/cosyvoice:/opt/cosyvoice/third_party/Matcha-TTS \
+    PYTHONNOUSERSITE=1 PYTHONDONTWRITEBYTECODE=1 PIP_NO_INDEX=1 \
+    HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 HF_DATASETS_OFFLINE=1 HOME=/tmp
+
+RUN /opt/python/bin/conda-unpack \
+    && /opt/python/bin/python -m pip install --no-index --no-deps /offline/wheels/*.whl \
+    && /opt/python/bin/python -m pip check \
+    && /opt/python/bin/python -B -c \
+       "import torch,torchaudio,onnxruntime,redis,cosyvoice; import mediacenter.audio_worker_cli,mediacenter.adapters.cosyvoice"
+
+USER 1000:1000
+WORKDIR /opt/mediacenter
+ENTRYPOINT ["/opt/python/bin/python","-B","-u","-m","mediacenter.audio_worker_cli"]

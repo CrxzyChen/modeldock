@@ -1,0 +1,25 @@
+ARG BASE_IMAGE
+FROM ${BASE_IMAGE}
+ARG VALIDATE_MODULE
+
+COPY env/ /opt/python/
+COPY wheels/ /offline/wheels/
+COPY --chown=1000:1000 sdk/ /opt/mediacenter/
+RUN chmod -R a+rX /opt/mediacenter
+
+ENV PATH=/opt/python/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
+    LD_LIBRARY_PATH=/opt/python/lib PYTHONPATH=/opt/mediacenter \
+    PYTHONNOUSERSITE=1 PYTHONDONTWRITEBYTECODE=1 PIP_NO_INDEX=1 \
+    HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 HF_DATASETS_OFFLINE=1 HOME=/tmp
+
+RUN test -n "$VALIDATE_MODULE" \
+    && /opt/python/bin/conda-unpack \
+    && /opt/python/bin/python -m pip install --no-index --no-deps /offline/wheels/*.whl \
+    && /opt/python/bin/python -m pip check \
+    && /opt/python/bin/python -B -c \
+       "import importlib,os,redis; import mediacenter.image_worker_cli; importlib.import_module(os.environ['VALIDATE_MODULE'])"
+
+ENV VALIDATE_MODULE=${VALIDATE_MODULE}
+USER 1000:1000
+WORKDIR /opt/mediacenter
+ENTRYPOINT ["/opt/python/bin/python","-B","-u","-m","mediacenter.image_worker_cli"]

@@ -1,0 +1,2699 @@
+{
+  "models": [
+    {
+      "catalog_key": "musicgen-small",
+      "kind": "music",
+      "label": "MusicGen Small",
+      "model_id": "facebook/musicgen-small",
+      "license": "CC-BY-NC-4.0",
+      "recommended_revision": "4c8334b02c6ec4e8664a91979669a501ec497792",
+      "worker_contract": {
+        "schema": 1,
+        "release": "mediacenter-musicgen-v1",
+        "target": "musicgen",
+        "adapter_id": "musicgen",
+        "module": "mediacenter.adapters.musicgen",
+        "class": "MusicGenAdapter",
+        "operation": "music.generate",
+        "lora_families": [],
+        "dependencies": []
+      },
+      "extension": "wav",
+      "download_profile": "immutable-service-recipe",
+      "download_allow_patterns": [
+        "config.json",
+        "generation_config.json",
+        "model.safetensors",
+        "preprocessor_config.json",
+        "special_tokens_map.json",
+        "spiece.model",
+        "tokenizer.json",
+        "tokenizer_config.json"
+      ],
+      "required_files": [
+        "config.json",
+        "model.safetensors",
+        "spiece.model",
+        "tokenizer.json"
+      ],
+      "required_vram_mib": 6144,
+      "min_gpus": 1,
+      "max_gpus": 1,
+      "recommended_gpus": [],
+      "service_recipe": {
+        "description": "MusicGen Small 文字生成音乐服务，安装固定模型快照、隔离运行环境并检查 GPU 服务；模型许可为 CC-BY-NC-4.0，非商业用途。",
+        "role": "checkpoint",
+        "format": "transformers",
+        "source_type": "huggingface",
+        "allowed_redirect_hosts": [
+          "cdn-lfs.huggingface.co",
+          "cdn-lfs-us-1.hf.co",
+          "cdn-lfs-eu-1.hf.co",
+          "cas-bridge.xethub.hf.co"
+        ],
+        "files": [
+          {
+            "relative_path": "config.json",
+            "byte_size": 7866,
+            "sha256": "36bba569a817511fa54ddd1c42b157c24c8f6a178b7b85484d7475e71ce30f6d",
+            "url": "https://huggingface.co/facebook/musicgen-small/resolve/4c8334b02c6ec4e8664a91979669a501ec497792/config.json"
+          },
+          {
+            "relative_path": "generation_config.json",
+            "byte_size": 224,
+            "sha256": "3126e10627aad71cce75772137b1043bae6a066751f0aaebf7a1ba440a5fc3c4",
+            "url": "https://huggingface.co/facebook/musicgen-small/resolve/4c8334b02c6ec4e8664a91979669a501ec497792/generation_config.json"
+          },
+          {
+            "relative_path": "model.safetensors",
+            "byte_size": 2364427288,
+            "sha256": "1bdc99d43eb6c775967df24b65b0a9f847c0907e95664698d93b5a1c35f5090d",
+            "url": "https://huggingface.co/facebook/musicgen-small/resolve/4c8334b02c6ec4e8664a91979669a501ec497792/model.safetensors"
+          },
+          {
+            "relative_path": "preprocessor_config.json",
+            "byte_size": 275,
+            "sha256": "3f820c9214aed413cde1d72fe2bed2f5ce5e5929d4ac2cc12bfddaf0ba0b8465",
+            "url": "https://huggingface.co/facebook/musicgen-small/resolve/4c8334b02c6ec4e8664a91979669a501ec497792/preprocessor_config.json"
+          },
+          {
+            "relative_path": "special_tokens_map.json",
+            "byte_size": 2201,
+            "sha256": "5c87151ef0f72a99d1f766a4c418bd2a1f90aaa30a8e22fe5eca9641daebb64f",
+            "url": "https://huggingface.co/facebook/musicgen-small/resolve/4c8334b02c6ec4e8664a91979669a501ec497792/special_tokens_map.json"
+          },
+          {
+            "relative_path": "spiece.model",
+            "byte_size": 791656,
+            "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+            "url": "https://huggingface.co/facebook/musicgen-small/resolve/4c8334b02c6ec4e8664a91979669a501ec497792/spiece.model"
+          },
+          {
+            "relative_path": "tokenizer.json",
+            "byte_size": 2422095,
+            "sha256": "5f0ed8ab5b8cfa9812bb73752f1d80c292e52bcf5a87a144dc9ab2d251056cbb",
+            "url": "https://huggingface.co/facebook/musicgen-small/resolve/4c8334b02c6ec4e8664a91979669a501ec497792/tokenizer.json"
+          },
+          {
+            "relative_path": "tokenizer_config.json",
+            "byte_size": 2366,
+            "sha256": "88922cb67999604f60f3176db748b20975efc9ea7f72d5c80211be02d93c3b92",
+            "url": "https://huggingface.co/facebook/musicgen-small/resolve/4c8334b02c6ec4e8664a91979669a501ec497792/tokenizer_config.json"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_key": "sdxl-base-1.0",
+      "kind": "image",
+      "label": "SDXL Base 1.0",
+      "model_id": "stabilityai/stable-diffusion-xl-base-1.0",
+      "license": "CreativeML Open RAIL++-M",
+      "recommended_revision": "462165984030d82259a11f4367a4eed129e94a7b",
+      "worker_contract": {
+        "schema": 1,
+        "release": "mediacenter-sdxl-v1",
+        "target": "sdxl",
+        "adapter_id": "sdxl",
+        "module": "mediacenter.adapters.sdxl",
+        "class": "SDXLAdapter",
+        "operation": "image.generate",
+        "lora_families": [
+          "sdxl"
+        ],
+        "dependencies": []
+      },
+      "extension": "png",
+      "download_profile": "immutable-service-recipe",
+      "download_allow_patterns": [
+        ".gitattributes",
+        "01.png",
+        "LICENSE.md",
+        "README.md",
+        "comparison.png",
+        "model_index.json",
+        "pipeline.png",
+        "sd_xl_offset_example-lora_1.0.safetensors",
+        "scheduler/*",
+        "text_encoder/*",
+        "text_encoder_2/*",
+        "tokenizer/*",
+        "tokenizer_2/*",
+        "unet/*",
+        "vae/*"
+      ],
+      "required_files": [
+        "model_index.json",
+        "text_encoder/model.fp16.safetensors",
+        "text_encoder_2/model.fp16.safetensors",
+        "unet/diffusion_pytorch_model.fp16.safetensors",
+        "vae/diffusion_pytorch_model.fp16.safetensors"
+      ],
+      "required_vram_mib": 16384,
+      "min_gpus": 1,
+      "max_gpus": 1,
+      "recommended_gpus": [],
+      "service_recipe": {
+        "description": "受管 SDXL 容器服务；固定基础 Runtime 与 PEFT 0.17.1 衍生层，常驻模型及逐任务 LoRA。需批准的实际镜像发布后方可安装；环境加载检查和生成测试为独立显式操作。",
+        "role": "checkpoint",
+        "format": "diffusers",
+        "source_type": "huggingface",
+        "allowed_redirect_hosts": [
+          "cdn-lfs.huggingface.co",
+          "cdn-lfs-us-1.hf.co",
+          "cdn-lfs-eu-1.hf.co",
+          "cas-bridge.xethub.hf.co"
+        ],
+        "files": [
+          {
+            "relative_path": ".gitattributes",
+            "byte_size": 1562,
+            "sha256": "ef770cfcc4f91641d93abd1119da54bb7af0708aee11fd90ce5575b2b908fba7",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/.gitattributes"
+          },
+          {
+            "relative_path": "01.png",
+            "byte_size": 4608613,
+            "sha256": "f40474e9ef8787d8209c275ade4254fc544dce290922b2e07650911ea255530c",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/01.png"
+          },
+          {
+            "relative_path": "LICENSE.md",
+            "byte_size": 14109,
+            "sha256": "19b6998b569b53ac1fc2158a8a3202c8699a9a4605b47075715d9c96be7fb6d0",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/LICENSE.md"
+          },
+          {
+            "relative_path": "README.md",
+            "byte_size": 8668,
+            "sha256": "40d263065b8a3e9a41996c257e11463fd97ae956ebf4e3f8b9625e0d78183893",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/README.md"
+          },
+          {
+            "relative_path": "comparison.png",
+            "byte_size": 130252,
+            "sha256": "236672de00184fca58a7437e01cc229819f7c7eae7f331770bc38cca547d7e0f",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/comparison.png"
+          },
+          {
+            "relative_path": "model_index.json",
+            "byte_size": 609,
+            "sha256": "6d7b93508390ab91ac5bfbe4aeb4dc2d83f7bb1b05fb069d714b5b0c75f70d44",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/model_index.json"
+          },
+          {
+            "relative_path": "pipeline.png",
+            "byte_size": 80188,
+            "sha256": "bbd01b409416c75d486caaeefea3e4b79b91b4262fc87007452ed1ee6ca1cc05",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/pipeline.png"
+          },
+          {
+            "relative_path": "scheduler/scheduler_config.json",
+            "byte_size": 479,
+            "sha256": "af3e45a949aff8b8341ab8b811429ec03fee857a700a1d9477363e4fff9666e2",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/scheduler/scheduler_config.json"
+          },
+          {
+            "relative_path": "sd_xl_offset_example-lora_1.0.safetensors",
+            "byte_size": 49553604,
+            "sha256": "4852686128f953d0277d0793e2f0335352f96a919c9c16a09787d77f55cbdf6f",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/sd_xl_offset_example-lora_1.0.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/config.json",
+            "byte_size": 565,
+            "sha256": "39b8b2e4b1949e36969caa425b6c81c68bace99198dd9078ce05d16ad401fe7f",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/text_encoder/config.json"
+          },
+          {
+            "relative_path": "text_encoder/flax_model.msgpack",
+            "byte_size": 492248682,
+            "sha256": "80269e53c9d09b1f19c6227cf903a5032878ed31ea8b49b8ecfa7808b81568d9",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/text_encoder/flax_model.msgpack"
+          },
+          {
+            "relative_path": "text_encoder/model.fp16.safetensors",
+            "byte_size": 246144152,
+            "sha256": "660c6f5b1abae9dc498ac2d21e1347d2abdb0cf6c0c0c8576cd796491d9a6cdd",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/text_encoder/model.fp16.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model.onnx",
+            "byte_size": 492587457,
+            "sha256": "e27bafa0b3029ad637ef3ace24ce1efe85b8d0dbd22e03a2e70bda6fc88963a1",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/text_encoder/model.onnx"
+          },
+          {
+            "relative_path": "text_encoder/model.safetensors",
+            "byte_size": 492265168,
+            "sha256": "5c3d6454dd2d23414b56aa1b5858a72487a656937847b6fea8d0606d7a42cdbc",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/text_encoder/model.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/openvino_model.bin",
+            "byte_size": 492242672,
+            "sha256": "bbc78395c8cee553a17380e9b1a9a47da926c98731ba31306032d7d45fadb29b",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/text_encoder/openvino_model.bin"
+          },
+          {
+            "relative_path": "text_encoder/openvino_model.xml",
+            "byte_size": 1057789,
+            "sha256": "ab5cf7327374d8c984f4e963564a329f92c9dad08dac9eee9b8dca86b912f1c9",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/text_encoder/openvino_model.xml"
+          },
+          {
+            "relative_path": "text_encoder_2/config.json",
+            "byte_size": 575,
+            "sha256": "a892d1c3a69a7e9247a24de2bc1d5891e3109a54696e53be20093af671072c34",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/text_encoder_2/config.json"
+          },
+          {
+            "relative_path": "text_encoder_2/model.fp16.safetensors",
+            "byte_size": 1389382176,
+            "sha256": "ec310df2af79c318e24d20511b601a591ca8cd4f1fce1d8dff822a356bcdb1f4",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/text_encoder_2/model.fp16.safetensors"
+          },
+          {
+            "relative_path": "text_encoder_2/model.onnx",
+            "byte_size": 1041992,
+            "sha256": "162042ac6556e73f93d4172d4c67532c1cbe4dc7a6a8fa7e44dd2e3d7cbb772b",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/text_encoder_2/model.onnx"
+          },
+          {
+            "relative_path": "tokenizer/merges.txt",
+            "byte_size": 524619,
+            "sha256": "9fd691f7c8039210e0fced15865466c65820d09b63988b0174bfe25de299051a",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/tokenizer/merges.txt"
+          },
+          {
+            "relative_path": "tokenizer/special_tokens_map.json",
+            "byte_size": 472,
+            "sha256": "c4864a9376a8401918425bed71fc14fc0e81f9b59ec45c1cf96cccb2df508eac",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/tokenizer/special_tokens_map.json"
+          },
+          {
+            "relative_path": "tokenizer/tokenizer_config.json",
+            "byte_size": 737,
+            "sha256": "19d7b034cb0cc3ce9766c2231373ab8aa8991fc72e2c8f76558bfaae3de0d563",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/tokenizer/tokenizer_config.json"
+          },
+          {
+            "relative_path": "tokenizer/vocab.json",
+            "byte_size": 1059962,
+            "sha256": "e089ad92ba36837a0d31433e555c8f45fe601ab5c221d4f607ded32d9f7a4349",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/tokenizer/vocab.json"
+          },
+          {
+            "relative_path": "tokenizer_2/merges.txt",
+            "byte_size": 524619,
+            "sha256": "9fd691f7c8039210e0fced15865466c65820d09b63988b0174bfe25de299051a",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/tokenizer_2/merges.txt"
+          },
+          {
+            "relative_path": "tokenizer_2/special_tokens_map.json",
+            "byte_size": 460,
+            "sha256": "f118ab3a983206e4f32583448de6bd6aae4ee21869135cef1f5848a753cdaab6",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/tokenizer_2/special_tokens_map.json"
+          },
+          {
+            "relative_path": "tokenizer_2/tokenizer_config.json",
+            "byte_size": 725,
+            "sha256": "c9d23941f76a41cbd50eda9290f57be7828f0a7a677939e9ef181f7e12bd1bdf",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/tokenizer_2/tokenizer_config.json"
+          },
+          {
+            "relative_path": "tokenizer_2/vocab.json",
+            "byte_size": 1059962,
+            "sha256": "e089ad92ba36837a0d31433e555c8f45fe601ab5c221d4f607ded32d9f7a4349",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/tokenizer_2/vocab.json"
+          },
+          {
+            "relative_path": "unet/config.json",
+            "byte_size": 1680,
+            "sha256": "30ebc70750223e59006f7f2b4e1e6c102570aa19a9c4ae3e1fbe7591332dbae6",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/unet/config.json"
+          },
+          {
+            "relative_path": "unet/diffusion_pytorch_model.fp16.safetensors",
+            "byte_size": 5135149760,
+            "sha256": "83e012a805b84c7ca28e5646747c90a243c65c8ba4f070e2d7ddc9d74661e139",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/unet/diffusion_pytorch_model.fp16.safetensors"
+          },
+          {
+            "relative_path": "vae/config.json",
+            "byte_size": 642,
+            "sha256": "0b331c8ac22ded5f9997a144a575c1d113d6169aff262c353f39015bd24a6264",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/vae/config.json"
+          },
+          {
+            "relative_path": "vae/diffusion_pytorch_model.fp16.safetensors",
+            "byte_size": 167335342,
+            "sha256": "bcb60880a46b63dea58e9bc591abe15f8350bde47b405f9c38f4be70c6161e68",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/vae/diffusion_pytorch_model.fp16.safetensors"
+          },
+          {
+            "relative_path": "vae/diffusion_pytorch_model.safetensors",
+            "byte_size": 334643268,
+            "sha256": "1598f3d24932bcfe6634e8b618ea1e30ab1d57f5aad13a6d2de446d2199f2341",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/vae/diffusion_pytorch_model.safetensors"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_key": "realesrgan-x2plus",
+      "kind": "image",
+      "label": "Real-ESRGAN 通用 2×",
+      "model_id": "xinntao/Real-ESRGAN:RealESRGAN_x2plus",
+      "license": "BSD-3-Clause",
+      "recommended_revision": "64ad194ddaf9c4d8c4b0d1b98cac6d89d3ea0d11",
+      "worker_contract": {"schema":1,"release":"mediacenter-image-models-v1","target":"upscale","adapter_id":"realesrgan","module":"mediacenter.adapters.realesrgan","class":"RealESRGANAdapter","operation":"image.upscale","lora_families":[],"dependencies":[]},
+      "extension": "png",
+      "download_profile": "realesrgan-direct",
+      "download_allow_patterns": [],
+      "download_urls": [
+        "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.1/RealESRGAN_x2plus.pth"
+      ],
+      "required_files": [
+        "RealESRGAN_x2plus.pth"
+      ],
+      "required_vram_mib": 6144,
+      "min_gpus": 1,
+      "max_gpus": 1,
+      "recommended_gpus": [],
+      "service_recipe": {
+        "description": "通用 2× AI 图片超分服务，自动安装固定官方权重、隔离运行环境、GPU 部署和健康检查。",
+        "role": "upscaler",
+        "format": "trusted-bundle",
+        "source_type": "github-release",
+        "allowed_redirect_hosts": [
+          "objects.githubusercontent.com",
+          "github-releases.githubusercontent.com",
+          "release-assets.githubusercontent.com"
+        ],
+        "files": [
+          {
+            "relative_path": "RealESRGAN_x2plus.pth",
+            "byte_size": 67061725,
+            "sha256": "49fafd45f8fd7aa8d31ab2a22d14d91b536c34494a5cfe31eb5d89c2fa266abb",
+            "url": "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.1/RealESRGAN_x2plus.pth"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_key": "realesrgan-x4plus",
+      "kind": "image",
+      "label": "Real-ESRGAN 通用 4×",
+      "model_id": "xinntao/Real-ESRGAN:RealESRGAN_x4plus",
+      "license": "BSD-3-Clause",
+      "recommended_revision": "4c05b20cb30aded73ed3731848a9fbbf70c7c0ac",
+      "worker_contract": {"schema":1,"release":"mediacenter-image-models-v1","target":"upscale","adapter_id":"realesrgan","module":"mediacenter.adapters.realesrgan","class":"RealESRGANAdapter","operation":"image.upscale","lora_families":[],"dependencies":[]},
+      "extension": "png",
+      "download_profile": "realesrgan-direct",
+      "download_allow_patterns": [],
+      "download_urls": [
+        "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth"
+      ],
+      "required_files": [
+        "RealESRGAN_x4plus.pth"
+      ],
+      "required_vram_mib": 8192,
+      "min_gpus": 1,
+      "max_gpus": 1,
+      "recommended_gpus": [],
+      "service_recipe": {
+        "description": "通用 4× AI 图片超分服务，自动安装固定官方权重、隔离运行环境、GPU 部署和健康检查。",
+        "role": "upscaler",
+        "format": "trusted-bundle",
+        "source_type": "github-release",
+        "allowed_redirect_hosts": [
+          "objects.githubusercontent.com",
+          "github-releases.githubusercontent.com",
+          "release-assets.githubusercontent.com"
+        ],
+        "files": [
+          {
+            "relative_path": "RealESRGAN_x4plus.pth",
+            "byte_size": 67040989,
+            "sha256": "4fa0d38905f75ac06eb49a7951b426670021be3018265fd191d2125df9d682f1",
+            "url": "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_key": "realesrgan-x4plus-anime-6b",
+      "kind": "image",
+      "label": "Real-ESRGAN 动漫 4×",
+      "model_id": "xinntao/Real-ESRGAN:RealESRGAN_x4plus_anime_6B",
+      "license": "BSD-3-Clause",
+      "recommended_revision": "f83472d0113b8af82b5c5dcaa6e5a9dc88e466a7",
+      "worker_contract": {"schema":1,"release":"mediacenter-image-models-v1","target":"upscale","adapter_id":"realesrgan","module":"mediacenter.adapters.realesrgan","class":"RealESRGANAdapter","operation":"image.upscale","lora_families":[],"dependencies":[]},
+      "extension": "png",
+      "download_profile": "realesrgan-direct",
+      "download_allow_patterns": [],
+      "download_urls": [
+        "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.2.4/RealESRGAN_x4plus_anime_6B.pth"
+      ],
+      "required_files": [
+        "RealESRGAN_x4plus_anime_6B.pth"
+      ],
+      "required_vram_mib": 4096,
+      "min_gpus": 1,
+      "max_gpus": 1,
+      "recommended_gpus": [],
+      "service_recipe": {
+        "description": "动漫优化 4× AI 图片超分服务，自动安装固定官方权重、隔离运行环境、GPU 部署和健康检查。",
+        "role": "upscaler",
+        "format": "trusted-bundle",
+        "source_type": "github-release",
+        "allowed_redirect_hosts": [
+          "objects.githubusercontent.com",
+          "github-releases.githubusercontent.com",
+          "release-assets.githubusercontent.com"
+        ],
+        "files": [
+          {
+            "relative_path": "RealESRGAN_x4plus_anime_6B.pth",
+            "byte_size": 17938799,
+            "sha256": "f872d837d3c90ed2e05227bed711af5671a6fd1c9f7d7e91c911a61f155e99da",
+            "url": "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.2.4/RealESRGAN_x4plus_anime_6B.pth"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_key": "z-image-turbo",
+      "kind": "image",
+      "label": "Z-Image Turbo",
+      "model_id": "Tongyi-MAI/Z-Image-Turbo",
+      "license": "Apache-2.0",
+      "recommended_revision": "f332072aa78be7aecdf3ee76d5c247082da564a6",
+      "worker_contract": {"schema":1,"release":"mediacenter-image-models-v1","target":"zimage","adapter_id":"zimage","module":"mediacenter.adapters.zimage","class":"ZImageAdapter","operation":"image.generate","lora_families":[],"dependencies":[]},
+      "extension": "png",
+      "download_profile": "immutable-service-recipe",
+      "download_allow_patterns": [
+        "model_index.json",
+        "scheduler/*",
+        "text_encoder/*",
+        "tokenizer/*",
+        "transformer/*",
+        "vae/*"
+      ],
+      "required_files": [
+        "model_index.json",
+        "text_encoder/config.json",
+        "text_encoder/model.safetensors.index.json",
+        "text_encoder/model-00001-of-00003.safetensors",
+        "text_encoder/model-00002-of-00003.safetensors",
+        "text_encoder/model-00003-of-00003.safetensors",
+        "transformer/config.json",
+        "transformer/diffusion_pytorch_model.safetensors.index.json",
+        "transformer/diffusion_pytorch_model-00001-of-00003.safetensors",
+        "transformer/diffusion_pytorch_model-00002-of-00003.safetensors",
+        "transformer/diffusion_pytorch_model-00003-of-00003.safetensors",
+        "vae/config.json",
+        "vae/diffusion_pytorch_model.safetensors",
+        "tokenizer/tokenizer.json"
+      ],
+      "required_vram_mib": 32768,
+      "min_gpus": 1,
+      "max_gpus": 1,
+      "recommended_gpus": [],
+      "service_recipe": {
+        "description": "Z-Image Turbo 高速文生图服务，自动安装固定模型快照、隔离运行环境、GPU 部署和健康检查。",
+        "role": "checkpoint",
+        "format": "diffusers",
+        "source_type": "huggingface",
+        "allowed_redirect_hosts": [
+          "cdn-lfs.huggingface.co",
+          "cdn-lfs-us-1.hf.co",
+          "cdn-lfs-eu-1.hf.co",
+          "cas-bridge.xethub.hf.co"
+        ],
+        "files": [
+          {
+            "relative_path": "model_index.json",
+            "byte_size": 467,
+            "sha256": "18a90e1bc117a29a8b7961bb200c86ff0b9704609e87c7171511dc724fcdc9d3",
+            "url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/f332072aa78be7aecdf3ee76d5c247082da564a6/model_index.json"
+          },
+          {
+            "relative_path": "scheduler/scheduler_config.json",
+            "byte_size": 173,
+            "sha256": "3b979ab0956e4f5e8d02ec409ac6a4ece1555191d15bd10788fdc85fea5d13fc",
+            "url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/f332072aa78be7aecdf3ee76d5c247082da564a6/scheduler/scheduler_config.json"
+          },
+          {
+            "relative_path": "text_encoder/config.json",
+            "byte_size": 726,
+            "sha256": "8ba006f74fecfaaeb392872a60f4a480e7ec9860153d2e1b769ec81f9a147f8a",
+            "url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/f332072aa78be7aecdf3ee76d5c247082da564a6/text_encoder/config.json"
+          },
+          {
+            "relative_path": "text_encoder/generation_config.json",
+            "byte_size": 239,
+            "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+            "url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/f332072aa78be7aecdf3ee76d5c247082da564a6/text_encoder/generation_config.json"
+          },
+          {
+            "relative_path": "text_encoder/model-00001-of-00003.safetensors",
+            "byte_size": 3957900840,
+            "sha256": "328a91d3122359d5547f9d79521205bc0a46e1f79a792dfe650e99fc2d651223",
+            "url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/f332072aa78be7aecdf3ee76d5c247082da564a6/text_encoder/model-00001-of-00003.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00002-of-00003.safetensors",
+            "byte_size": 3987450520,
+            "sha256": "6cd087b316306a68c562436b5492edbcf6e16c6dba3a1308279caa5a58e21ca5",
+            "url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/f332072aa78be7aecdf3ee76d5c247082da564a6/text_encoder/model-00002-of-00003.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00003-of-00003.safetensors",
+            "byte_size": 99630640,
+            "sha256": "7ca841ee75b9c61267c0c6148fd8d096d3d21b6d3e161256a9b878154f91fc52",
+            "url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/f332072aa78be7aecdf3ee76d5c247082da564a6/text_encoder/model-00003-of-00003.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model.safetensors.index.json",
+            "byte_size": 32819,
+            "sha256": "6dc0981b8829fead746441f68f38f24c5ca4a3a66351f652c26c6df0efc43ab2",
+            "url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/f332072aa78be7aecdf3ee76d5c247082da564a6/text_encoder/model.safetensors.index.json"
+          },
+          {
+            "relative_path": "tokenizer/merges.txt",
+            "byte_size": 1671853,
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/f332072aa78be7aecdf3ee76d5c247082da564a6/tokenizer/merges.txt"
+          },
+          {
+            "relative_path": "tokenizer/tokenizer.json",
+            "byte_size": 11422654,
+            "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+            "url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/f332072aa78be7aecdf3ee76d5c247082da564a6/tokenizer/tokenizer.json"
+          },
+          {
+            "relative_path": "tokenizer/tokenizer_config.json",
+            "byte_size": 9732,
+            "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+            "url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/f332072aa78be7aecdf3ee76d5c247082da564a6/tokenizer/tokenizer_config.json"
+          },
+          {
+            "relative_path": "tokenizer/vocab.json",
+            "byte_size": 2776833,
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/f332072aa78be7aecdf3ee76d5c247082da564a6/tokenizer/vocab.json"
+          },
+          {
+            "relative_path": "transformer/config.json",
+            "byte_size": 473,
+            "sha256": "06d49d1ae533f825c4704cc616fc8bc7826e9d449dde292cc7a95163c69af24a",
+            "url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/f332072aa78be7aecdf3ee76d5c247082da564a6/transformer/config.json"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00001-of-00003.safetensors",
+            "byte_size": 9973693184,
+            "sha256": "95facd593e2549e8252acb571c653d57f7ddb7f1060d4e81712f152555a88804",
+            "url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/f332072aa78be7aecdf3ee76d5c247082da564a6/transformer/diffusion_pytorch_model-00001-of-00003.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00002-of-00003.safetensors",
+            "byte_size": 9973714824,
+            "sha256": "a4bbe43ee184a1fb5af4b412d27555f532893bdc3165b1149e304ed82b5d7015",
+            "url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/f332072aa78be7aecdf3ee76d5c247082da564a6/transformer/diffusion_pytorch_model-00002-of-00003.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00003-of-00003.safetensors",
+            "byte_size": 4672282880,
+            "sha256": "aba4e37a590e63210878160a718d916d80398f4e1f78ab6c9b2b2a00d92769fa",
+            "url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/f332072aa78be7aecdf3ee76d5c247082da564a6/transformer/diffusion_pytorch_model-00003-of-00003.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model.safetensors.index.json",
+            "byte_size": 48969,
+            "sha256": "182a119d8018bfc61c9a62685a384af3b7d4a2f8aabbe766e07c9e1eda5b97ab",
+            "url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/f332072aa78be7aecdf3ee76d5c247082da564a6/transformer/diffusion_pytorch_model.safetensors.index.json"
+          },
+          {
+            "relative_path": "vae/config.json",
+            "byte_size": 805,
+            "sha256": "e80af1e64a71883a9d10c3159d2e493e5934508da57852f6a180ae6ae63b14bd",
+            "url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/f332072aa78be7aecdf3ee76d5c247082da564a6/vae/config.json"
+          },
+          {
+            "relative_path": "vae/diffusion_pytorch_model.safetensors",
+            "byte_size": 167666902,
+            "sha256": "f5b59a26851551b67ae1fe58d32e76486e1e812def4696a4bea97f16604d40a3",
+            "url": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/f332072aa78be7aecdf3ee76d5c247082da564a6/vae/diffusion_pytorch_model.safetensors"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_key": "qwen-image-2512",
+      "kind": "image",
+      "label": "Qwen-Image-2512",
+      "model_id": "Qwen/Qwen-Image-2512",
+      "license": "Apache-2.0",
+      "recommended_revision": "25468b98e3276ca6700de15c6628e51b7de54a26",
+      "worker_contract": {"schema":1,"release":"mediacenter-image-models-v1","target":"qwen","adapter_id":"qwen-image","module":"mediacenter.adapters.qwen_image","class":"QwenImageAdapter","operation":"image.generate","lora_families":[],"dependencies":[]},
+      "extension": "png",
+      "download_profile": "immutable-service-recipe",
+      "download_allow_patterns": [
+        "model_index.json",
+        "scheduler/*",
+        "text_encoder/*",
+        "tokenizer/*",
+        "transformer/*",
+        "vae/*"
+      ],
+      "required_files": [
+        "model_index.json",
+        "scheduler/scheduler_config.json",
+        "text_encoder/config.json",
+        "text_encoder/generation_config.json",
+        "text_encoder/model.safetensors.index.json",
+        "text_encoder/model-00001-of-00004.safetensors",
+        "text_encoder/model-00002-of-00004.safetensors",
+        "text_encoder/model-00003-of-00004.safetensors",
+        "text_encoder/model-00004-of-00004.safetensors",
+        "tokenizer/added_tokens.json",
+        "tokenizer/chat_template.jinja",
+        "tokenizer/merges.txt",
+        "tokenizer/special_tokens_map.json",
+        "tokenizer/tokenizer_config.json",
+        "tokenizer/vocab.json",
+        "transformer/config.json",
+        "transformer/diffusion_pytorch_model.safetensors.index.json",
+        "transformer/diffusion_pytorch_model-00001-of-00009.safetensors",
+        "transformer/diffusion_pytorch_model-00002-of-00009.safetensors",
+        "transformer/diffusion_pytorch_model-00003-of-00009.safetensors",
+        "transformer/diffusion_pytorch_model-00004-of-00009.safetensors",
+        "transformer/diffusion_pytorch_model-00005-of-00009.safetensors",
+        "transformer/diffusion_pytorch_model-00006-of-00009.safetensors",
+        "transformer/diffusion_pytorch_model-00007-of-00009.safetensors",
+        "transformer/diffusion_pytorch_model-00008-of-00009.safetensors",
+        "transformer/diffusion_pytorch_model-00009-of-00009.safetensors",
+        "vae/config.json",
+        "vae/diffusion_pytorch_model.safetensors"
+      ],
+      "required_vram_mib": 36864,
+      "min_gpus": 1,
+      "max_gpus": 1,
+      "recommended_gpus": [],
+      "service_recipe": {
+        "description": "Qwen-Image-2512 高质量文生图服务，自动安装固定模型快照、隔离运行环境、GPU 部署和健康检查。",
+        "role": "checkpoint",
+        "format": "diffusers",
+        "source_type": "huggingface",
+        "allowed_redirect_hosts": [
+          "cdn-lfs.huggingface.co",
+          "cdn-lfs-us-1.hf.co",
+          "cdn-lfs-eu-1.hf.co",
+          "cas-bridge.xethub.hf.co"
+        ],
+        "files": [
+          {
+            "relative_path": "model_index.json",
+            "byte_size": 443,
+            "sha256": "caf5f49ee3d897fff6a8e8d6353b084c8d1da3e40ba2f32e9bc554eb0ee4b4e9",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/model_index.json"
+          },
+          {
+            "relative_path": "scheduler/scheduler_config.json",
+            "byte_size": 485,
+            "sha256": "7ee767e37bae4af31d4eb935e125bb20a2237eeecafd22af6610093865c6f587",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/scheduler/scheduler_config.json"
+          },
+          {
+            "relative_path": "text_encoder/config.json",
+            "byte_size": 3146,
+            "sha256": "4a49f14a1594fd988ab301e491ac522cd9b0e8fd1c9232b806c54568f348c1fb",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/text_encoder/config.json"
+          },
+          {
+            "relative_path": "text_encoder/generation_config.json",
+            "byte_size": 244,
+            "sha256": "50867494bddf9ddc8e289e6214be5a2263e68f16c127a3652c6eb9f17990e5d9",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/text_encoder/generation_config.json"
+          },
+          {
+            "relative_path": "text_encoder/model-00001-of-00004.safetensors",
+            "byte_size": 4968243304,
+            "sha256": "d725335e4ea2399be706469e4b8807716a8fa64bd03468252e9f7acf2415fee4",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/text_encoder/model-00001-of-00004.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00002-of-00004.safetensors",
+            "byte_size": 4991495816,
+            "sha256": "b1830db6908dcc76df3a71492acbcf2b8cac130114cf1f3c2d9edae8de8c6de3",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/text_encoder/model-00002-of-00004.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00003-of-00004.safetensors",
+            "byte_size": 4932751040,
+            "sha256": "09c1807c6d00d7cab94f7db39d4c02ebb8537225ccde383861ac48db97945aa6",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/text_encoder/model-00003-of-00004.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00004-of-00004.safetensors",
+            "byte_size": 1691924384,
+            "sha256": "5dd068336d14d45ffb43cef374d286cc6ba9d8741b028f90a7d040d847961f4a",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/text_encoder/model-00004-of-00004.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model.safetensors.index.json",
+            "byte_size": 57655,
+            "sha256": "4be35310ddc165e46e88de4c3fec8c1210014b0b8717f4544d82cc740814ae0c",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/text_encoder/model.safetensors.index.json"
+          },
+          {
+            "relative_path": "tokenizer/added_tokens.json",
+            "byte_size": 605,
+            "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/tokenizer/added_tokens.json"
+          },
+          {
+            "relative_path": "tokenizer/chat_template.jinja",
+            "byte_size": 2427,
+            "sha256": "44d5f08f3f72b837eaad09f13a54c1f9f4eb58d75240334548b7fd52a5437fa5",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/tokenizer/chat_template.jinja"
+          },
+          {
+            "relative_path": "tokenizer/merges.txt",
+            "byte_size": 1671853,
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/tokenizer/merges.txt"
+          },
+          {
+            "relative_path": "tokenizer/special_tokens_map.json",
+            "byte_size": 613,
+            "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/tokenizer/special_tokens_map.json"
+          },
+          {
+            "relative_path": "tokenizer/tokenizer_config.json",
+            "byte_size": 4686,
+            "sha256": "0a04a9d7d4a62b28482bdfe726c122756de85714fb64166ace92ae75b8f57614",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/tokenizer/tokenizer_config.json"
+          },
+          {
+            "relative_path": "tokenizer/vocab.json",
+            "byte_size": 3383407,
+            "sha256": "87a257b04b17642a0688c98cd1df89c398bda4fee532d6f88b38a659ecb4ac8d",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/tokenizer/vocab.json"
+          },
+          {
+            "relative_path": "transformer/config.json",
+            "byte_size": 339,
+            "sha256": "247c94f9b923a7d6b6035ca76d27b556bd0efd1a8c7672f31f037644fcce340e",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/transformer/config.json"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00001-of-00009.safetensors",
+            "byte_size": 4989364312,
+            "sha256": "1abb592dfb6701994f11dbbe1228d99fef1246e2cdd119a73e030da7c2b4d795",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/transformer/diffusion_pytorch_model-00001-of-00009.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00002-of-00009.safetensors",
+            "byte_size": 4984214160,
+            "sha256": "f725018bd0b6b54a1529b38f20d38840b69aceefe843b443949e0e035799e88b",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/transformer/diffusion_pytorch_model-00002-of-00009.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00003-of-00009.safetensors",
+            "byte_size": 4946470000,
+            "sha256": "3de6b71c7d756b4ead46c475f02bc27ff9efe64c43ce2b6790afb9fea81d821b",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/transformer/diffusion_pytorch_model-00003-of-00009.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00004-of-00009.safetensors",
+            "byte_size": 4984213736,
+            "sha256": "c6877663a33e453e3e7fb73d1c6d006612a3e7b29d6a9f84d697383015e2f4b8",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/transformer/diffusion_pytorch_model-00004-of-00009.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00005-of-00009.safetensors",
+            "byte_size": 4946471896,
+            "sha256": "31ce58f75ddfaa3851a95397ae5b22e8e435ded5f021dd7d903e138e12586d2e",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/transformer/diffusion_pytorch_model-00005-of-00009.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00006-of-00009.safetensors",
+            "byte_size": 4946451560,
+            "sha256": "e8c1521290054c832e50086e65e50222e8e9b85cefb595667bc82ee091854772",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/transformer/diffusion_pytorch_model-00006-of-00009.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00007-of-00009.safetensors",
+            "byte_size": 4908690520,
+            "sha256": "33847ad316bdc789f4b0c522cd0c388a025c6254e6e5b3f9626a6afe175655d3",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/transformer/diffusion_pytorch_model-00007-of-00009.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00008-of-00009.safetensors",
+            "byte_size": 4984232856,
+            "sha256": "770716dc6e0c7007c2e8fba297f075cae23b45985a4cda3ec4dae5f7b559c03c",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/transformer/diffusion_pytorch_model-00008-of-00009.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00009-of-00009.safetensors",
+            "byte_size": 1170918840,
+            "sha256": "3f8213dfaaf5aacba65f42c33bc77bb5926506755b1503fa6fa323750088fc0c",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/transformer/diffusion_pytorch_model-00009-of-00009.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model.safetensors.index.json",
+            "byte_size": 198887,
+            "sha256": "adeb4aa7230a3940cdfb4f6d7be4131a13cd5275d612fb9f8be90ede8d965b29",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/transformer/diffusion_pytorch_model.safetensors.index.json"
+          },
+          {
+            "relative_path": "vae/config.json",
+            "byte_size": 730,
+            "sha256": "c448160dba5ce79c965cb075ee02e18d1c42eb6424f787e5869790d577b56a65",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/vae/config.json"
+          },
+          {
+            "relative_path": "vae/diffusion_pytorch_model.safetensors",
+            "byte_size": 253806966,
+            "sha256": "0c8bc8b758c649abef9ea407b95408389a3b2f610d0d10fcb054fe171d0a8344",
+            "url": "https://huggingface.co/Qwen/Qwen-Image-2512/resolve/25468b98e3276ca6700de15c6628e51b7de54a26/vae/diffusion_pytorch_model.safetensors"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_key": "illustrious-xl-v2.0",
+      "kind": "image",
+      "label": "Illustrious XL v2.0",
+      "model_id": "OnomaAIResearch/Illustrious-XL-v2.0",
+      "license": "CreativeML Open RAIL-M",
+      "recommended_revision": "69459c1fe6f46db41ab31e6114f05acc0e06bcaa",
+      "worker_contract": {"schema":1,"release":"mediacenter-image-models-v1","target":"sdxl","adapter_id":"illustrious","module":"mediacenter.adapters.illustrious","class":"IllustriousAdapter","operation":"image.generate","lora_families":["sdxl"],"dependencies":["sdxl-base-1.0"]},
+      "extension": "png",
+      "download_profile": "immutable-service-recipe",
+      "download_allow_patterns": [
+        "Illustrious-XL-v2.0.safetensors"
+      ],
+      "required_files": [
+        "Illustrious-XL-v2.0.safetensors"
+      ],
+      "required_vram_mib": 16384,
+      "min_gpus": 1,
+      "max_gpus": 1,
+      "recommended_gpus": [],
+      "service_recipe": {
+        "description": "Illustrious XL v2.0 插画文生图服务，使用固定单文件权重并依赖已安装的 SDXL Base 1.0 配置。",
+        "role": "checkpoint",
+        "format": "safetensors",
+        "source_type": "huggingface",
+        "allowed_redirect_hosts": [
+          "cdn-lfs.huggingface.co",
+          "cdn-lfs-us-1.hf.co",
+          "cdn-lfs-eu-1.hf.co",
+          "cas-bridge.xethub.hf.co"
+        ],
+        "prerequisites": [
+          "sdxl-base-1.0"
+        ],
+        "files": [
+          {
+            "relative_path": "Illustrious-XL-v2.0.safetensors",
+            "byte_size": 6938040674,
+            "sha256": "c2a1a3eaa13d4c107dc7e00c3fe830cab427aa026362740ea094745b3422a331",
+            "url": "https://huggingface.co/OnomaAIResearch/Illustrious-XL-v2.0/resolve/69459c1fe6f46db41ab31e6114f05acc0e06bcaa/Illustrious-XL-v2.0.safetensors"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_key": "cosyvoice2-0.5b",
+      "kind": "speech",
+      "label": "CosyVoice2 0.5B",
+      "model_id": "FunAudioLLM/CosyVoice2-0.5B",
+      "license": "Apache-2.0",
+      "recommended_revision": "eec1ae6c79877dbd9379285cf8789c9e0879293d",
+      "worker_contract": {
+        "schema": 1,
+        "release": "mediacenter-cosyvoice-v1",
+        "target": "cosyvoice",
+        "adapter_id": "cosyvoice",
+        "module": "mediacenter.adapters.cosyvoice",
+        "class": "CosyVoiceAdapter",
+        "operation": "speech.generate",
+        "lora_families": [],
+        "dependencies": []
+      },
+      "extension": "wav",
+      "download_profile": "cosyvoice2",
+      "download_allow_patterns": [
+        ".gitattributes",
+        "CosyVoice-BlankEN/config.json",
+        "CosyVoice-BlankEN/generation_config.json",
+        "CosyVoice-BlankEN/merges.txt",
+        "CosyVoice-BlankEN/model.safetensors",
+        "CosyVoice-BlankEN/tokenizer_config.json",
+        "CosyVoice-BlankEN/vocab.json",
+        "README.md",
+        "asset/dingding.png",
+        "campplus.onnx",
+        "config.json",
+        "configuration.json",
+        "cosyvoice2.yaml",
+        "flow.decoder.estimator.fp32.onnx",
+        "flow.pt",
+        "hift.pt",
+        "llm.pt",
+        "speech_tokenizer_v2.batch.onnx",
+        "speech_tokenizer_v2.onnx"
+      ],
+      "required_files": [
+        "cosyvoice2.yaml",
+        "campplus.onnx",
+        "speech_tokenizer_v2.onnx",
+        "llm.pt",
+        "flow.pt",
+        "hift.pt",
+        "CosyVoice-BlankEN/model.safetensors"
+      ],
+      "required_vram_mib": 6144,
+      "min_gpus": 1,
+      "max_gpus": 1,
+      "recommended_gpus": [],
+      "service_recipe": {
+        "description": "CosyVoice2 文本转语音服务，使用官方固定参考音色；自动校验权重、固定源码及 Matcha-TTS 子模块，并准备独立 Python 3.10 运行环境。",
+        "role": "checkpoint",
+        "format": "transformers",
+        "source_type": "huggingface",
+        "allowed_redirect_hosts": [
+          "cdn-lfs.huggingface.co",
+          "cdn-lfs-us-1.hf.co",
+          "cdn-lfs-eu-1.hf.co",
+          "cas-bridge.xethub.hf.co"
+        ],
+        "files": [
+          {
+            "relative_path": ".gitattributes",
+            "byte_size": 1914,
+            "sha256": "73138813a47c81e47a6ab599a0d179d0c4362ff3474941f7aad5c7a7b0d14aa7",
+            "url": "https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/resolve/eec1ae6c79877dbd9379285cf8789c9e0879293d/.gitattributes"
+          },
+          {
+            "relative_path": "CosyVoice-BlankEN/config.json",
+            "byte_size": 659,
+            "sha256": "168aa1bd401abc3bc262ba15ba4e499627a8b4e006e9d050b47c22de20660185",
+            "url": "https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/resolve/eec1ae6c79877dbd9379285cf8789c9e0879293d/CosyVoice-BlankEN/config.json"
+          },
+          {
+            "relative_path": "CosyVoice-BlankEN/generation_config.json",
+            "byte_size": 242,
+            "sha256": "e558847a8b4402616f1273797b015104dc266fe4b520056fca88823ba8f8ebe6",
+            "url": "https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/resolve/eec1ae6c79877dbd9379285cf8789c9e0879293d/CosyVoice-BlankEN/generation_config.json"
+          },
+          {
+            "relative_path": "CosyVoice-BlankEN/merges.txt",
+            "byte_size": 1402109,
+            "sha256": "ac8ff86a72bee70828fbc1119bc4398c6f3a9a6e490d7b0dbe917be025478bd0",
+            "url": "https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/resolve/eec1ae6c79877dbd9379285cf8789c9e0879293d/CosyVoice-BlankEN/merges.txt"
+          },
+          {
+            "relative_path": "CosyVoice-BlankEN/model.safetensors",
+            "byte_size": 988097824,
+            "sha256": "130282af0dfa9fe5840737cc49a0d339d06075f83c5a315c3372c9a0740d0b96",
+            "url": "https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/resolve/eec1ae6c79877dbd9379285cf8789c9e0879293d/CosyVoice-BlankEN/model.safetensors"
+          },
+          {
+            "relative_path": "CosyVoice-BlankEN/tokenizer_config.json",
+            "byte_size": 1287,
+            "sha256": "482bd979881423375ca5414e4e0d94cd7c5349dbb17fffd46b4d36d71e62a1bc",
+            "url": "https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/resolve/eec1ae6c79877dbd9379285cf8789c9e0879293d/CosyVoice-BlankEN/tokenizer_config.json"
+          },
+          {
+            "relative_path": "CosyVoice-BlankEN/vocab.json",
+            "byte_size": 2776833,
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "url": "https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/resolve/eec1ae6c79877dbd9379285cf8789c9e0879293d/CosyVoice-BlankEN/vocab.json"
+          },
+          {
+            "relative_path": "README.md",
+            "byte_size": 12073,
+            "sha256": "7b00725016d3fe143fc13cef1df27615df6ba9cd98c6716c5b98bbc54aefd525",
+            "url": "https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/resolve/eec1ae6c79877dbd9379285cf8789c9e0879293d/README.md"
+          },
+          {
+            "relative_path": "asset/dingding.png",
+            "byte_size": 122824,
+            "sha256": "7f04815e2e676d31b089af6fa270135f3214f2193d5e0ad98b491d007d48f1c6",
+            "url": "https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/resolve/eec1ae6c79877dbd9379285cf8789c9e0879293d/asset/dingding.png"
+          },
+          {
+            "relative_path": "campplus.onnx",
+            "byte_size": 28303423,
+            "sha256": "a6ac6a63997761ae2997373e2ee1c47040854b4b759ea41ec48e4e42df0f4d73",
+            "url": "https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/resolve/eec1ae6c79877dbd9379285cf8789c9e0879293d/campplus.onnx"
+          },
+          {
+            "relative_path": "config.json",
+            "byte_size": 2,
+            "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "url": "https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/resolve/eec1ae6c79877dbd9379285cf8789c9e0879293d/config.json"
+          },
+          {
+            "relative_path": "configuration.json",
+            "byte_size": 47,
+            "sha256": "c502b6328c67638b401df8dd05de89e9e8d1cff9cd0ada10dfbdbe13556c20de",
+            "url": "https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/resolve/eec1ae6c79877dbd9379285cf8789c9e0879293d/configuration.json"
+          },
+          {
+            "relative_path": "cosyvoice2.yaml",
+            "byte_size": 7330,
+            "sha256": "0af2c0d010c477187c39f3e8fd5f1ae2e4e6f90ad03ba37c10ed6c6a87b05959",
+            "url": "https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/resolve/eec1ae6c79877dbd9379285cf8789c9e0879293d/cosyvoice2.yaml"
+          },
+          {
+            "relative_path": "flow.decoder.estimator.fp32.onnx",
+            "byte_size": 286317026,
+            "sha256": "cd54e4281701e6630730da64502d77b7e8b6e5c057cca65128bffb50f85cbf98",
+            "url": "https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/resolve/eec1ae6c79877dbd9379285cf8789c9e0879293d/flow.decoder.estimator.fp32.onnx"
+          },
+          {
+            "relative_path": "flow.pt",
+            "byte_size": 450575567,
+            "sha256": "ff4c2f867674411e0a08cee702996df13fa67c1cd864c06108da88d16d088541",
+            "url": "https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/resolve/eec1ae6c79877dbd9379285cf8789c9e0879293d/flow.pt"
+          },
+          {
+            "relative_path": "hift.pt",
+            "byte_size": 83390254,
+            "sha256": "3386cc880324d4e98e05987b99107f49e40ed925b8ecc87c1f4939432d429879",
+            "url": "https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/resolve/eec1ae6c79877dbd9379285cf8789c9e0879293d/hift.pt"
+          },
+          {
+            "relative_path": "llm.pt",
+            "byte_size": 2023316821,
+            "sha256": "b144ef55b51ce8cfb79a73c90dbba0bdaba4e451c0ebcfab20f769264f84a608",
+            "url": "https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/resolve/eec1ae6c79877dbd9379285cf8789c9e0879293d/llm.pt"
+          },
+          {
+            "relative_path": "speech_tokenizer_v2.batch.onnx",
+            "byte_size": 496095794,
+            "sha256": "5b45a98572ed21e3a3ebf50201f3020567f7db40e9a57509b790b2982f5c07b7",
+            "url": "https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/resolve/eec1ae6c79877dbd9379285cf8789c9e0879293d/speech_tokenizer_v2.batch.onnx"
+          },
+          {
+            "relative_path": "speech_tokenizer_v2.onnx",
+            "byte_size": 496082973,
+            "sha256": "d43342aa12163a80bf07bffb94c9de2e120a8df2f9917cd2f642e7f4219c6f71",
+            "url": "https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/resolve/eec1ae6c79877dbd9379285cf8789c9e0879293d/speech_tokenizer_v2.onnx"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_key": "minimax-h3-ref2va",
+      "kind": "video",
+      "label": "MiniMax H3 Ref2VA · BF16源权重/INT8运行",
+      "model_id": "MiniMaxAI/MiniMax-H3",
+      "license": "MiniMax H3 Community License",
+      "recommended_revision": "42ed227ee7df40d41602854ae760620d6eb651fe",
+      "worker_contract": {"schema":1,"release":"mediacenter-video-models-v1","target":"h3","adapter_id":"h3","module":"mediacenter.adapters.h3","class":"H3Adapter","operation":"video.generate","lora_families":[],"dependencies":[]},
+      "extension": "mp4",
+      "download_profile": "immutable-service-recipe",
+      "download_allow_patterns": [
+        "model_index.json",
+        "modular_model_index.json",
+        "audio_scheduler/*",
+        "audio_vae/*",
+        "processor/*",
+        "scheduler/*",
+        "text_encoder/*",
+        "tokenizer/*",
+        "transformer_ref/*",
+        "vae/*"
+      ],
+      "required_files": [
+        "model_index.json",
+        "modular_model_index.json",
+        "transformer_ref/config.json",
+        "text_encoder/config.json",
+        "vae/config.json",
+        "audio_vae/config.json"
+      ],
+      "required_vram_mib": 40960,
+      "min_gpus": 2,
+      "max_gpus": 2,
+      "recommended_gpus": [],
+      "service_recipe": {
+        "description": "参考图像、视频或音频生成音画视频；固定 Ref2VA BF16 源权重，运行时 INT8 量化。需选择两张服务器可分配 GPU；安装完成不代表生成已验证。",
+        "role": "checkpoint",
+        "format": "diffusers",
+        "source_type": "huggingface",
+        "files": [
+          {
+            "relative_path": "audio_scheduler/scheduler_config.json",
+            "byte_size": 96,
+            "sha256": "804780f7133477067bd6bbfbc02dc8b3cf9feeb400f97c08f5b1d5f6cbab3840",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/audio_scheduler/scheduler_config.json"
+          },
+          {
+            "relative_path": "audio_vae/config.json",
+            "byte_size": 2271,
+            "sha256": "9a3c645ff892b376c6f5f4c8685964cd75474731af594ff058492a0000caabb6",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/audio_vae/config.json"
+          },
+          {
+            "relative_path": "audio_vae/diffusion_pytorch_model.safetensors",
+            "byte_size": 605429340,
+            "sha256": "52c59e67ba8de5477c81bfbced0327aabf500f1bfdeefd5ee754529241cb26cb",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/audio_vae/diffusion_pytorch_model.safetensors"
+          },
+          {
+            "relative_path": "model_index.json",
+            "byte_size": 2936,
+            "sha256": "5a587fe13b2371427415ac892463142683aefcd8d322e274a3a095eac37ac7d2",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/model_index.json"
+          },
+          {
+            "relative_path": "modular_model_index.json",
+            "byte_size": 2935,
+            "sha256": "a2b6a210e482ffb78e613b553f570c44e101afce6741bd4ed91429d0559af031",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/modular_model_index.json"
+          },
+          {
+            "relative_path": "processor/chat_template.json",
+            "byte_size": 5499,
+            "sha256": "5c72a170d2a4a1a3bc5adad2e689ae28138a9700e5b8c96c0266331e86c0acce",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/processor/chat_template.json"
+          },
+          {
+            "relative_path": "processor/merges.txt",
+            "byte_size": 1671839,
+            "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/processor/merges.txt"
+          },
+          {
+            "relative_path": "processor/preprocessor_config.json",
+            "byte_size": 390,
+            "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/processor/preprocessor_config.json"
+          },
+          {
+            "relative_path": "processor/tokenizer.json",
+            "byte_size": 7032403,
+            "sha256": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/processor/tokenizer.json"
+          },
+          {
+            "relative_path": "processor/tokenizer_config.json",
+            "byte_size": 11003,
+            "sha256": "a07e942ac874baa13758de8d1fbdb186683cc03416b5589e1b6671c6b3057c68",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/processor/tokenizer_config.json"
+          },
+          {
+            "relative_path": "processor/video_preprocessor_config.json",
+            "byte_size": 385,
+            "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/processor/video_preprocessor_config.json"
+          },
+          {
+            "relative_path": "processor/vocab.json",
+            "byte_size": 2776833,
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/processor/vocab.json"
+          },
+          {
+            "relative_path": "scheduler/scheduler_config.json",
+            "byte_size": 97,
+            "sha256": "8fa6c3aa70dc9e691e1a6df899fd1b6f75f70481a27cee6e18a303817075c304",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/scheduler/scheduler_config.json"
+          },
+          {
+            "relative_path": "text_encoder/chat_template.json",
+            "byte_size": 5499,
+            "sha256": "5c72a170d2a4a1a3bc5adad2e689ae28138a9700e5b8c96c0266331e86c0acce",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/chat_template.json"
+          },
+          {
+            "relative_path": "text_encoder/config.json",
+            "byte_size": 1474,
+            "sha256": "d2dd0c60d01b9e195d9447c52da61c7302d28828524914c044d9c6e1b81d0427",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/config.json"
+          },
+          {
+            "relative_path": "text_encoder/merges.txt",
+            "byte_size": 1671839,
+            "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/merges.txt"
+          },
+          {
+            "relative_path": "text_encoder/model-00001-of-00014.safetensors",
+            "byte_size": 4932328944,
+            "sha256": "6b9dfbc930e505402ae9d7e5091a9d7d656cda5f34614f01cfe70bfb0cca27cb",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/model-00001-of-00014.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00002-of-00014.safetensors",
+            "byte_size": 4875990528,
+            "sha256": "d8bb44b4ff303fe76fe9e894022fb3dc71b15a2e716592790fe0e3c3e60478fa",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/model-00002-of-00014.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00003-of-00014.safetensors",
+            "byte_size": 4875990552,
+            "sha256": "54f22e8b3168f8dc962fac0d313607ebf52a12b433d4cf3098a0d82d9f042940",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/model-00003-of-00014.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00004-of-00014.safetensors",
+            "byte_size": 4875990584,
+            "sha256": "ad09c74d3c13ee29b5d0d84548fd8a3424a651564eaccd519946c296e59c557f",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/model-00004-of-00014.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00005-of-00014.safetensors",
+            "byte_size": 4875990584,
+            "sha256": "fc993c8a0e2a5b0570f383e1a95dc3a1281d1b224b6f3ee908f4827941e1dfc2",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/model-00005-of-00014.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00006-of-00014.safetensors",
+            "byte_size": 4875990584,
+            "sha256": "82f05620d1f718a90c362b221d6a184ff1a0f53301d706882d3df49695fa1974",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/model-00006-of-00014.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00007-of-00014.safetensors",
+            "byte_size": 4875990584,
+            "sha256": "fb91da8cb01ff4de3eef0eab1c3e769a734b3a1aafc61734068638a0d6c86934",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/model-00007-of-00014.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00008-of-00014.safetensors",
+            "byte_size": 4875990584,
+            "sha256": "431ca56535c8781944ce3801f5eb61c45531e853ecc5846d936ebaf4761b764f",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/model-00008-of-00014.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00009-of-00014.safetensors",
+            "byte_size": 4875990584,
+            "sha256": "3825e3f4302f4d2f7d76aa7430d2ce0864fde6b9e540a5806bf0d8e38e4d9f47",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/model-00009-of-00014.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00010-of-00014.safetensors",
+            "byte_size": 4875990584,
+            "sha256": "aded5a4d1d5e22dbd8b6f79266b6eb88c840411b09527c53917a1419ace22e2f",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/model-00010-of-00014.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00011-of-00014.safetensors",
+            "byte_size": 4875990584,
+            "sha256": "3820ffe8d8d6477f6fe8d614ef3c87abb264ee39accebf43a1507b970d80946f",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/model-00011-of-00014.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00012-of-00014.safetensors",
+            "byte_size": 4875990584,
+            "sha256": "05ad2d08ce71963121c9b03f1d9ec5d7641052f4b23c6c12b80d71065eb8e98e",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/model-00012-of-00014.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00013-of-00014.safetensors",
+            "byte_size": 4875990584,
+            "sha256": "b64f2289871261fdd1abbd3b78bcd66011b341de3dc8eeb2ed1a473ee7c8d95c",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/model-00013-of-00014.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00014-of-00014.safetensors",
+            "byte_size": 3270697008,
+            "sha256": "e45b6c9998c77ee5a6577f9f47bc76416c1d4d387169e50c4c9d3134ea51b13b",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/model-00014-of-00014.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model.safetensors.index.json",
+            "byte_size": 97831,
+            "sha256": "06c952c569285870b811989b794b9766493e280fb77fbcb957fc4e5fcf25403a",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/model.safetensors.index.json"
+          },
+          {
+            "relative_path": "text_encoder/preprocessor_config.json",
+            "byte_size": 390,
+            "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/preprocessor_config.json"
+          },
+          {
+            "relative_path": "text_encoder/tokenizer.json",
+            "byte_size": 7032403,
+            "sha256": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/tokenizer.json"
+          },
+          {
+            "relative_path": "text_encoder/tokenizer_config.json",
+            "byte_size": 11003,
+            "sha256": "a07e942ac874baa13758de8d1fbdb186683cc03416b5589e1b6671c6b3057c68",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/tokenizer_config.json"
+          },
+          {
+            "relative_path": "text_encoder/video_preprocessor_config.json",
+            "byte_size": 385,
+            "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/video_preprocessor_config.json"
+          },
+          {
+            "relative_path": "text_encoder/vocab.json",
+            "byte_size": 2776833,
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/text_encoder/vocab.json"
+          },
+          {
+            "relative_path": "tokenizer/merges.txt",
+            "byte_size": 1671839,
+            "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/tokenizer/merges.txt"
+          },
+          {
+            "relative_path": "tokenizer/tokenizer.json",
+            "byte_size": 7032403,
+            "sha256": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/tokenizer/tokenizer.json"
+          },
+          {
+            "relative_path": "tokenizer/tokenizer_config.json",
+            "byte_size": 11003,
+            "sha256": "a07e942ac874baa13758de8d1fbdb186683cc03416b5589e1b6671c6b3057c68",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/tokenizer/tokenizer_config.json"
+          },
+          {
+            "relative_path": "tokenizer/vocab.json",
+            "byte_size": 2776833,
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/tokenizer/vocab.json"
+          },
+          {
+            "relative_path": "transformer_ref/config.json",
+            "byte_size": 546,
+            "sha256": "74c11bff524336576096993cbfcdcdc2ef4fa2fa4409df693bdcbc6c666282ae",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/transformer_ref/config.json"
+          },
+          {
+            "relative_path": "transformer_ref/diffusion_pytorch_model-00001-of-00014.safetensors",
+            "byte_size": 4825958704,
+            "sha256": "7a3fcad885f51560e550b2e84c9a8d8b35e62996cfd9076937e992bd23478df9",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/transformer_ref/diffusion_pytorch_model-00001-of-00014.safetensors"
+          },
+          {
+            "relative_path": "transformer_ref/diffusion_pytorch_model-00002-of-00014.safetensors",
+            "byte_size": 4702158032,
+            "sha256": "1638ae1dc8ae26c4ba43ad28a6d851ad8983847324bb2b468719c7c81f219706",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/transformer_ref/diffusion_pytorch_model-00002-of-00014.safetensors"
+          },
+          {
+            "relative_path": "transformer_ref/diffusion_pytorch_model-00003-of-00014.safetensors",
+            "byte_size": 4933368192,
+            "sha256": "1ef3c4954ffe5a664c2e3028e2a3241190d9c159dce6ba1136002c6af1db5353",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/transformer_ref/diffusion_pytorch_model-00003-of-00014.safetensors"
+          },
+          {
+            "relative_path": "transformer_ref/diffusion_pytorch_model-00004-of-00014.safetensors",
+            "byte_size": 4567069608,
+            "sha256": "12d92f2975cfd5c5b786126385c52e5bf64884d4b4d6e60c3ef5d857c3f7469f",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/transformer_ref/diffusion_pytorch_model-00004-of-00014.safetensors"
+          },
+          {
+            "relative_path": "transformer_ref/diffusion_pytorch_model-00005-of-00014.safetensors",
+            "byte_size": 4702158080,
+            "sha256": "304d41ce03d59ac94bceb055935bf4e034df0badf8b0df4ded327c08a288a4cc",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/transformer_ref/diffusion_pytorch_model-00005-of-00014.safetensors"
+          },
+          {
+            "relative_path": "transformer_ref/diffusion_pytorch_model-00006-of-00014.safetensors",
+            "byte_size": 4933368232,
+            "sha256": "12a134b7c76d86edbe8fa2dc315f6cdaf4e1aca1b6ea4dfe4cad92df03d42eeb",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/transformer_ref/diffusion_pytorch_model-00006-of-00014.safetensors"
+          },
+          {
+            "relative_path": "transformer_ref/diffusion_pytorch_model-00007-of-00014.safetensors",
+            "byte_size": 4567069608,
+            "sha256": "b96395261359937c00fb42f4eb29306dc59b1a3368eeba52af4fb66e3e142c69",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/transformer_ref/diffusion_pytorch_model-00007-of-00014.safetensors"
+          },
+          {
+            "relative_path": "transformer_ref/diffusion_pytorch_model-00008-of-00014.safetensors",
+            "byte_size": 4702158080,
+            "sha256": "1897a6bf3b4fc834bb82d73ca02a7afc7d38c07f50ec5382cd54cd2f91b604d1",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/transformer_ref/diffusion_pytorch_model-00008-of-00014.safetensors"
+          },
+          {
+            "relative_path": "transformer_ref/diffusion_pytorch_model-00009-of-00014.safetensors",
+            "byte_size": 4933368232,
+            "sha256": "edfb38235adc96b99f55a401849befce59075a745e99c2d8c63ff358dd36443d",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/transformer_ref/diffusion_pytorch_model-00009-of-00014.safetensors"
+          },
+          {
+            "relative_path": "transformer_ref/diffusion_pytorch_model-00010-of-00014.safetensors",
+            "byte_size": 4567069608,
+            "sha256": "f8710775cf3413670edd7e23861b650a3431a71a6cc14cb1080623ab6b052385",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/transformer_ref/diffusion_pytorch_model-00010-of-00014.safetensors"
+          },
+          {
+            "relative_path": "transformer_ref/diffusion_pytorch_model-00011-of-00014.safetensors",
+            "byte_size": 4702158080,
+            "sha256": "9e18acc09f84edb5b34df9628efa15cfcab8bb76e8e20c1c2e979a107a0f7215",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/transformer_ref/diffusion_pytorch_model-00011-of-00014.safetensors"
+          },
+          {
+            "relative_path": "transformer_ref/diffusion_pytorch_model-00012-of-00014.safetensors",
+            "byte_size": 4933368232,
+            "sha256": "ea2e18228f8bdba1a4e0f32b155e4586df055997c45356213d05b971ba13e2f4",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/transformer_ref/diffusion_pytorch_model-00012-of-00014.safetensors"
+          },
+          {
+            "relative_path": "transformer_ref/diffusion_pytorch_model-00013-of-00014.safetensors",
+            "byte_size": 4567069608,
+            "sha256": "1e12083b1875678f7414ff55b09cd8bb1c30b861243f9bb7ff1e75b6ad3f1bdc",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/transformer_ref/diffusion_pytorch_model-00013-of-00014.safetensors"
+          },
+          {
+            "relative_path": "transformer_ref/diffusion_pytorch_model-00014-of-00014.safetensors",
+            "byte_size": 4644161920,
+            "sha256": "b340f44b5690cc745d48ae399381ec15b26a4fe25d483f677ccb4960dadb50d4",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/transformer_ref/diffusion_pytorch_model-00014-of-00014.safetensors"
+          },
+          {
+            "relative_path": "transformer_ref/diffusion_pytorch_model.safetensors.index.json",
+            "byte_size": 64488,
+            "sha256": "ac30a3b58963f2e735d493475fbb81853a5735ec947619648b3e045acda6783e",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/transformer_ref/diffusion_pytorch_model.safetensors.index.json"
+          },
+          {
+            "relative_path": "vae/config.json",
+            "byte_size": 2011,
+            "sha256": "78f67deec3d63aae807f2bfe7154bc1e26f6372cb20b63265fcbae1b62bb5745",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/vae/config.json"
+          },
+          {
+            "relative_path": "vae/diffusion_pytorch_model-00001-of-00003.safetensors",
+            "byte_size": 5061033024,
+            "sha256": "72f4c6be84ac0674f27398cde991dd9d719762f3952c4921aa66b2ce542f6374",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/vae/diffusion_pytorch_model-00001-of-00003.safetensors"
+          },
+          {
+            "relative_path": "vae/diffusion_pytorch_model-00002-of-00003.safetensors",
+            "byte_size": 4955986528,
+            "sha256": "2e05e8bc23fa4071043e17fd242be8acd0685e781a43987432b2eae925be4198",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/vae/diffusion_pytorch_model-00002-of-00003.safetensors"
+          },
+          {
+            "relative_path": "vae/diffusion_pytorch_model-00003-of-00003.safetensors",
+            "byte_size": 398539336,
+            "sha256": "c05d6ac4b1a33de372799d708531da6320f6a3ce6d1ce6d895e770988e004a39",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/vae/diffusion_pytorch_model-00003-of-00003.safetensors"
+          },
+          {
+            "relative_path": "vae/diffusion_pytorch_model.safetensors.index.json",
+            "byte_size": 74228,
+            "sha256": "15f6d44553c3c616b0dc999920aa784f92ecee7e4201f1f99ac405cfbf3061ca",
+            "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/42ed227ee7df40d41602854ae760620d6eb651fe/vae/diffusion_pytorch_model.safetensors.index.json"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_key": "ltx-2.3-distilled",
+      "kind": "video",
+      "label": "LTX-2.3 Distilled 1.1",
+      "model_id": "diffusers/LTX-2.3-Diffusers",
+      "license": "LTX-2 Community License",
+      "recommended_revision": "8eee8edcf067e838b843f926ec4d4cc9b2be1aaf",
+      "worker_contract": {"schema":1,"release":"mediacenter-video-models-v1","target":"ltx","adapter_id":"ltx","module":"mediacenter.adapters.ltx","class":"LTXAdapter","operation":"video.generate","lora_families":[],"dependencies":[]},
+      "extension": "mp4",
+      "download_profile": "immutable-service-recipe",
+      "download_allow_patterns": [
+        "model_index.json",
+        "audio_vae/*",
+        "connectors/*",
+        "processor/*",
+        "scheduler/*",
+        "text_encoder/*",
+        "tokenizer/*",
+        "transformer/*",
+        "vae/*",
+        "vocoder/*"
+      ],
+      "required_files": [
+        "model_index.json",
+        "transformer/config.json",
+        "text_encoder/config.json",
+        "vae/config.json",
+        "audio_vae/config.json",
+        "vocoder/config.json"
+      ],
+      "required_vram_mib": 36864,
+      "min_gpus": 1,
+      "max_gpus": 2,
+      "recommended_gpus": [],
+      "service_recipe": {
+        "description": "LTX-2.3 音画视频服务；复用既有固定 Diffusers 版本和完整组件，独立准备运行环境。安装完成不代表生成已验证。",
+        "role": "checkpoint",
+        "format": "diffusers",
+        "source_type": "huggingface",
+        "files": [
+          {
+            "relative_path": "audio_vae/config.json",
+            "byte_size": 505,
+            "sha256": "58c10a50ceafcbd19b61c99761b2b676d58186a4c2b1284833a41637ccaeeda0",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/audio_vae/config.json"
+          },
+          {
+            "relative_path": "audio_vae/diffusion_pytorch_model.safetensors",
+            "byte_size": 106507972,
+            "sha256": "45dcb1c3cffc8c8b7710a04dd19500e481daff31f5ea8e8529f2cf697c439d12",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/audio_vae/diffusion_pytorch_model.safetensors"
+          },
+          {
+            "relative_path": "connectors/config.json",
+            "byte_size": 817,
+            "sha256": "cff9a5cdfd67d75cfcb425986c372dc640e21c3e7d982db33ef3be164424e22b",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/connectors/config.json"
+          },
+          {
+            "relative_path": "connectors/diffusion_pytorch_model-00001-of-00002.safetensors",
+            "byte_size": 4999998520,
+            "sha256": "b767a411e336d692306d7d34fa85627db1d17809a4690f45dd96a4b3807d248c",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/connectors/diffusion_pytorch_model-00001-of-00002.safetensors"
+          },
+          {
+            "relative_path": "connectors/diffusion_pytorch_model-00002-of-00002.safetensors",
+            "byte_size": 1344490576,
+            "sha256": "ffe33521b2bbd12604abe2d63b5cf02cf55f2fdf10226ff5aae00e437678ebc8",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/connectors/diffusion_pytorch_model-00002-of-00002.safetensors"
+          },
+          {
+            "relative_path": "connectors/diffusion_pytorch_model.safetensors",
+            "byte_size": 6344489120,
+            "sha256": "e2bf5ca48db13cea180ecff2d8e8e1224fcea8cc04d41721e704c6034f914722",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/connectors/diffusion_pytorch_model.safetensors"
+          },
+          {
+            "relative_path": "connectors/diffusion_pytorch_model.safetensors.index.json",
+            "byte_size": 30629,
+            "sha256": "6c78508c56116c3357ece4b350d054bddb2b6251a08e8ab828108ac8af234bc1",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/connectors/diffusion_pytorch_model.safetensors.index.json"
+          },
+          {
+            "relative_path": "model_index.json",
+            "byte_size": 623,
+            "sha256": "e5cd72eba01399116afd0b109b20546450a90660ff4c9118d9e6c57fa7508c37",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/model_index.json"
+          },
+          {
+            "relative_path": "processor/added_tokens.json",
+            "byte_size": 35,
+            "sha256": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/processor/added_tokens.json"
+          },
+          {
+            "relative_path": "processor/chat_template.jinja",
+            "byte_size": 1532,
+            "sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/processor/chat_template.jinja"
+          },
+          {
+            "relative_path": "processor/preprocessor_config.json",
+            "byte_size": 570,
+            "sha256": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/processor/preprocessor_config.json"
+          },
+          {
+            "relative_path": "processor/processor_config.json",
+            "byte_size": 70,
+            "sha256": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/processor/processor_config.json"
+          },
+          {
+            "relative_path": "processor/special_tokens_map.json",
+            "byte_size": 662,
+            "sha256": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/processor/special_tokens_map.json"
+          },
+          {
+            "relative_path": "processor/tokenizer.json",
+            "byte_size": 33384568,
+            "sha256": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/processor/tokenizer.json"
+          },
+          {
+            "relative_path": "processor/tokenizer.model",
+            "byte_size": 4689074,
+            "sha256": "1299c11d7cf632ef3b4e11937501358ada021bbdf7c47638d13c0ee982f2e79c",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/processor/tokenizer.model"
+          },
+          {
+            "relative_path": "processor/tokenizer_config.json",
+            "byte_size": 1155387,
+            "sha256": "983c80895e7b188911f5ccfbb4f780a4e73fb3131ed2080a3e847ef8623cfdca",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/processor/tokenizer_config.json"
+          },
+          {
+            "relative_path": "scheduler/scheduler_config.json",
+            "byte_size": 487,
+            "sha256": "d0ea66125ca4e0f5bcd6bd26ee6797217abca76f7270d2bf1a64d33c6364d195",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/scheduler/scheduler_config.json"
+          },
+          {
+            "relative_path": "text_encoder/config.json",
+            "byte_size": 2960,
+            "sha256": "fb4508a46270e0af2778cd72c191f290984e6a5fa8f155895544507d3803dbe9",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/text_encoder/config.json"
+          },
+          {
+            "relative_path": "text_encoder/generation_config.json",
+            "byte_size": 168,
+            "sha256": "1b77c4610a27b5aa38b72be8a757da4e14849bc4e3dc641ccbe923a0e226ed9a",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/text_encoder/generation_config.json"
+          },
+          {
+            "relative_path": "text_encoder/model-00001-of-00011.safetensors",
+            "byte_size": 1685223128,
+            "sha256": "cbc6e8132e4998652d4c8c219f0ca8da10a143606c806c8728a7513d49bbcdb3",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/text_encoder/model-00001-of-00011.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00002-of-00011.safetensors",
+            "byte_size": 4987027384,
+            "sha256": "b95e7ab472b88860e53c71ef078fe8ba4c85e3727b8f0a0bcc130c1f4a2b9ab9",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/text_encoder/model-00002-of-00011.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00003-of-00011.safetensors",
+            "byte_size": 4844749824,
+            "sha256": "3731e7c18280d0e9dcbcfadaecaeb8b81fa7f7f15e702ea3d1b4f8eb1b5919f7",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/text_encoder/model-00003-of-00011.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00004-of-00011.safetensors",
+            "byte_size": 4954909736,
+            "sha256": "e9d1ce8b472f2cc6d70c7885388f50fb3a5f233cf1d4784f6a4be1732547a74c",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/text_encoder/model-00004-of-00011.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00005-of-00011.safetensors",
+            "byte_size": 4907664584,
+            "sha256": "cb478659a67b2e34a920f237387a1d7a8208325aa2fc285198a97603f15af1e6",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/text_encoder/model-00005-of-00011.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00006-of-00011.safetensors",
+            "byte_size": 4954909792,
+            "sha256": "a190581d871980f9309f40d5c2b4db99d76737d7ed743d531bac95443f6b7145",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/text_encoder/model-00006-of-00011.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00007-of-00011.safetensors",
+            "byte_size": 4907664584,
+            "sha256": "c347de789ff34be642e4fe7ab8e142ca5e3d833d70cb9ec5127a86af0e2ecfed",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/text_encoder/model-00007-of-00011.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00008-of-00011.safetensors",
+            "byte_size": 4954909792,
+            "sha256": "2ec7525b89b083d774f4abbdd1f2d7ee190f0475658875cf700530a2faa84a4f",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/text_encoder/model-00008-of-00011.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00009-of-00011.safetensors",
+            "byte_size": 4907664584,
+            "sha256": "2b0117ecf1d83691bb875c66a9f2b47e450a87fdfe90915bc7b9e9946c37a650",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/text_encoder/model-00009-of-00011.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00010-of-00011.safetensors",
+            "byte_size": 4954909792,
+            "sha256": "d9f665a743589231adb812c61c9d8e295c9a68c31d3e87976ae032f1de4e46b6",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/text_encoder/model-00010-of-00011.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00011-of-00011.safetensors",
+            "byte_size": 2689808472,
+            "sha256": "999bf4706d4f616e558eec486667fc2b66f8d0f9c106e1d1f802458fb349b0db",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/text_encoder/model-00011-of-00011.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model.safetensors.index.json",
+            "byte_size": 108642,
+            "sha256": "9c85ee65d0de363846bebbe921f43a641c8e0979471560ba8a76f6eec35693c8",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/text_encoder/model.safetensors.index.json"
+          },
+          {
+            "relative_path": "tokenizer/added_tokens.json",
+            "byte_size": 35,
+            "sha256": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/tokenizer/added_tokens.json"
+          },
+          {
+            "relative_path": "tokenizer/chat_template.jinja",
+            "byte_size": 1532,
+            "sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/tokenizer/chat_template.jinja"
+          },
+          {
+            "relative_path": "tokenizer/special_tokens_map.json",
+            "byte_size": 662,
+            "sha256": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/tokenizer/special_tokens_map.json"
+          },
+          {
+            "relative_path": "tokenizer/tokenizer.json",
+            "byte_size": 33384568,
+            "sha256": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/tokenizer/tokenizer.json"
+          },
+          {
+            "relative_path": "tokenizer/tokenizer.model",
+            "byte_size": 4689074,
+            "sha256": "1299c11d7cf632ef3b4e11937501358ada021bbdf7c47638d13c0ee982f2e79c",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/tokenizer/tokenizer.model"
+          },
+          {
+            "relative_path": "tokenizer/tokenizer_config.json",
+            "byte_size": 1155387,
+            "sha256": "983c80895e7b188911f5ccfbb4f780a4e73fb3131ed2080a3e847ef8623cfdca",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/tokenizer/tokenizer_config.json"
+          },
+          {
+            "relative_path": "transformer/config.json",
+            "byte_size": 1317,
+            "sha256": "5aa2c0445a196bb5e4256a03209038bb6fe41c93d4bda02a5311bde7c85dc2fe",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/transformer/config.json"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00001-of-00008.safetensors",
+            "byte_size": 4990709464,
+            "sha256": "5067ec278f12877bcabb140340ac568cb8457a4ba0333fd473e321c351be8ab3",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/transformer/diffusion_pytorch_model-00001-of-00008.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00002-of-00008.safetensors",
+            "byte_size": 4944487248,
+            "sha256": "8f0c73535077cdd40c44dc4a17a84c4cd110fa2ca692211737360adb7d169008",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/transformer/diffusion_pytorch_model-00002-of-00008.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00003-of-00008.safetensors",
+            "byte_size": 4994661712,
+            "sha256": "fd60f01d4234cc4016c8b55cdcfc570ed9155f2b69e9ececde563db70e7df16f",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/transformer/diffusion_pytorch_model-00003-of-00008.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00004-of-00008.safetensors",
+            "byte_size": 4927859352,
+            "sha256": "05a7733ddbc8b2c32b6d997e1332206c3cb0308be45268dc06033aa7884793f3",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/transformer/diffusion_pytorch_model-00004-of-00008.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00005-of-00008.safetensors",
+            "byte_size": 4977604280,
+            "sha256": "23de83b6aea3f6eb39c0f10b55f4ef972c2be576522af25f9daf6d2b49097c82",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/transformer/diffusion_pytorch_model-00005-of-00008.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00006-of-00008.safetensors",
+            "byte_size": 4994844576,
+            "sha256": "d6b8b093eb6125e7533c78b089da64fe50167d4a458994eba44966435c99d0ed",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/transformer/diffusion_pytorch_model-00006-of-00008.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00007-of-00008.safetensors",
+            "byte_size": 4994386864,
+            "sha256": "795542ccb575328eaf288aa725ae14bd69df57f9fad6336232b8dc09410397ba",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/transformer/diffusion_pytorch_model-00007-of-00008.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00008-of-00008.safetensors",
+            "byte_size": 3163094784,
+            "sha256": "c37992eb853a90c414a5ee8da6e557dc3a5f7d49c982f019bb809e7133e3af4c",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/transformer/diffusion_pytorch_model-00008-of-00008.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model.safetensors.index.json",
+            "byte_size": 455948,
+            "sha256": "70e9cdcf2cfac2382bce43881fe351196d7bfc0ecc5b442375ae1e1ababeec39",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/transformer/diffusion_pytorch_model.safetensors.index.json"
+          },
+          {
+            "relative_path": "vae/config.json",
+            "byte_size": 1480,
+            "sha256": "cd054c75383362d3d9486a138917a148dae0340fd5d4ef93f07a8b7917412afa",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/vae/config.json"
+          },
+          {
+            "relative_path": "vae/diffusion_pytorch_model.safetensors",
+            "byte_size": 1452233194,
+            "sha256": "425f0dfa227dee5d0ff3d9720563370810409a439c302ca74f0f944057ce55c5",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/vae/diffusion_pytorch_model.safetensors"
+          },
+          {
+            "relative_path": "vocoder/config.json",
+            "byte_size": 1478,
+            "sha256": "d46ccd33ab47d548b1596367b78a67009f01a99b9945ebacb36bc2a0fdecf7d5",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/vocoder/config.json"
+          },
+          {
+            "relative_path": "vocoder/diffusion_pytorch_model.safetensors",
+            "byte_size": 258305056,
+            "sha256": "c99dde145a982974bc4c39608b3b929f232f0126a55d8326a47ad54f486ae23c",
+            "url": "https://huggingface.co/diffusers/LTX-2.3-Diffusers/resolve/8eee8edcf067e838b843f926ec4d4cc9b2be1aaf/vocoder/diffusion_pytorch_model.safetensors"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_key": "wan2.2-i2v-a14b",
+      "kind": "video",
+      "label": "Wan 2.2 I2V-A14B",
+      "model_id": "Wan-AI/Wan2.2-I2V-A14B-Diffusers",
+      "license": "Apache-2.0",
+      "recommended_revision": "596658fd9ca6b7b71d5057529bbf319ecbc61d74",
+      "worker_contract": {"schema":1,"release":"mediacenter-video-models-v1","target":"wan22","adapter_id":"wan22","module":"mediacenter.adapters.wan22","class":"Wan22Adapter","operation":"video.generate","lora_families":[],"dependencies":[]},
+      "extension": "mp4",
+      "download_profile": "immutable-service-recipe",
+      "download_allow_patterns": [
+        "model_index.json",
+        "scheduler/*",
+        "text_encoder/*",
+        "tokenizer/*",
+        "transformer/*",
+        "transformer_2/*",
+        "vae/*"
+      ],
+      "required_files": [
+        "model_index.json",
+        "transformer/config.json",
+        "transformer_2/config.json",
+        "text_encoder/config.json",
+        "vae/config.json"
+      ],
+      "required_vram_mib": 34816,
+      "min_gpus": 1,
+      "max_gpus": 2,
+      "recommended_gpus": [],
+      "service_recipe": {
+        "description": "Wan 2.2 图生视频服务；包含高噪声与低噪声两组 Transformer，生成时需提供一张参考图片。安装完成不代表生成已验证。",
+        "role": "checkpoint",
+        "format": "diffusers",
+        "source_type": "huggingface",
+        "files": [
+          {
+            "relative_path": "model_index.json",
+            "byte_size": 600,
+            "sha256": "50ba96f2b36888eab6b33afb4a74254652fb4f43be4767cea633f4bcda67f5d8",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/model_index.json"
+          },
+          {
+            "relative_path": "scheduler/scheduler_config.json",
+            "byte_size": 820,
+            "sha256": "40624e058848feddf4bc2da5e8a232668b9a6f4a4939365810bebd9ce0166578",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/scheduler/scheduler_config.json"
+          },
+          {
+            "relative_path": "text_encoder/config.json",
+            "byte_size": 855,
+            "sha256": "a2bcb24699f6c009a2427432bdd483ef8b2b42a712abc9503759cdc77d171f07",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/text_encoder/config.json"
+          },
+          {
+            "relative_path": "text_encoder/model-00001-of-00003.safetensors",
+            "byte_size": 4935812536,
+            "sha256": "a8e861969c7433e707cc5a74065d795d36cca07ec96eb6763eb4083df7248f58",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/text_encoder/model-00001-of-00003.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00002-of-00003.safetensors",
+            "byte_size": 4983103192,
+            "sha256": "d57d948ece4837d850b7a859a4415121d57cacf8b9ee1d4db200c67f592902d7",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/text_encoder/model-00002-of-00003.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00003-of-00003.safetensors",
+            "byte_size": 1442935480,
+            "sha256": "0da9ee284e21d1406df708788db1d502d95d75f69faa25cd26151bf8829b7c5f",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/text_encoder/model-00003-of-00003.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model.safetensors.index.json",
+            "byte_size": 22476,
+            "sha256": "31c4c7bcce679eaa0dd4667462394ddb013dc2f748e0bffc893dc9146a320dab",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/text_encoder/model.safetensors.index.json"
+          },
+          {
+            "relative_path": "tokenizer/special_tokens_map.json",
+            "byte_size": 7079,
+            "sha256": "456b58fd240a06c743a7c2cf8008bec501240d68ebd1fc4018ea569505fea270",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/tokenizer/special_tokens_map.json"
+          },
+          {
+            "relative_path": "tokenizer/spiece.model",
+            "byte_size": 4548313,
+            "sha256": "e3909a67b780650b35cf529ac782ad2b6b26e6d1f849d3fbb6a872905f452458",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/tokenizer/spiece.model"
+          },
+          {
+            "relative_path": "tokenizer/tokenizer.json",
+            "byte_size": 16837459,
+            "sha256": "20a46ac256746594ed7e1e3ef733b83fbc5a6f0922aa7480eda961743de080ef",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/tokenizer/tokenizer.json"
+          },
+          {
+            "relative_path": "tokenizer/tokenizer_config.json",
+            "byte_size": 61758,
+            "sha256": "1d8d2a216bf8e70ac15b7ddcea566c4dd0433c024b39a58ca5e4c66bd78defbd",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/tokenizer/tokenizer_config.json"
+          },
+          {
+            "relative_path": "transformer/config.json",
+            "byte_size": 495,
+            "sha256": "6809423c4a92f886feded9f85f55c667d73a2332d5e011fab4172f3448dd5666",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer/config.json"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00001-of-00012.safetensors",
+            "byte_size": 4864810208,
+            "sha256": "0400c403bd7cfe6c1c29b47ff9cb575495dc590c9be2511a3b44ae5795add106",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer/diffusion_pytorch_model-00001-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00002-of-00012.safetensors",
+            "byte_size": 4919594456,
+            "sha256": "0da8ce107f7ccbe323be7b35c5e81ce90504995b9cf0a0c06e4132f836474ba4",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer/diffusion_pytorch_model-00002-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00003-of-00012.safetensors",
+            "byte_size": 4919465128,
+            "sha256": "4bee4dbbb916f167ce96d3f795ae316cd221713302ee427b7df457ea4dafe034",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer/diffusion_pytorch_model-00003-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00004-of-00012.safetensors",
+            "byte_size": 4919594536,
+            "sha256": "e6fec68a39ce49cfde2e6464061df64b853f0354151ca17931f8dd028dd47ff6",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer/diffusion_pytorch_model-00004-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00005-of-00012.safetensors",
+            "byte_size": 4919465224,
+            "sha256": "cf66f3fcf66788d2e939d0e60da015fa0953c48da92ae67f04ff085c4e826104",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer/diffusion_pytorch_model-00005-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00006-of-00012.safetensors",
+            "byte_size": 4919594552,
+            "sha256": "cdc4bb9e21d17e8577c915215429827ad5d58bee2021ed0d63c6854596b06c90",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer/diffusion_pytorch_model-00006-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00007-of-00012.safetensors",
+            "byte_size": 4919465224,
+            "sha256": "c9c48dfd22c8546e20a805a5e5d698f6fbebc7b1426db92d693b75ccd10e574c",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer/diffusion_pytorch_model-00007-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00008-of-00012.safetensors",
+            "byte_size": 4919594552,
+            "sha256": "1bed82c03707de72ef06f624f2bbc9d43370cc208d657989dd07b08b1ff998ab",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer/diffusion_pytorch_model-00008-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00009-of-00012.safetensors",
+            "byte_size": 4919465224,
+            "sha256": "779d7d8901239b5deef86597f74a4eccaf91fee674f05854dfc3d808e556805b",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer/diffusion_pytorch_model-00009-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00010-of-00012.safetensors",
+            "byte_size": 4919594552,
+            "sha256": "ea1ebb7975f001bda912c56bf8095865605e6a019b0c180e1de74129cfbfef98",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer/diffusion_pytorch_model-00010-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00011-of-00012.safetensors",
+            "byte_size": 4919465224,
+            "sha256": "38d9349f1c29a99c1f78ef53d228c1f51dde301bd3e33296db1a7e7f8c25f6fe",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer/diffusion_pytorch_model-00011-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00012-of-00012.safetensors",
+            "byte_size": 3095607280,
+            "sha256": "978ff94fe927dab5dc2a60030297043abff35a7d93524ce286b07c49025edfe1",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer/diffusion_pytorch_model-00012-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model.safetensors.index.json",
+            "byte_size": 97307,
+            "sha256": "fb80e949700c1a9a1d761d7bf56e78e6c5592d819bb600d76092e65497b9dfa5",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer/diffusion_pytorch_model.safetensors.index.json"
+          },
+          {
+            "relative_path": "transformer_2/config.json",
+            "byte_size": 495,
+            "sha256": "6809423c4a92f886feded9f85f55c667d73a2332d5e011fab4172f3448dd5666",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer_2/config.json"
+          },
+          {
+            "relative_path": "transformer_2/diffusion_pytorch_model-00001-of-00012.safetensors",
+            "byte_size": 4864810208,
+            "sha256": "95256668a2f7f60fd80db7b0ef2edd0700d18bfd44365a546c4eb75150b43518",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer_2/diffusion_pytorch_model-00001-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer_2/diffusion_pytorch_model-00002-of-00012.safetensors",
+            "byte_size": 4919594456,
+            "sha256": "3af2c8d8990a9a214fa13d2206dabc6ddd7148260ceffa570a93ff3a077d0ea0",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer_2/diffusion_pytorch_model-00002-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer_2/diffusion_pytorch_model-00003-of-00012.safetensors",
+            "byte_size": 4919465128,
+            "sha256": "47895d51e50eb833cfb729a55c0a88d69801171c3da64b895b44a2128315894f",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer_2/diffusion_pytorch_model-00003-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer_2/diffusion_pytorch_model-00004-of-00012.safetensors",
+            "byte_size": 4919594536,
+            "sha256": "c60f290bf6173bcd451ce4bb69054de077e6bc68609dc575033123996feebe70",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer_2/diffusion_pytorch_model-00004-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer_2/diffusion_pytorch_model-00005-of-00012.safetensors",
+            "byte_size": 4919465224,
+            "sha256": "fa53bebbb015efcf3de972a3029a34d4a8535a8d098f8f6e6210ea92d392b8f3",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer_2/diffusion_pytorch_model-00005-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer_2/diffusion_pytorch_model-00006-of-00012.safetensors",
+            "byte_size": 4919594552,
+            "sha256": "11afdf78c0219e950484e72e046ee0aa2a583052d048f57c339ce4eee3737130",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer_2/diffusion_pytorch_model-00006-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer_2/diffusion_pytorch_model-00007-of-00012.safetensors",
+            "byte_size": 4919465224,
+            "sha256": "8dc3fc3f8398854f6e1a521ef79d7e2199da7d039caa38625929acf83ab0f41c",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer_2/diffusion_pytorch_model-00007-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer_2/diffusion_pytorch_model-00008-of-00012.safetensors",
+            "byte_size": 4919594552,
+            "sha256": "fcf286f8a4745b6e7dd557d50f2e8126ac20037c1f4c3d75493b2a32861b29a4",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer_2/diffusion_pytorch_model-00008-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer_2/diffusion_pytorch_model-00009-of-00012.safetensors",
+            "byte_size": 4919465224,
+            "sha256": "2571fe8aefce8557b97809e9879e7d2650b9033944cf28e77007977cb1b6d7b7",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer_2/diffusion_pytorch_model-00009-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer_2/diffusion_pytorch_model-00010-of-00012.safetensors",
+            "byte_size": 4919594552,
+            "sha256": "8496ff20bb26d39484c940bc27047f0a7ca107f8ee23ef4ba7b2bd2f36c1dbfd",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer_2/diffusion_pytorch_model-00010-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer_2/diffusion_pytorch_model-00011-of-00012.safetensors",
+            "byte_size": 4919465224,
+            "sha256": "2bb74907c0cfffcdae0be5efe462a05179f199eee21be79b5ad20ea296a45869",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer_2/diffusion_pytorch_model-00011-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer_2/diffusion_pytorch_model-00012-of-00012.safetensors",
+            "byte_size": 3095607280,
+            "sha256": "2d3f1aca89bc664f029efd5a9cf848b47fa671d781681ce05dfeb4671a5bd77d",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer_2/diffusion_pytorch_model-00012-of-00012.safetensors"
+          },
+          {
+            "relative_path": "transformer_2/diffusion_pytorch_model.safetensors.index.json",
+            "byte_size": 97307,
+            "sha256": "fb80e949700c1a9a1d761d7bf56e78e6c5592d819bb600d76092e65497b9dfa5",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/transformer_2/diffusion_pytorch_model.safetensors.index.json"
+          },
+          {
+            "relative_path": "vae/config.json",
+            "byte_size": 724,
+            "sha256": "47e8bcf55e93e9c182e1962a8c7a0650faeb34ea0f66826d6f8aaa9f73e08ec9",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/vae/config.json"
+          },
+          {
+            "relative_path": "vae/diffusion_pytorch_model.safetensors",
+            "byte_size": 507591892,
+            "sha256": "d6e524b3fffede1787a74e81b30976dce5400c4439ba64222168e607ed19e793",
+            "url": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers/resolve/596658fd9ca6b7b71d5057529bbf319ecbc61d74/vae/diffusion_pytorch_model.safetensors"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_key": "hunyuanvideo-1.5-720p-t2v",
+      "kind": "video",
+      "label": "HunyuanVideo 1.5 720p T2V",
+      "model_id": "hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v",
+      "license": "Tencent Hunyuan Community License",
+      "recommended_revision": "f4dbc4a1efa4ac8ea56680cdf79d9f455105e814",
+      "worker_contract": {"schema":1,"release":"mediacenter-video-models-v1","target":"hunyuan15","adapter_id":"hunyuan15","module":"mediacenter.adapters.hunyuan15","class":"Hunyuan15Adapter","operation":"video.generate","lora_families":[],"dependencies":[]},
+      "extension": "mp4",
+      "download_profile": "immutable-service-recipe",
+      "download_allow_patterns": [
+        "model_index.json",
+        "guider/*",
+        "scheduler/*",
+        "text_encoder/*",
+        "text_encoder_2/*",
+        "tokenizer/*",
+        "tokenizer_2/*",
+        "transformer/*",
+        "vae/*"
+      ],
+      "required_files": [
+        "model_index.json",
+        "transformer/config.json",
+        "text_encoder/config.json",
+        "text_encoder_2/config.json",
+        "guider/guider_config.json",
+        "vae/config.json"
+      ],
+      "required_vram_mib": 30720,
+      "min_gpus": 1,
+      "max_gpus": 2,
+      "recommended_gpus": [],
+      "service_recipe": {
+        "description": "HunyuanVideo 1.5 720p 文生视频服务；包含双文本编码器、分词器和引导配置。安装完成不代表生成已验证。",
+        "role": "checkpoint",
+        "format": "diffusers",
+        "source_type": "huggingface",
+        "files": [
+          {
+            "relative_path": "guider/guider_config.json",
+            "byte_size": 224,
+            "sha256": "690862ec179f7a295fe79a4dad8d0c4835bc071cd39655115c611e704dd6c5aa",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/guider/guider_config.json"
+          },
+          {
+            "relative_path": "model_index.json",
+            "byte_size": 644,
+            "sha256": "e6573b14a5b008a680f5ff1606003bf8715f82adaf89674917950939578403bb",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/model_index.json"
+          },
+          {
+            "relative_path": "scheduler/scheduler_config.json",
+            "byte_size": 487,
+            "sha256": "d53ab643a8ac67173386f8ea412baadb3e39d6b9c39347450a090e9fcc65b79d",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/scheduler/scheduler_config.json"
+          },
+          {
+            "relative_path": "text_encoder/config.json",
+            "byte_size": 1471,
+            "sha256": "6848bb40490cbc356d531c6ec405b6b12ee54d1367b609169db6c311a00aaa78",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/text_encoder/config.json"
+          },
+          {
+            "relative_path": "text_encoder/model-00001-of-00003.safetensors",
+            "byte_size": 4877660152,
+            "sha256": "a1b9f95e60d6844963933dc20c11cf712d902441ef50d0926e5f2b3521a2f01d",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/text_encoder/model-00001-of-00003.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00002-of-00003.safetensors",
+            "byte_size": 4932750280,
+            "sha256": "ab32a0fe73edfa4af4eb0c7f17633c44704335d80755f9230200cf16fea42b7e",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/text_encoder/model-00002-of-00003.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00003-of-00003.safetensors",
+            "byte_size": 4330864528,
+            "sha256": "fe26b2e0da51f3c6522b46056b26603f0642f866a60eacec09ebe66a025cb7ee",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/text_encoder/model-00003-of-00003.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model.safetensors.index.json",
+            "byte_size": 25702,
+            "sha256": "3374ab25b3226ec4416e0f036c157d577b36329a2c45ba710f8843547ef8ba00",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/text_encoder/model.safetensors.index.json"
+          },
+          {
+            "relative_path": "text_encoder_2/config.json",
+            "byte_size": 782,
+            "sha256": "093eb86b182657d3c6ab6c32e9c1373082c4ca3c4554e6ccc0dea28094ed8427",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/text_encoder_2/config.json"
+          },
+          {
+            "relative_path": "text_encoder_2/model.safetensors",
+            "byte_size": 877273128,
+            "sha256": "3f3b22f7926015b76022ca4842a3130d83c477d4ecee8a5275252650d96bf97a",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/text_encoder_2/model.safetensors"
+          },
+          {
+            "relative_path": "tokenizer/added_tokens.json",
+            "byte_size": 605,
+            "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/tokenizer/added_tokens.json"
+          },
+          {
+            "relative_path": "tokenizer/chat_template.jinja",
+            "byte_size": 1017,
+            "sha256": "a0bc6f6fc7a29a80017a433e8f03a1cc1236e838a944a2d034295a60c4f2fddb",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/tokenizer/chat_template.jinja"
+          },
+          {
+            "relative_path": "tokenizer/merges.txt",
+            "byte_size": 1671853,
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/tokenizer/merges.txt"
+          },
+          {
+            "relative_path": "tokenizer/special_tokens_map.json",
+            "byte_size": 613,
+            "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/tokenizer/special_tokens_map.json"
+          },
+          {
+            "relative_path": "tokenizer/tokenizer.json",
+            "byte_size": 11421896,
+            "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/tokenizer/tokenizer.json"
+          },
+          {
+            "relative_path": "tokenizer/tokenizer_config.json",
+            "byte_size": 4713,
+            "sha256": "11d20a741a0eda1e7482d29b5d17553328922ed9e7391ec6f44d390215390f3d",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/tokenizer/tokenizer_config.json"
+          },
+          {
+            "relative_path": "tokenizer/vocab.json",
+            "byte_size": 2776833,
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/tokenizer/vocab.json"
+          },
+          {
+            "relative_path": "tokenizer_2/added_tokens.json",
+            "byte_size": 29726,
+            "sha256": "6dbf3df426e1c529b1823b2a9b10b6cd72fab3b375b6d55cbf7608e89f081151",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/tokenizer_2/added_tokens.json"
+          },
+          {
+            "relative_path": "tokenizer_2/special_tokens_map.json",
+            "byte_size": 167786,
+            "sha256": "aca482f95fc225629e1a4bf8d2e3784422f03def7d99210fe8101e839a92a00f",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/tokenizer_2/special_tokens_map.json"
+          },
+          {
+            "relative_path": "tokenizer_2/tokenizer_config.json",
+            "byte_size": 247408,
+            "sha256": "56adeaeff12e5819883501744cfc1bea3b6daa1f72d870c5558f0e4794c24c0f",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/tokenizer_2/tokenizer_config.json"
+          },
+          {
+            "relative_path": "transformer/config.json",
+            "byte_size": 550,
+            "sha256": "8e80ab2c8f893d371b660cf1e0cf2856977d77dbf4fd44f4114a3976325c1b98",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/transformer/config.json"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00001-of-00007.safetensors",
+            "byte_size": 4974650312,
+            "sha256": "7f10f6baa7f54e5ae420c9f621e00d669975edf8b03bf84aac502220e10d1e5d",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/transformer/diffusion_pytorch_model-00001-of-00007.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00002-of-00007.safetensors",
+            "byte_size": 4984921240,
+            "sha256": "2d78c3e3ed6737cd255f94d1540ab42abc6063204f5d3afc58fa0e95b2846954",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/transformer/diffusion_pytorch_model-00002-of-00007.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00003-of-00007.safetensors",
+            "byte_size": 4984921840,
+            "sha256": "a5add36ddfe926ef3e575bc62c6c8c1a845ce9d52c0da40914bc6739cc0ddcf2",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/transformer/diffusion_pytorch_model-00003-of-00007.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00004-of-00007.safetensors",
+            "byte_size": 4968109672,
+            "sha256": "b8f74aa73943b2885af7b9adbb7b7e2839e477676200c5022d55f6ba7dcec977",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/transformer/diffusion_pytorch_model-00004-of-00007.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00005-of-00007.safetensors",
+            "byte_size": 4900967800,
+            "sha256": "64f9d1f57f274301a64df4d7f3ceb2a093803fdca86d817d550832f266305a66",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/transformer/diffusion_pytorch_model-00005-of-00007.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00006-of-00007.safetensors",
+            "byte_size": 4934563168,
+            "sha256": "4713eb9c914d9d402148821d4cb19902be7a239a4b0feb62730ef1875c4b9966",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/transformer/diffusion_pytorch_model-00006-of-00007.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00007-of-00007.safetensors",
+            "byte_size": 3558508600,
+            "sha256": "cb0bb2e9de20efc2fadd8d0808a642d2c4d18657e8424df77d072adca4447f9a",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/transformer/diffusion_pytorch_model-00007-of-00007.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model.safetensors.index.json",
+            "byte_size": 187206,
+            "sha256": "728378184469168b5ffa9cb5ee7f0efaabad13fdc83d63105a8324c9f293e700",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/transformer/diffusion_pytorch_model.safetensors.index.json"
+          },
+          {
+            "relative_path": "vae/config.json",
+            "byte_size": 427,
+            "sha256": "e80c0186b8b41b135d4b3937df727ad314e08719d1f36af06577439259b74243",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/vae/config.json"
+          },
+          {
+            "relative_path": "vae/diffusion_pytorch_model-00001-of-00002.safetensors",
+            "byte_size": 4929270112,
+            "sha256": "59574f24717e0306bd1c0af33fc5006c42625f615cda08f57246cc14d7f82571",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/vae/diffusion_pytorch_model-00001-of-00002.safetensors"
+          },
+          {
+            "relative_path": "vae/diffusion_pytorch_model-00002-of-00002.safetensors",
+            "byte_size": 113292844,
+            "sha256": "7258d3080448036656835e8cf1bfa78e5e4d33b2c56fab6deab844dd2a5fdcc6",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/vae/diffusion_pytorch_model-00002-of-00002.safetensors"
+          },
+          {
+            "relative_path": "vae/diffusion_pytorch_model.safetensors.index.json",
+            "byte_size": 23187,
+            "sha256": "fdf1ba922364183eb76f24139fb911c0f0e0678222c7b7402a7896846e20ceaf",
+            "url": "https://huggingface.co/hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-720p_t2v/resolve/f4dbc4a1efa4ac8ea56680cdf79d9f455105e814/vae/diffusion_pytorch_model.safetensors.index.json"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_key": "wan2.1-t2v-1.3b",
+      "kind": "video",
+      "label": "Wan2.1 T2V-1.3B",
+      "model_id": "Wan-AI/Wan2.1-T2V-1.3B-Diffusers",
+      "license": "Apache-2.0",
+      "recommended_revision": "0fad780a534b6463e45facd96134c9f345acfa5b",
+      "worker_contract": {"schema":1,"release":"mediacenter-wan21-v1","target":"wan21","adapter_id":"wan21","module":"mediacenter.adapters.wan21","class":"Wan21Adapter","operation":"video.generate","lora_families":[],"dependencies":[]},
+      "extension": "mp4",
+      "download_profile": "immutable-service-recipe",
+      "download_allow_patterns": [
+        "model_index.json",
+        "scheduler/*",
+        "text_encoder/*",
+        "tokenizer/*",
+        "transformer/*",
+        "vae/*"
+      ],
+      "required_files": [
+        "model_index.json",
+        "text_encoder/model-00001-of-00005.safetensors",
+        "text_encoder/model-00005-of-00005.safetensors",
+        "transformer/diffusion_pytorch_model-00001-of-00002.safetensors",
+        "transformer/diffusion_pytorch_model-00002-of-00002.safetensors",
+        "vae/diffusion_pytorch_model.safetensors",
+        "tokenizer/spiece.model"
+      ],
+      "required_vram_mib": 20480,
+      "min_gpus": 1,
+      "max_gpus": 1,
+      "recommended_gpus": [],
+      "service_recipe": {
+        "description": "Wan 2.1 T2V-1.3B 文生视频服务；固定完整模型文件与现有运行环境合同，单 GPU CPU offload。安装完成不代表真实生成已验证。",
+        "role": "checkpoint",
+        "format": "diffusers",
+        "source_type": "huggingface",
+        "files": [
+          {
+            "relative_path": "model_index.json",
+            "byte_size": 400,
+            "sha256": "b8b28e022329acf975e027579a1d2dc3de44dba28f4c909b98a880fbf5b0de7d",
+            "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers/resolve/0fad780a534b6463e45facd96134c9f345acfa5b/model_index.json"
+          },
+          {
+            "relative_path": "scheduler/scheduler_config.json",
+            "byte_size": 751,
+            "sha256": "3fed2abbd9bbc301a74db01947198057ec5049808910dccab320925bf27bea6e",
+            "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers/resolve/0fad780a534b6463e45facd96134c9f345acfa5b/scheduler/scheduler_config.json"
+          },
+          {
+            "relative_path": "text_encoder/config.json",
+            "byte_size": 854,
+            "sha256": "4087b6192155a4643f6d29fd326c4610103130674011ef4d0a53f8bce5de967d",
+            "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers/resolve/0fad780a534b6463e45facd96134c9f345acfa5b/text_encoder/config.json"
+          },
+          {
+            "relative_path": "text_encoder/model-00001-of-00005.safetensors",
+            "byte_size": 4972389712,
+            "sha256": "c0ef3a140898e228a3520c9adec60743d2e8e5b3d229651bb37f1a3921919f99",
+            "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers/resolve/0fad780a534b6463e45facd96134c9f345acfa5b/text_encoder/model-00001-of-00005.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00002-of-00005.safetensors",
+            "byte_size": 4899225672,
+            "sha256": "481c7b2b39771c44df6dd8d13ee12ed072d731b4a650bd092885d4d52db229ad",
+            "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers/resolve/0fad780a534b6463e45facd96134c9f345acfa5b/text_encoder/model-00002-of-00005.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00003-of-00005.safetensors",
+            "byte_size": 4966309504,
+            "sha256": "f93148bcc04052a169e1e49bfcf6125df6cf9bf243cb9c627da75266cf8e35c3",
+            "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers/resolve/0fad780a534b6463e45facd96134c9f345acfa5b/text_encoder/model-00003-of-00005.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00004-of-00005.safetensors",
+            "byte_size": 4999880704,
+            "sha256": "a451792c739c05bca4606190cc2dd16731411bac03b4cf6aacc5767321f857c9",
+            "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers/resolve/0fad780a534b6463e45facd96134c9f345acfa5b/text_encoder/model-00004-of-00005.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model-00005-of-00005.safetensors",
+            "byte_size": 2885866152,
+            "sha256": "7e76e18d224531b8197a46231cb53daf7f2f6ca707130252becf933026ac4eea",
+            "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers/resolve/0fad780a534b6463e45facd96134c9f345acfa5b/text_encoder/model-00005-of-00005.safetensors"
+          },
+          {
+            "relative_path": "text_encoder/model.safetensors.index.json",
+            "byte_size": 22476,
+            "sha256": "8af791f24a6447aa30c95786f40adf23d3c9df97470d2f36159c8f1113f120b4",
+            "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers/resolve/0fad780a534b6463e45facd96134c9f345acfa5b/text_encoder/model.safetensors.index.json"
+          },
+          {
+            "relative_path": "tokenizer/special_tokens_map.json",
+            "byte_size": 7079,
+            "sha256": "456b58fd240a06c743a7c2cf8008bec501240d68ebd1fc4018ea569505fea270",
+            "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers/resolve/0fad780a534b6463e45facd96134c9f345acfa5b/tokenizer/special_tokens_map.json"
+          },
+          {
+            "relative_path": "tokenizer/spiece.model",
+            "byte_size": 4548313,
+            "sha256": "e3909a67b780650b35cf529ac782ad2b6b26e6d1f849d3fbb6a872905f452458",
+            "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers/resolve/0fad780a534b6463e45facd96134c9f345acfa5b/tokenizer/spiece.model"
+          },
+          {
+            "relative_path": "tokenizer/tokenizer.json",
+            "byte_size": 16837459,
+            "sha256": "20a46ac256746594ed7e1e3ef733b83fbc5a6f0922aa7480eda961743de080ef",
+            "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers/resolve/0fad780a534b6463e45facd96134c9f345acfa5b/tokenizer/tokenizer.json"
+          },
+          {
+            "relative_path": "tokenizer/tokenizer_config.json",
+            "byte_size": 61758,
+            "sha256": "1d8d2a216bf8e70ac15b7ddcea566c4dd0433c024b39a58ca5e4c66bd78defbd",
+            "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers/resolve/0fad780a534b6463e45facd96134c9f345acfa5b/tokenizer/tokenizer_config.json"
+          },
+          {
+            "relative_path": "transformer/config.json",
+            "byte_size": 465,
+            "sha256": "0b093fa072e9ff28763febe9b964ee582f566733a6d6709deb9dfba1bde16b81",
+            "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers/resolve/0fad780a534b6463e45facd96134c9f345acfa5b/transformer/config.json"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00001-of-00002.safetensors",
+            "byte_size": 4998781576,
+            "sha256": "6d011927dbd2cc8afe53d57abab04a8fd86f615d83324770d985fb058ece3a24",
+            "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers/resolve/0fad780a534b6463e45facd96134c9f345acfa5b/transformer/diffusion_pytorch_model-00001-of-00002.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00002-of-00002.safetensors",
+            "byte_size": 677289072,
+            "sha256": "b92ec2309b1f239af6f746431815a881afcc938abb26a4f08d9a2fd6c892f872",
+            "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers/resolve/0fad780a534b6463e45facd96134c9f345acfa5b/transformer/diffusion_pytorch_model-00002-of-00002.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model.safetensors.index.json",
+            "byte_size": 73296,
+            "sha256": "dcbcf3497134a3f50557ff069dd7d2c84b5c4d8c5932472f6bdb780fb4016589",
+            "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers/resolve/0fad780a534b6463e45facd96134c9f345acfa5b/transformer/diffusion_pytorch_model.safetensors.index.json"
+          },
+          {
+            "relative_path": "vae/config.json",
+            "byte_size": 724,
+            "sha256": "f0c1cc1d7decb5badc384f54691746a27a9aeff49f7ebca974e583389342d527",
+            "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers/resolve/0fad780a534b6463e45facd96134c9f345acfa5b/vae/config.json"
+          },
+          {
+            "relative_path": "vae/diffusion_pytorch_model.safetensors",
+            "byte_size": 507591892,
+            "sha256": "d6e524b3fffede1787a74e81b30976dce5400c4439ba64222168e607ed19e793",
+            "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers/resolve/0fad780a534b6463e45facd96134c9f345acfa5b/vae/diffusion_pytorch_model.safetensors"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_key": "krea-2-turbo",
+      "kind": "image",
+      "label": "Krea 2 Turbo",
+      "model_id": "krea/Krea-2-Turbo",
+      "license": "Krea 2 Community License",
+      "recommended_revision": "98e0fe118d17c9e3547fbb2e25acdbae2cadf7c7",
+      "worker_contract": {
+        "schema": 1,
+        "release": "mediacenter-krea2-v1",
+        "target": "krea2",
+        "adapter_id": "krea2",
+        "module": "mediacenter.adapters.krea2",
+        "class": "Krea2Adapter",
+        "operation": "image.generate",
+        "lora_families": [],
+        "dependencies": []
+      },
+      "extension": "png",
+      "download_profile": "immutable-service-recipe",
+      "download_allow_patterns": [
+        "model_index.json",
+        "scheduler/*",
+        "text_encoder/*",
+        "tokenizer/*",
+        "transformer/*",
+        "vae/*"
+      ],
+      "required_files": [
+        "model_index.json",
+        "text_encoder/model.safetensors",
+        "transformer/diffusion_pytorch_model.safetensors.index.json",
+        "transformer/diffusion_pytorch_model-00001-of-00003.safetensors",
+        "transformer/diffusion_pytorch_model-00002-of-00003.safetensors",
+        "transformer/diffusion_pytorch_model-00003-of-00003.safetensors",
+        "vae/diffusion_pytorch_model.safetensors"
+      ],
+      "required_vram_mib": 45056,
+      "min_gpus": 1,
+      "max_gpus": 1,
+      "recommended_gpus": [],
+      "service_recipe": {
+        "description": "Krea 2 Turbo 官方 8 步图片生成服务；固定 33.23 GiB 官方快照、独立容器运行层与逐文件校验。仓库受限，安装前须接受 Krea 2 Community License 并显式配置 Hugging Face 读取令牌。",
+        "role": "checkpoint",
+        "format": "diffusers",
+        "source_type": "huggingface",
+        "authentication": {
+          "provider": "huggingface",
+          "host": "huggingface.co",
+          "required": true,
+          "terms_url": "https://huggingface.co/krea/Krea-2-Turbo"
+        },
+        "allowed_redirect_hosts": [
+          "cdn-lfs.huggingface.co",
+          "cdn-lfs-us-1.hf.co",
+          "cdn-lfs-eu-1.hf.co",
+          "cas-bridge.xethub.hf.co"
+        ],
+        "files": [
+          {
+            "relative_path": "model_index.json",
+            "byte_size": 586,
+            "sha256": "7d6c1206e369286df31244670a9a38fc73b077d8f64b4d273abb20ef9a8a8b93",
+            "url": "https://huggingface.co/krea/Krea-2-Turbo/resolve/98e0fe118d17c9e3547fbb2e25acdbae2cadf7c7/model_index.json"
+          },
+          {
+            "relative_path": "scheduler/scheduler_config.json",
+            "byte_size": 486,
+            "sha256": "4d8ea4471195528cdb84fcb8d37cd54ff442b9c02ff74f7d16d0a7a2f14b9467",
+            "url": "https://huggingface.co/krea/Krea-2-Turbo/resolve/98e0fe118d17c9e3547fbb2e25acdbae2cadf7c7/scheduler/scheduler_config.json"
+          },
+          {
+            "relative_path": "text_encoder/config.json",
+            "byte_size": 1559,
+            "sha256": "1a1006851200920f53ab7e17ca14a8b3d1b91075dfbbff493307ba894cab0abb",
+            "url": "https://huggingface.co/krea/Krea-2-Turbo/resolve/98e0fe118d17c9e3547fbb2e25acdbae2cadf7c7/text_encoder/config.json"
+          },
+          {
+            "relative_path": "text_encoder/model.safetensors",
+            "byte_size": 8875715136,
+            "sha256": "8434db05292f95e0041589a7c82abeb39385be59c85b54ae11caa7b45e9f4f13",
+            "url": "https://huggingface.co/krea/Krea-2-Turbo/resolve/98e0fe118d17c9e3547fbb2e25acdbae2cadf7c7/text_encoder/model.safetensors"
+          },
+          {
+            "relative_path": "tokenizer/chat_template.jinja",
+            "byte_size": 5292,
+            "sha256": "3636d0f0bd6bef02654cdffdc447b79cb2cef8ab02cc75267345946291a489e4",
+            "url": "https://huggingface.co/krea/Krea-2-Turbo/resolve/98e0fe118d17c9e3547fbb2e25acdbae2cadf7c7/tokenizer/chat_template.jinja"
+          },
+          {
+            "relative_path": "tokenizer/tokenizer.json",
+            "byte_size": 11422650,
+            "sha256": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+            "url": "https://huggingface.co/krea/Krea-2-Turbo/resolve/98e0fe118d17c9e3547fbb2e25acdbae2cadf7c7/tokenizer/tokenizer.json"
+          },
+          {
+            "relative_path": "tokenizer/tokenizer_config.json",
+            "byte_size": 664,
+            "sha256": "c871ed314285a377eccf509b906aa5fe015d5e79a3ddab2c198467329127ead6",
+            "url": "https://huggingface.co/krea/Krea-2-Turbo/resolve/98e0fe118d17c9e3547fbb2e25acdbae2cadf7c7/tokenizer/tokenizer_config.json"
+          },
+          {
+            "relative_path": "transformer/config.json",
+            "byte_size": 588,
+            "sha256": "65b85015e515bbfc3ffe6c03e10537a47121bd3756e0d21a1a87126da60bc4a8",
+            "url": "https://huggingface.co/krea/Krea-2-Turbo/resolve/98e0fe118d17c9e3547fbb2e25acdbae2cadf7c7/transformer/config.json"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00001-of-00003.safetensors",
+            "byte_size": 9970652128,
+            "sha256": "9ca6a4951e447d8465cf64e0d7324b65da1a44d373d7d1b7d610fc395b164861",
+            "url": "https://huggingface.co/krea/Krea-2-Turbo/resolve/98e0fe118d17c9e3547fbb2e25acdbae2cadf7c7/transformer/diffusion_pytorch_model-00001-of-00003.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00002-of-00003.safetensors",
+            "byte_size": 9829444456,
+            "sha256": "d092b7b22d2febe37354a54f2cfa4891b4fda397e27a3a465ee64f7597ecaad3",
+            "url": "https://huggingface.co/krea/Krea-2-Turbo/resolve/98e0fe118d17c9e3547fbb2e25acdbae2cadf7c7/transformer/diffusion_pytorch_model-00002-of-00003.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model-00003-of-00003.safetensors",
+            "byte_size": 6483240784,
+            "sha256": "df51a0e537a56ba2ebf06c0d190d3f8571f967ae1f8e7b8acf05c33b5821cdce",
+            "url": "https://huggingface.co/krea/Krea-2-Turbo/resolve/98e0fe118d17c9e3547fbb2e25acdbae2cadf7c7/transformer/diffusion_pytorch_model-00003-of-00003.safetensors"
+          },
+          {
+            "relative_path": "transformer/diffusion_pytorch_model.safetensors.index.json",
+            "byte_size": 42906,
+            "sha256": "805104fc89272b7d5fb5aea4d7d7d0281691a1b97368adf1d7f57cbc2de5cf97",
+            "url": "https://huggingface.co/krea/Krea-2-Turbo/resolve/98e0fe118d17c9e3547fbb2e25acdbae2cadf7c7/transformer/diffusion_pytorch_model.safetensors.index.json"
+          },
+          {
+            "relative_path": "vae/config.json",
+            "byte_size": 791,
+            "sha256": "54949c79def0d1060353c3fbfd4d2d2c4815ae241da6d6d28c99634c4eac6e6e",
+            "url": "https://huggingface.co/krea/Krea-2-Turbo/resolve/98e0fe118d17c9e3547fbb2e25acdbae2cadf7c7/vae/config.json"
+          },
+          {
+            "relative_path": "vae/diffusion_pytorch_model.safetensors",
+            "byte_size": 507591892,
+            "sha256": "ab1b61103959913d6c7e628cf793dbb2ca4726a40a3b3ae206c52b8e75bf6f08",
+            "url": "https://huggingface.co/krea/Krea-2-Turbo/resolve/98e0fe118d17c9e3547fbb2e25acdbae2cadf7c7/vae/diffusion_pytorch_model.safetensors"
+          }
+        ]
+      }
+    }
+  ]
+}

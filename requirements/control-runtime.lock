@@ -1,0 +1,10 @@
+# Runtime-only wheel lock. Install with --require-hashes --only-binary=:all:.
+# No crypto/ocsp/hiredis extras. Python 3.10+ dependency closure.
+redis==5.3.1 \
+    --hash=sha256:dc1909bd24669cc31b5f67a039700b16ec30571096c5f1f0d9d2324bff31af97
+PyJWT==2.12.1 \
+    --hash=sha256:28ca37c070cad8ba8cd9790cd940535d40274d22f80ab87f3ac6a713e6e8454c
+async-timeout==5.0.1 ; python_full_version < "3.11.3" \
+    --hash=sha256:39e3809566ff85354557ec2398b55e096c8364bacac9405a7a1fa429e77fe76c
+typing_extensions==4.16.0 ; python_version < "3.11" \
+    --hash=sha256:481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8

@@ -1,0 +1,71 @@
+{
+  "schema": "mc.container-release/1",
+  "release_id": "mc044-final",
+  "status": "retired_superseded_by_mc.release/1",
+  "candidate": {
+    "manifest": "docs/project-control/evidence/refactor/mc044-final-candidate-sha256.json",
+    "sha256": null
+  },
+  "production_authorization": {
+    "authorization_id": null,
+    "server_id": null,
+    "maintenance_window": null,
+    "gpu_uuids": [],
+    "database_identity": null,
+    "backup_target": null,
+    "rollback_deadline": null,
+    "maximum_download_bytes": null,
+    "maximum_duration_seconds": null
+  },
+  "preserve": [
+    "/srv/mediacenter/models",
+    "/srv/mediacenter/inputs",
+    "/srv/mediacenter/artifacts",
+    "/srv/mediacenter/config/api-key",
+    "/srv/mediacenter/config/runtime.json",
+    "/srv/mediacenter/state/mediacenter.db"
+  ],
+  "models": [
+    {"model_key":"sdxl-base-1.0","release":"containers/sdxl/release.json"},
+    {"model_key":"illustrious-xl-v2.0","release":"containers/image-models/release.json"},
+    {"model_key":"z-image-turbo","release":"containers/image-models/release.json"},
+    {"model_key":"qwen-image-2512","release":"containers/image-models/release.json"},
+    {"model_key":"realesrgan-x2plus","release":"containers/image-models/release.json"},
+    {"model_key":"realesrgan-x4plus","release":"containers/image-models/release.json"},
+    {"model_key":"realesrgan-x4plus-anime-6b","release":"containers/image-models/release.json"},
+    {"model_key":"wan2.1-t2v-1.3b","release":"containers/wan21/release.json"},
+    {"model_key":"minimax-h3-ref2va","release":"containers/video-models/release.json"},
+    {"model_key":"ltx-2.3-distilled","release":"containers/video-models/release.json"},
+    {"model_key":"wan2.2-i2v-a14b","release":"containers/video-models/release.json"},
+    {"model_key":"hunyuanvideo-1.5-720p-t2v","release":"containers/video-models/release.json"},
+    {"model_key":"musicgen-small","release":"containers/musicgen/release.json"},
+    {"model_key":"cosyvoice2-0.5b","release":"containers/cosyvoice/release.json"}
+  ],
+  "sequence": [
+    "verify_candidate_and_release_metadata",
+    "freeze_server_gpu_database_and_asset_identities",
+    "stop_only_the_owned_mediacenter_service",
+    "create_and_verify_read_only_backup",
+    "run_task_kernel_migration_against_an_offline_copy",
+    "build_or_import_digest_pinned_images",
+    "install_runtime_config_with_14_container_packages",
+    "start_control_plane_and_reconcile_owned_instances",
+    "run_bounded_cold_warm_cancel_and_recovery_matrix",
+    "request_single_human_acceptance"
+  ],
+  "rollback": [
+    "stop_only_the_owned_mediacenter_service",
+    "restore_the_verified_database_and_config_backup",
+    "restore_the_previous_source_release",
+    "start_the_previous_owned_service",
+    "verify_history_artifacts_and_credentials_references"
+  ],
+  "prohibitions": [
+    "delete_or_rewrite_model_input_or_artifact_roots",
+    "stop_external_gpu_processes",
+    "infer_gpu_ownership_from_process_names",
+    "disconnect_shared_redis",
+    "launch_legacy_stdin_or_host_python_workers",
+    "claim_deployed_or_user_accepted_from_verify_only"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "name": "mediacenter-desktop",
+  "version": "1.2.28",
+  "private": true,
+  "description": "MediaCenter private-network desktop client",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev:client": "vite --configLoader runner",
+    "typecheck": "vue-tsc --noEmit",
+    "build:client": "npm run typecheck && vite build --configLoader runner",
+    "test:client": "vitest run --configLoader runner",
+    "smoke:electron": "npm run build:client && electron --disable-gpu --disable-software-rasterizer --no-sandbox tests/electron-smoke.js",
+    "start": "npm run build:client && electron .",
+    "check": "node --check electron/main.js && node --check electron/preload.js && npm run typecheck && npm run test:client",
+    "dist:win": "npm run build:client && electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.8",
+    "@vue/test-utils": "^2.5.0",
+    "electron": "44.0.0",
+    "electron-builder": "26.15.3",
+    "jsdom": "^28.1.0",
+    "typescript": "5.9.3",
+    "vite": "^8.2.2",
+    "vitest": "^5.0.0",
+    "vue-tsc": "^3.3.11",
+    "pinia": "^4.0.3",
+    "vue": "^3.5.42"
+  },
+  "build": {
+    "appId": "com.mediacenter.desktop",
+    "productName": "MediaCenter",
+    "asar": true,
+    "files": [
+      "electron/**/*",
+      "client/dist/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "artifactName": "MediaCenter-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
